@@ -1,0 +1,18 @@
+# Process config example for dataset
+
+# global parameters
+project_name: 'demo-analyser'
+dataset_path: './data/test.json'  # path to your dataset directory or file
+export_path: './output/test.jsonl'
+
+np: 4  # number of subprocess to process your dataset
+text_keys: 'content'
+
+# process schedule
+# a list of several process operators with their arguments
+process:
+  - language_id_score_filter:
+      lang: 'en'
+  - perplexity_filter:
+      lang: 'en'
+      max_ppl: 1500
