@@ -12,7 +12,7 @@ text_keys: 'content'
 # a list of several process operators with their arguments
 process:
   - language_id_score_filter:
-      lang: 'en'
+      lang: 'ko'
   - perplexity_filter:
-      lang: 'en'
+      lang: 'ko'
       max_ppl: 1500
