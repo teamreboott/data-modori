@@ -26,6 +26,14 @@ BACKUP_MODEL_LINKS = {
     'data_juicer/models/'
 }
 
+KOREAN_MODEL_LINKS = {
+    # tokenizer and language model for korean from sentencepiece and KenLM
+    '%s.sp.model':
+    'https://huggingface.co/edugp/kenlm/resolve/refs%2Fpr%2F6/wikipedia/',
+    '%s.arpa.bin':
+    'https://huggingface.co/edugp/kenlm/resolve/refs%2Fpr%2F6/wikipedia/',
+}
+
 # Default cached models links for downloading
 MODEL_LINKS = 'https://dail-wlcb.oss-cn-wulanchabu.aliyuncs.com/' \
                'data_juicer/models/'
@@ -64,9 +72,14 @@ def check_model(model_name, args=(), force=False):
             wget.download(model_link, mdp, bar=None)
         except:  # noqa: E722
             try:
-                backup_model_link = os.path.join(
-                    BACKUP_MODEL_LINKS[model_name], true_model_name)
-                wget.download(backup_model_link, mdp, bar=None)
+                if args == "ko":
+                    backup_model_link = os.path.join(
+                        KOREAN_MODEL_LINKS[model_name], true_model_name)
+                    wget.download(backup_model_link, mdp, bar=None)
+                else:
+                    backup_model_link = os.path.join(
+                        BACKUP_MODEL_LINKS[model_name], true_model_name)
+                    wget.download(backup_model_link, mdp, bar=None)
             except:  # noqa: E722
                 logger.error(
                     f'Downloading model [{true_model_name}] error. '

@@ -10,6 +10,7 @@ class Fields(object):
 
 class StatsKeys(object):
     alpha_token_ratio = 'alpha_token_ratio'
+    korean_token_ratio = 'korean_token_ratio'
     alnum_ratio = 'alnum_ratio'
     avg_line_length = 'avg_line_length'
     char_rep_ratio = 'char_rep_ratio'
