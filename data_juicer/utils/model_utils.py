@@ -182,6 +182,20 @@ def prepare_huggingface_tokenizer(tokenizer_name):
                                               trust_remote_code=True)
     return tokenizer
 
+
+def prepare_konlpy_model():
+    """
+    Prepare and load a konlpy model.
+
+    :param model_name: input model name
+    :return: model instance.
+    """
+    from konlpy.tag import Kkma 
+    logger.info('Loading Okt tokenizer From konlpy...')
+    Kkma = Kkma()
+    return Kkma
+
+
 def prepare_diversity_model(model_name, lang):
     """
     Prepare diversity model for specific language.
@@ -235,6 +249,7 @@ def prepare_model(lang='en', model_type='sentencepiece', model_key=None):
         'nltk': ('punkt.%s.pickle', prepare_nltk_model),
         'huggingface': ('%s', prepare_huggingface_tokenizer),
         'spacy': ('%s_core_web_md-3.5.0', prepare_diversity_model),
+        'konlpy': ('%s', prepare_konlpy_model),
     }
     assert model_type in type_to_name.keys(
     ), 'model_type must be one of the following: {}'.format(
@@ -248,6 +263,8 @@ def prepare_model(lang='en', model_type='sentencepiece', model_key=None):
             MODEL_ZOO[model_key] = model_func(model_name)
         elif model_type == 'huggingface':
             MODEL_ZOO[model_key] = model_func(model_key)
+        elif model_type == 'konlpy':
+            MODEL_ZOO[model_key] = model_func()
         else:
             MODEL_ZOO[model_key] = model_func(model_name, lang)
     return model_key
