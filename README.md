@@ -52,28 +52,39 @@ English | [한국어](README_KO.md)
 
 ## Installation
 
+- Get source code from **Github**
 ```bash
-# Git에서 소스 코드 가져오기
 git clone https://github.com/teamreboott/data-juicer
 cd data-juicer
+```
 
-# 가상환경 설정 및 의존성 설치
-pip install -v -e .[all]
+- Run the following commands to install the latest basic data_juicer version in editable mode:
+```bash
+pip install -v -e .
+```
 
-# 또는 선택적 의존성 설치
-pip install -v -e .[tools]  # 도구에 필요한 의존성만 설치
+- Some OPs rely on some other too large or low-platform-compatibility third-party libraries. You can install optional dependencies as needed:
+```bash
+pip install -v -e .  # install a minimal dependencies, which support the basic functions
+pip install -v -e .[tools] # install a subset of tools dependencies
+```
+
+- The dependency options are listed below:
+
+| Tag          | Description                                                                                  |
+|--------------|----------------------------------------------------------------------------------------------|
+| `.` or `.[mini]` | Install minimal dependencies for basic Data-Juicer.                                          |
+| `.[all]`       | Install all optional dependencies (including minimal dependencies and all of the following). |
+| `.[sci]`       | Install all dependencies for all OPs.                                                        |
+| `.[dist]`      | Install dependencies for distributed data processing. (Experimental)                         |
+| `.[dev]`       | Install dependencies for developing the package as contributors.                             |
+| `.[tools]`     | Install dependencies for dedicated tools, such as quality classifiers.                       |
+
+
 
 # 선택적으로 버전 확인
 import data_juicer as dj
 print(dj.__version__)
-
-# pip로 설치하기 (제한된 기능 포함)
-# 설치 명령어
-pip install py-data-juicer
-```
-
-# Usage
-Brief description of how to use your project.
 
 # Data Processing
 ## Tool Usage
