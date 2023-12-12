@@ -1,6 +1,25 @@
-# Data Juicer
 
-해당 페이지는 개발 중입니다.
+![character_heart](https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39)
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/teamboott/data-juicer/main/docs/en/character_heart.png" width="300"/>
+  <div>&nbsp;</div>
+  <div align="center">
+    <b><font size="5">TEAMREBOOTT website </font></b>
+    <sup>
+      <a href="https://reboott.ai">
+        <i><font size="4">HOT</font></i>
+      </a>
+    </sup>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b><font size="5">TeamAR platform</font></b>
+    <sup>
+      <a href="https://askyour.trade">
+        <i><font size="4">TRY IT OUT</font></i>
+      </a>
+    </sup>
+  </div>
+  <div>&nbsp;</div>
 
 
 ## Table of Contents
