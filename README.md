@@ -43,14 +43,13 @@ English | [한국어](README_KO.md)
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Data Processing](#data-processing)
 - [Data Analysis](#data-analysis)
 - [Data Visualization](#data-visualization)
 - [Build Up Config Files](#build-up-config-files)
 - [Example Command](#example-command)
 
-## Installation
+# Installation
 
 - Get source code from **Github**
 ```bash
@@ -80,23 +79,32 @@ pip install -v -e .[tools] # install a subset of tools dependencies
 | `.[dev]`       | Install dependencies for developing the package as contributors.                             |
 | `.[tools]`     | Install dependencies for dedicated tools, such as quality classifiers.                       |
 
-
-
-# 선택적으로 버전 확인
+- If you check the version you have installed
+```bash
 import data_juicer as dj
 print(dj.__version__)
+```
 
 # Data Processing
+
+- Run `process_data.py` tool with your config as the argument to process your dataset.
+
 ## Tool Usage
 ```bash
 python tools/process_data.py --config configs/process.yaml
-
-dj-process --config configs/process.yaml
 ```
 
-Notes
-- 몇몇 작업에서는 로컬에 저장되지 않은 서드파티 모델이나 리소스가 필요할 수 있습니다.
-- 처음 실행 시 다운로드에 시간이 걸릴 수 있으며, 캐시 디렉토리는 `~/.cache/data_juicer`에 위치합니다.
+- **Note:** For some operators that involve third-party models or resources which are not stored locally on your computer, it might be slow for the first running because these ops need to download corresponding resources into a directory first.
+The default download cache directory is `~/.cache/data_juicer`. Change the cache location by setting the shell environment variable, `DATA_JUICER_CACHE_HOME` to another directory, and you can also change `DATA_JUICER_MODELS_CACHE` or `DATA_JUICER_ASSETS_CACHE` in the same way:
+
+```bash
+# cache home
+export DATA_JUICER_CACHE_HOME="/path/to/another/directory"
+# cache models
+export DATA_JUICER_MODELS_CACHE="/path/to/another/directory/models"
+# cache assets
+export DATA_JUICER_ASSETS_CACHE="/path/to/another/directory/assets"
+```
 
 # Data Analysis
 ## Tool Usage
