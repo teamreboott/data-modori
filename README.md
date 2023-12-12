@@ -49,7 +49,7 @@ English | [한국어](README_KO.md)
 - [Build Up Config Files](#build-up-config-files)
 - [Example Command](#example-command)
 
-# Installation
+### Installation
 
 - Get source code from **Github**
 ```bash
@@ -85,11 +85,10 @@ import data_juicer as dj
 print(dj.__version__)
 ```
 
-# Data Processing
+### Data Processing
 
 - Run `process_data.py` tool with your config as the argument to process your dataset.
 
-## Tool Usage
 ```bash
 python tools/process_data.py --config configs/process.yaml
 ```
@@ -106,27 +105,41 @@ export DATA_JUICER_MODELS_CACHE="/path/to/another/directory/models"
 export DATA_JUICER_ASSETS_CACHE="/path/to/another/directory/assets"
 ```
 
-# Data Analysis
-## Tool Usage
+### Data Analysis
+
+- Run `analyze_data.py` tool with your config as the argument to analyse your dataset.
+
 ```bash
 python tools/analyze_data.py --config configs/analyser.yaml
-
-dj-analyze --config configs/analyser.yaml
 ```
 
-Notes
-- Analyser는 Filter 연산의 통계만 계산하며, 추가적인 Mapper나 Deduplicator 연산은 무시됩니다.
+- **Note:** Analyser only compute stats of Filter ops. So extra Mapper or Deduplicator ops will be ignored in the analysis process.
 
-# Data Visualization
-## Tool Usage
+### Data Visualization
+
+- Run `app.py` tool to visualize your dataset in your browser.
+- **Note**: only available for installation from source.
+
 ```bash
 streamlit run app.py
 ```
-Note
-- 이 기능은 소스 설치에서만 사용 가능합니다.
 
-# Build Up Config Files
-## Config File Example
+### Build Up Config Files
+
+- Config files specify some global arguments, and an operator list for the
+  data process. You need to set:
+  - Global arguments: input/output dataset path, number of workers, etc.
+  - Operator list: list operators with their arguments used to process the dataset.
+- You can build up your own config files by:
+  - ➖：Modify from our example config file [`config_all.yaml`](configs/config_all.yaml) which includes **all** ops and default
+    arguments. You just need to **remove** ops that you won't use and refine
+    some arguments of ops.
+  - ➕：Build up your own config files **from scratch**. You can refer our
+    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide.md#build-your-own-configs).
+  - Besides the yaml files, you also have the flexibility to specify just
+    one (of several) parameters on the command line, which will override
+    the values in yaml files.
+    
 ```bash
 # Process config example for dataset
 
@@ -144,9 +157,3 @@ process:
   - language_id_score_filter:
       lang: 'en'
 ```
-## Example Command
-```bash
-python xxx.py --config configs/process.yaml --language_id_score_filter.lang=en
-```
-Note
-- 프로젝트에 맞게 이 템플릿을 수정하고 확장하십시오.
