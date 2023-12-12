@@ -1,8 +1,5 @@
-
-![character_heart](https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39)
-
 <div align="center">
-  <img src="https://raw.githubusercontent.com/teamboott/data-juicer/main/docs/en/character_heart.png" width="300"/>
+  <img src="https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39" width="300"/>
   <div>&nbsp;</div>
   <div align="center">
     <b><font size="5">TEAMREBOOTT website </font></b>
@@ -21,6 +18,27 @@
   </div>
   <div>&nbsp;</div>
 
+
+[![platform](https://img.shields.io/badge/platform-Linux%7CWindows%7CmacOS-blue)]()
+![](https://img.shields.io/badge/language-Python-214870.svg)
+![](https://img.shields.io/badge/license-Apache--2.0-000000.svg)
+[![Contributing](https://img.shields.io/badge/Contribution-welcome-brightgreen.svg)](docs/DeveloperGuide.md)
+
+[![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=026cad)](https://pypi.org/project/py-data-juicer)
+[![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=498bdf)](https://hub.docker.com/r/datajuicer/data-juicer)
+[![Document_List](https://img.shields.io/badge/Docs-English-blue?logo=Markdown)](README.md#documentation)
+
+[📘Documentation]() |
+[🛠️Installation]() |
+[🤔Reporting Issues]()
+
+</div>
+
+<div align="center">
+
+한국어 | [English](README_en.md)
+
+</div>
 
 ## Table of Contents
 
