@@ -17,3 +17,9 @@ spacy==3.5.0
 multiprocess==0.70.12
 dill==0.3.4
 ray
+boto3==1.33.13
+gluonnlp==0.10.0
+mxnet==1.7.0.post2
+mxnet-mkl==1.6.0 
+numpy==1.23.1
+sentencepiece==0.1.96

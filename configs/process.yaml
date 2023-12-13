@@ -1,15 +1,89 @@
 # Process config example for dataset
 
 # global parameters
-project_name: 'demo-process'
-dataset_path: './data/test.json'  # path to your dataset directory or file
-export_path: './output/test.jsonl'
+project_name: 'buri_translation_juicer'
+dataset_path: '/home/kyuheon/jy_workspace/DataGen/merged_dataset/buli-v0.0.2.jsonl'  # path to your dataset directory or file
+export_path: '/home/kyuheon/jy_workspace/DataGen/juicer_dataset/buli-v0.0.2.jsonl'
 
-np: 4  # number of subprocess to process your dataset
-text_keys: 'content'
+np: 8  # number of subprocess to process your dataset
+text_keys: 'instruction'
+open_tracer: true
+trace_num: 1000 
 
 # process schedule
 # a list of several process operators with their arguments
 process:
-  - language_id_score_filter:
-      lang: 'en'
+  - alphanumeric_filter:
+      tokenization: true
+      min_ratio: 0.3
+      max_ratio: 1.0
+  - average_line_length_filter:                             # 문장별 평균 글자길이를 기준으로 filter
+      min_len: 5                                              # 평균 문장길이가 char기준으로 5개 미만인 샘플은 제외
+      max_len: 10000                                          # 평균 문장길이가 char기준으로 10000개 초과인 샘플은 제외
+  - character_repetition_filter:                            # filter text with the character repetition ratio out of specific range
+      rep_len: 50                                             # repetition length for char-level n-gram
+      min_ratio: 0.0                                          # the min ratio of filter range
+      max_ratio: 0.5                                          # the max ratio of filter range
+  - flagged_words_filter:                                   # filter text with the flagged-word ratio larger than a specific max value
+      lang: ko                                                # consider flagged words in what language
+      tokenization: false                                     # whether to use model to tokenize documents
+      max_ratio: 0.0045                                       # the max ratio to filter text
+      flagged_words_dir: ./assets                             # directory to store flagged words dictionaries
+      use_words_aug: false                                    # whether to augment words, especially for Chinese and Vietnamese
+      words_aug_group_sizes: [2]                              # the group size of words to augment
+      words_aug_join_char: ""                                 # the join char between words to augment
+  - language_id_score_filter:                               # filter text in specific language with language scores larger than a specific max value
+      lang: ko                                                # keep text in what language
+      min_score: 0.3                                          # the min language scores to filter text
+  - maximum_line_length_filter:                             # filter text with the maximum length of lines out of specific range
+      min_len: 10                                             # the min length of filter range
+      max_len: 10000                                          # the max length of filter range
+  - perplexity_filter:                                      # filter text with perplexity score out of specific range
+      lang: ko                                                # compute perplexity in what language
+      max_ppl: 50000                                          # the max perplexity score to filter text
+  - text_length_filter:                                     # filter text with length out of specific range
+      min_len: 10                                             # the min length of filter range
+      max_len: 10000                                          # the max length of filter range
+  - token_num_filter:                                       # filter text with total token number out of specific range
+      hf_tokenizer: EleutherAI/pythia-6.9b-deduped            # name of used Hugging Face tokenizer
+      min_num: 10                                             # the min number of filter range
+      max_num: 4096                                           # the max number of filter range
+  - words_num_filter:                                       # filter text with number of words out of specific range
+      lang: ko                                                # sample in which language
+      min_num: 10                                             # the min number of filter range
+      max_num: 10000                                          # the max number of filter range
+  - word_repetition_filter:                                 # filter text with the word repetition ratio out of specific range
+      lang: ko                                                # sample in which language
+      rep_len: 10                                             # repetition length for word-level n-gram
+      min_ratio: 0.0                                          # the min ratio of filter range
+      max_ratio: 0.5                                          # the max ratio of filter range
+  - suffix_filter:                                          # filter to keep samples with specified suffix.
+      suffixes: []                                            # the suffix of text that will be keep. For example: '.txt', 'txt' or ['txt', '.pdf', 'docx']
+  - specified_field_filter:                                 # filter text with the specified field info out of specific range
+      field_key: ''                                           # the target key corresponding to multi-level field information need to be separated by '.'
+      target_value: []                                        # the range of specified field information corresponding to the samples that need to be retained
+  - specified_numeric_field_filter:                         # filter text with the specified numeric field info out of specific range
+      field_key: ''                                           # the target key corresponding to multi-level field information need to be separated by '.'
+      min_value: 0                                            # the min filter value in SpecifiedNumericField op
+      max_value: 10000                                        # the max filter value in SpecifiedNumericField op
+
+  # Deduplicator ops
+  - document_deduplicator:                                  # deduplicate text samples using md5 hashing exact matching method
+      lowercase: false                                        # whether to convert text to lower case
+      ignore_non_character: false                             # whether to ignore non-alphabet characters, including whitespaces, digits, and punctuations
+  - document_minhash_deduplicator:                          # deduplicate text samples using MinHash-LSH method
+      tokenization: space                                     # tokenization method for text. One of [space, punctuation, character]
+      window_size: 5                                          # window size of shingling
+      num_permutations: 256                                   # number of permutations in minhash computing
+      jaccard_threshold: 0.7                                  # the min jaccard similarity threshold in near-duplicate detection. When the jaccard similarity of two sample texts is >= this threshold, they are regarded as similar samples and this op will only keep one of them after deduplication
+      num_bands: null                                         # number of bands in LSH. Default it's None, and it will be determined by an optimal params computation algorithm by minimize the weighted sum of probs of False Positives and False Negatives
+      num_rows_per_band: null                                 # number of rows in each band in LSH. Default it's None, and it will be determined by an optimal params computation algorithm
+      lowercase: true                                         # whether to convert text to lower case
+      ignore_pattern: null                                    # whether to ignore sub-strings with specific pattern when computing simhash.
+  - document_simhash_deduplicator:                          # deduplicate text samples using SimHash-LSH method
+      tokenization: space                                     # tokenization method for text. One of [space, punctuation, character]
+      window_size: 6                                          # window size of shingling
+      num_blocks: 6                                           # number of blocks in SimHash computing
+      hamming_distance: 4                                     # the max hamming distance to regard 2 samples as similar enough pair. Should be less than num_blocks always
+      lowercase: true                                         # whether to convert text to lower case
+      ignore_pattern: null                                    # whether to ignore sub-strings with specific pattern when computing simhash.

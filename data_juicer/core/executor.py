@@ -80,6 +80,7 @@ class Executor:
                 logger.info('Trace for all ops.')
                 self.op_list_to_trace = set(OPERATORS.modules.keys())
 
+
     def run(self, load_data_np=None):
         """
         Running the dataset process pipeline.
@@ -108,6 +109,7 @@ class Executor:
         logger.info('Processing data...')
         start = time()
         tstart = start
+
         for op_cfg, op in zip(self.process_list, self.ops):
             op_name, op_args = list(op_cfg.items())[0]
             prev = dataset  # record last dataset

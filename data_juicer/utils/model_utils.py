@@ -35,8 +35,7 @@ KOREAN_MODEL_LINKS = {
 }
 
 # Default cached models links for downloading
-MODEL_LINKS = 'https://dail-wlcb.oss-cn-wulanchabu.aliyuncs.com/' \
-               'data_juicer/models/'
+MODEL_LINKS = 'https://dail-wlcb.oss-cn-wulanchabu.aliyuncs.com/data_juicer/models/'
 
 MODEL_ZOO = {}
 
@@ -58,6 +57,7 @@ def check_model(model_name, args=(), force=False):
     # check if the specified model exists. If it does not exist, download it
     true_model_name = model_name % args
     mdp = os.path.join(MODEL_PATH, true_model_name)
+
     if force:
         if os.path.exists(mdp):
             os.remove(mdp)
@@ -75,7 +75,11 @@ def check_model(model_name, args=(), force=False):
                 if args == "ko":
                     backup_model_link = os.path.join(
                         KOREAN_MODEL_LINKS[model_name], true_model_name)
-                    wget.download(backup_model_link, mdp, bar=None)
+                    try:
+                        wget.download(backup_model_link, mdp, bar=None)
+                    except:
+                        from urllib import request
+                        request.urlretrieve(backup_model_link, mdp)
                 else:
                     backup_model_link = os.path.join(
                         BACKUP_MODEL_LINKS[model_name], true_model_name)
@@ -114,12 +118,19 @@ def prepare_sentencepiece_model(model_name, lang):
     :return: model instance.
     """
     import sentencepiece
+    from gluonnlp.data import SentencepieceTokenizer
+    from ..ops.common import get_tokenizer
+
     logger.info('Loading sentencepiece model...')
-    sentencepiece_model = sentencepiece.SentencePieceProcessor()
-    try:
-        sentencepiece_model.load(check_model(model_name, lang))
-    except:  # noqa: E722
-        sentencepiece_model.load(check_model(model_name, lang, force=True))
+    if lang == 'ko':
+        tok_path = get_tokenizer()
+        sentencepiece_model = SentencepieceTokenizer(tok_path)
+    else:
+        sentencepiece_model = sentencepiece.SentencePieceProcessor()
+        try:
+            sentencepiece_model.load(check_model(model_name, lang))
+        except:  # noqa: E722
+            sentencepiece_model.load(check_model(model_name, lang, force=True))
     return sentencepiece_model
 
 
