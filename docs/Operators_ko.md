@@ -44,27 +44,27 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 
 ## Mapper <a name="mapper"/>
 
-| Operator                                            | Domain             | Lang   | Description                                                                                                    |
-|-----------------------------------------------------|--------------------|--------|----------------------------------------------------------------------------------------------------------------|
-| clean_copyright_mapper                              | Code               | en, ko | Removes copyright notice at the beginning of code files (:warning: must contain the word *copyright*)          |
-| clean_email_mapper                                  | General            | en, ko | Removes email information                                                                                      |
-| clean_html_mapper                                   | General            | en, ko | Removes HTML tags and returns plain text of all the nodes                                                      |
-| clean_ip_mapper                                     | General            | en, ko | Removes IP addresses                                                                                           |
-| clean_links_mapper                                  | General, Code      | en, ko | Removes links, such as those starting with http or ftp                                                         |
-| expand_macro_mapper                                 | LaTeX              | en, ko | Expands macros usually defined at the top of TeX documents                                                     |
-| fix_unicode_mapper                                  | General            | en, ko | Fixes broken Unicodes (by [ftfy](https://ftfy.readthedocs.io/))                                                |
-| nlpaug_en_mapper                                    | General            | en     | Simply augment texts in English based on the `nlpaug` library                                                  | 
-| punctuation_normalization_mapper                    | General            | en, ko | Normalizes various Unicode punctuations to their ASCII equivalents                                             |
-| remove_bibliography_mapper                          | LaTeX              | en, ko | Removes the bibliography of TeX documents                                                                      |
-| remove_comments_mapper                              | LaTeX              | en, ko | Removes the comments of TeX documents                                                                          |
-| remove_header_mapper                                | LaTeX              | en, ko | Removes the running headers of TeX documents, e.g., titles, chapter or section numbers/names                   |
-| remove_long_words_mapper                            | General            | en, ko | Removes words with length outside the specified range                                                          |
-| remove_non_chinese_character_mapper                 | General            | en, ko | Remove non Chinese character in text samples. |
-| remove_specific_chars_mapper                        | General            | en, ko | Removes any user-specified characters or substrings                                                            |
-| remove_table_text_mapper                            | General, Financial | en     | Detects and removes possible table contents (:warning: relies on regular expression matching and thus fragile) |
-| remove_words_with_incorrect_<br />substrings_mapper | General            | en, ko | Removes words containing specified substrings                                                                  |
-| sentence_split_mapper                               | General            | en     | Splits and reorganizes sentences according to semantics                                                        |
-| whitespace_normalization_mapper                     | General            | en, ko | Normalizes various Unicode whitespaces to the normal ASCII space (U+0020)                                      |
+| Operator                                            | Domain             | Lang   | Description                                                                                      |
+|-----------------------------------------------------|--------------------|--------|--------------------------------------------------------------------------------------------------|
+| clean_copyright_mapper                              | Code               | en, ko | 코드 파일의 시작 부분에 있는 저작권 표시를 제거합니다 (:warning: must contain the word *copyright*)  |
+| clean_email_mapper                                  | General            | en, ko | 이메일 정보를 제거합니다                                                                          |
+| clean_html_mapper                                   | General            | en, ko | HTML 태그를 제거하고 모든 노드의 일반 텍스트를 반환합니다                                            |
+| clean_ip_mapper                                     | General            | en, ko | IP 주소를 제거합니다                                                                              |
+| clean_links_mapper                                  | General, Code      | en, ko | 링크를 제거합니다 (예: http 또는 ftp로 시작하는 링크)                                            |
+| expand_macro_mapper                                 | LaTeX              | en, ko | TeX 문서 상단에 일반적으로 정의된 매크로를 확장합니다                                            |
+| fix_unicode_mapper                                  | General            | en, ko | 깨진 유니코드를 수정합니다 (by [ftfy](https://ftfy.readthedocs.io/))                                  |
+| nlpaug_en_mapper                                    | General            | en     | `nlpaug` 라이브러리를 기반으로 영어 텍스트를 단순히 증가시킵니다                                       | 
+| punctuation_normalization_mapper                    | General            | en, ko | 다양한 유니코드 구두점을 해당 ASCII 등가물로 표준화합니다                                     |
+| remove_bibliography_mapper                          | LaTeX              | en, ko | TeX 문서의 참고문헌을 제거합니다                                                           |
+| remove_comments_mapper                              | LaTeX              | en, ko | TeX 문서의 주석을 제거합니다                                                              |
+| remove_header_mapper                                | LaTeX              | en, ko | TeX 문서의 러닝 헤더를 제거합니다, e.g., titles, chapter or section numbers/names      |
+| remove_long_words_mapper                            | General            | en, ko | 지정된 범위를 벗어나는 길이의 단어를 제거합니다                                               |
+| remove_non_chinese_character_mapper                 | General            | en, ko | 중국어 이외의 문자를 텍스트 샘플에서 제거합니다. |
+| remove_specific_chars_mapper                        | General            | en, ko | 사용자가 지정한 문자나 부분 문자열을 제거합니다                                                |
+| remove_table_text_mapper                            | General, Financial | en     | 가능한 테이블 콘텐츠를 감지하고 제거합니다 (:warning: relies on regular expression matching and thus fragile) |
+| remove_words_with_incorrect_<br />substrings_mapper | General            | en, ko | 지정된 부분 문자열을 포함하는 단어를 제거합니다                                                     |
+| sentence_split_mapper                               | General            | en     | 문장을 의미에 따라 분리하고 재구성합니다                                            |
+| whitespace_normalization_mapper                     | General            | en, ko | 다양한 유니코드 공백을 정규 ASCII 공백 (U+0020)으로 정규화합니다                         |
 
 
 ## Filter <a name="filter"/>
