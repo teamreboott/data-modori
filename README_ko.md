@@ -25,7 +25,7 @@
 
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
 ![](https://img.shields.io/badge/language-Python-b44dff.svg)
-[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide.md)
+[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_en.md)
 
 <!-- [![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
 [![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
@@ -133,7 +133,7 @@ streamlit run app.py
   - 연산자 목록: 데이터셋을 처리하는 데 사용되는 연산자와 해당 인수를 나열합니다.
 - 다음 중 하나로 자체 구성 파일을 작성할 수 있습니다.
   - ➖: config_all.yaml 예제 구성 파일에서 수정 (사용하지 않을 연산자를 제거하고 인수를 정리하세요).
-  - ➕: 처음부터 자체 구성 파일 작성. 예제 구성 파일 [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md) 및 [Build-Up Guide for developers](docs/DeveloperGuide.md#build-your-own-configs)을 참조할 수 있습니다.
+  - ➕: 처음부터 자체 구성 파일 작성. 예제 구성 파일 [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md) 및 [Build-Up Guide for developers](docs/DeveloperGuide_en.md#build-your-own-configs)을 참조할 수 있습니다.
   - yaml 파일 외에도 명령 줄에서 파라미터 하나만 지정하여 yaml 파일의 값을 무시하고 변경할 수 있습니다.
 ```bash
 python xxx.py --config configs/process.yaml --language_id_score_filter.lang=ko 
@@ -162,7 +162,7 @@ Data-Modori is released under Apache License 2.0.
 
 ## Contributing
 We are in a rapidly developing field and greatly welcome contributions of new 
-features, bug fixes and better documentations. Please refer to[How-to Guide for Developers](docs/DeveloperGuide.md).
+features, bug fixes and better documentations. Please refer to[How-to Guide for Developers](docs/DeveloperGuide_en.md).
 
 ## Acknowledgement
 Data-Modori is used across various LLM products and research initiatives,

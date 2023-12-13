@@ -1,4 +1,4 @@
-English | [한국어](README_KO.md)
+English | [한국어](README_ko.md)
 
 # Data-Modori: Explore a New Frontier in Data
 
@@ -25,7 +25,7 @@ English | [한국어](README_KO.md)
 
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
 ![](https://img.shields.io/badge/language-Python-b44dff.svg)
-[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide.md)
+[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_en.md)
 
 <!-- [![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
 [![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
@@ -136,7 +136,7 @@ streamlit run app.py
     arguments. You just need to **remove** ops that you won't use and refine
     some arguments of ops.
   - ➕：Build up your own config files **from scratch**. You can refer our
-    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide.md#build-your-own-configs).
+    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide_en.md#build-your-own-configs).
   - Besides the yaml files, you also have the flexibility to specify just
     one (of several) parameters on the command line, which will override
     the values in yaml files.
@@ -167,7 +167,7 @@ Data-Modori is released under Apache License 2.0.
 
 ## Contributing
 We are in a rapidly developing field and greatly welcome contributions of new 
-features, bug fixes and better documentations. Please refer to[How-to Guide for Developers](docs/DeveloperGuide.md).
+features, bug fixes and better documentations. Please refer to[How-to Guide for Developers](docs/DeveloperGuide_en.md).
 
 ## Acknowledgement
 Data-Modori is used across various LLM products and research initiatives,
