@@ -1,39 +1,10 @@
 # How-to Guide for Developers
 
 * [How-to Guide for Developers](#how-to-guide-for-developers)
-   * [Coding Style](#coding-style)
    * [Build your own ops](#build-your-own-ops)
    * [Build your own configs](#build-your-own-configs)
       * [Fruitful config sources &amp; Type hints](#fruitful-config-sources--type-hints)
       * [Hierarchical configs and helps](#hierarchical-configs-and-helps)
-
-## Coding Style
-
-We define our styles in `.pre-commit-config.yaml`. Before committing,
-please install `pre-commit` tool to check and modify accordingly:
-
-```shell
-# ===========install pre-commit tool===========
-pip install pre-commit
-
-cd <path_to_data_juicer>
-# install pre-commit script for data_juicer
-pre-commit install
-
-
-# ===========check all files===========
-git add .
-pre-commit run --all-files
-
-# commit after all checking are passed
-git commit -m "xxxx"
-```
-
-**Note**: We have configured pre-commit checks in github workflow. If this 
-check in your PR fails, please locally ① ensure that the relevant 
-dependencies of pre-commit are consistent with the project configuration 
-(which can be completed through `pre-commit clean` and `pre-commit install`); 
-and ② execute `pre-commit run --all-files` before push.
 
 ## Build your own ops
 
