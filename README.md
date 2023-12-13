@@ -1,3 +1,9 @@
+English | [한국어](README_KO.md)
+
+# Data-Nestor
+
+Streamline your data analysis and organization with Data-Nestor for efficient insights and structured data synthesis.
+
 <div align="center">
   <img src="https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39" width="300"/>
   <div>&nbsp;</div>
@@ -19,14 +25,13 @@
   <div>&nbsp;</div>
 
 
-[![platform](https://img.shields.io/badge/platform-Linux%7CWindows%7CmacOS-blue&color=498bdf)]()
-![](https://img.shields.io/badge/language-Python-b44dff.svg)
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
+![](https://img.shields.io/badge/language-Python-b44dff.svg)
 [![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide.md)
 
-[![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
+<!-- [![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
 [![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
-[![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation)
+[![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
 
 [📘Documentation]() |
 [🛠️Installation]() |
@@ -36,7 +41,6 @@
 
 <div align="center">
 
-English | [한국어](README_KO.md)
 
 </div>
 
