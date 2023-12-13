@@ -122,14 +122,14 @@ process:
   - special_characters_filter:                              # filter text with special-char ratio out of specific range
       min_ratio: 0.0                                          # the min ratio of filter range
       max_ratio: 0.25                                         # the max ratio of filter range
-  - stopwords_filter:                                       # filter text with stopword ratio smaller than a specific min value
-      lang: en                                                # consider stopwords in what language
-      tokenization: false                                     # whether to use model to tokenize documents
-      min_ratio: 0.3                                          # the min ratio to filter text
-      stopwords_dir: ./assets                                 # directory to store stopwords dictionaries
-      use_words_aug: false                                    # whether to augment words, especially for Chinese and Vietnamese
-      words_aug_group_sizes: [2]                              # the group size of words to augment
-      words_aug_join_char: ""                                 # the join char between words to augment
+#   - stopwords_filter:                                       # filter text with stopword ratio smaller than a specific min value
+#       lang: en                                                # consider stopwords in what language
+#       tokenization: false                                     # whether to use model to tokenize documents
+#       min_ratio: 0.3                                          # the min ratio to filter text
+#       stopwords_dir: ./assets                                 # directory to store stopwords dictionaries
+#       use_words_aug: false                                    # whether to augment words, especially for Chinese and Vietnamese
+#       words_aug_group_sizes: [2]                              # the group size of words to augment
+#       words_aug_join_char: ""                                 # the join char between words to augment
   - text_length_filter:                                     # filter text with length out of specific range
       min_len: 10                                             # the min length of filter range
       max_len: 10000                                          # the max length of filter range

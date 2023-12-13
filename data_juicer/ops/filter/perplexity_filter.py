@@ -49,16 +49,17 @@ class PerplexityFilter(Filter):
         if context and words_key in sample[Fields.context]:
             words = sample[Fields.context][words_key]
         else:
-            tokenizer = get_model(self.sp_model_key, self.lang, 'sentencepiece')
-            if self.lang == 'ko':
-                words = get_words_from_document(sample[self.text_key], token_func=tokenizer if tokenizer else None)
-            else:
-                words = get_words_from_document(
-                    sample[self.text_key],
-                    token_func=tokenizer.encode_as_pieces if tokenizer else None)
-            print(words)
+            tokenizer = get_model(self.sp_model_key, "en", 'sentencepiece')
+            # if self.lang == 'ko':
+            #     words = get_words_from_document(sample[self.text_key], token_func=tokenizer if tokenizer else None)
+            #     #words = [s.replace("▁", "") for s in words]
+            # else:
+            words = get_words_from_document(
+                sample[self.text_key],
+                token_func=tokenizer if tokenizer else None)
             if context:
                 sample[Fields.context][words_key] = words
+            print(words)
         text = ' '.join(words)
         # compute perplexity
         logits, length = 0, 0
@@ -67,7 +68,6 @@ class PerplexityFilter(Filter):
             logits += kenlm_model.score(line)
             length += (len(line.split()) + 1)
         ppl = (10.0**(-logits / length)) if length != 0 else 0.0
-        print(ppl)
         sample[Fields.stats][StatsKeys.perplexity] = round(ppl, 1)
 
         return sample

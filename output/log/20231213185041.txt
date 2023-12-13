@@ -1,124 +1,0 @@
-2023-12-13 18:50:41.235 | INFO     | data_juicer.config.config:config_backup:398 - Back up the input config file [/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/./configs/process.yaml] into the work_dir [./output]
-2023-12-13 18:50:41.243 | INFO     | data_juicer.config.config:display_config:417 - Configuration table: 
-╒════════════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════╕
-│ key                    │ values                                                                                             │
-╞════════════════════════╪════════════════════════════════════════════════════════════════════════════════════════════════════╡
-│ config                 │ [Path_fr(./configs/process.yaml, cwd=/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer)] │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ project_name           │ 'demo-process'                                                                                     │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ executor_type          │ 'default'                                                                                          │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ dataset_path           │ './data/test.json'                                                                                 │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ export_path            │ './output/test.jsonl'                                                                              │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ export_shard_size      │ 0                                                                                                  │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ export_in_parallel     │ False                                                                                              │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ np                     │ 1                                                                                                  │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ text_keys              │ 'content'                                                                                          │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ suffixes               │ []                                                                                                 │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ use_cache              │ True                                                                                               │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ ds_cache_dir           │ PosixPath('/home/kyuheon/.cache/huggingface/datasets')                                             │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ cache_compress         │ None                                                                                               │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ use_checkpoint         │ False                                                                                              │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ temp_dir               │ None                                                                                               │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ open_tracer            │ False                                                                                              │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ op_list_to_trace       │ []                                                                                                 │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ trace_num              │ 10                                                                                                 │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ op_fusion              │ False                                                                                              │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ process                │ [{'alphanumeric_filter': {'max_ratio': 1.0,                                                        │
-│                        │                           'min_ratio': 0.3,                                                        │
-│                        │                           'text_key': 'content',                                                   │
-│                        │                           'tokenization': True}},                                                  │
-│                        │  {'average_line_length_filter': {'max_len': 10000,                                                 │
-│                        │                                  'min_len': 5,                                                     │
-│                        │                                  'text_key': 'content'}},                                          │
-│                        │  {'character_repetition_filter': {'max_ratio': 0.5,                                                │
-│                        │                                   'min_ratio': 0.0,                                                │
-│                        │                                   'rep_len': 50,                                                   │
-│                        │                                   'text_key': 'content'}},                                         │
-│                        │  {'flagged_words_filter': {'flagged_words_dir': './assets',                                        │
-│                        │                            'lang': 'ko',                                                           │
-│                        │                            'max_ratio': 0.0045,                                                    │
-│                        │                            'text_key': 'content',                                                  │
-│                        │                            'tokenization': False,                                                  │
-│                        │                            'use_words_aug': False,                                                 │
-│                        │                            'words_aug_group_sizes': [2],                                           │
-│                        │                            'words_aug_join_char': ''}},                                            │
-│                        │  {'language_id_score_filter': {'lang': 'ko',                                                       │
-│                        │                                'min_score': 0.3,                                                   │
-│                        │                                'text_key': 'content'}},                                            │
-│                        │  {'maximum_line_length_filter': {'max_len': 10000,                                                 │
-│                        │                                  'min_len': 10,                                                    │
-│                        │                                  'text_key': 'content'}},                                          │
-│                        │  {'perplexity_filter': {'lang': 'en', 'max_ppl': 1500, 'text_key': 'content'}}]                    │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ save_stats_in_one_file │ False                                                                                              │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ ray_address            │ 'auto'                                                                                             │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ work_dir               │ './output'                                                                                         │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ timestamp              │ '20231213185041'                                                                                   │
-├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ add_suffix             │ False                                                                                              │
-╘════════════════════════╧════════════════════════════════════════════════════════════════════════════════════════════════════╛
-2023-12-13 18:50:41.243 | INFO     | data_juicer.core.executor:__init__:40 - Using cache compression method: [None]
-2023-12-13 18:50:41.244 | INFO     | data_juicer.core.executor:__init__:45 - Setting up data formatter...
-2023-12-13 18:50:41.244 | INFO     | data_juicer.core.executor:__init__:67 - Preparing exporter...
-2023-12-13 18:50:41.244 | INFO     | data_juicer.core.executor:run:96 - Loading dataset from data formatter...
-2023-12-13 18:50:42.043 | INFO     | logging:handle:954 - Found cached dataset json (/home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
-  0%|          | 0/1 [00:00<?, ?it/s]100%|##########| 1/1 [00:00<00:00, 591.58it/s]
-2023-12-13 18:50:42.054 | INFO     | data_juicer.format.formatter:unify_format:173 - Unifying the input dataset formats...
-2023-12-13 18:50:42.055 | INFO     | data_juicer.format.formatter:unify_format:188 - There are 11 sample(s) in the original dataset.
-2023-12-13 18:50:42.061 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-53f04966f89e1347.arrow
-2023-12-13 18:50:42.062 | INFO     | data_juicer.format.formatter:unify_format:202 - 11 samples left after filtering empty text.
-2023-12-13 18:50:42.062 | INFO     | data_juicer.format.mixture_formatter:load_dataset:95 - sampled 11 from 11 with weight 1.0
-2023-12-13 18:50:42.063 | INFO     | data_juicer.format.mixture_formatter:load_dataset:101 - There are 11 in final dataset
-2023-12-13 18:50:42.064 | INFO     | data_juicer.core.executor:run:102 - Preparing process operators...
-using cached model. /home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/.cache/kobert_news_wiki_ko_cased-1087f8699e.spiece
-2023-12-13 18:50:42.080 | INFO     | data_juicer.utils.model_utils:prepare_fasttext_model:100 - Loading fasttext language identification model...
-Warning : `load_model` does not return WordVectorModel or SupervisedModel any more, but a `FastText` object which is very similar.
-2023-12-13 18:50:42.218 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:120 - Loading sentencepiece model...
-2023-12-13 18:50:42.219 | INFO     | data_juicer.utils.model_utils:check_model:67 - Model [en.sp.model] not found . Downloading...
-2023-12-13 18:50:42.861 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:142 - Loading kenlm language model...
-2023-12-13 18:50:42.862 | INFO     | data_juicer.utils.model_utils:check_model:67 - Model [en.arpa.bin] not found . Downloading...
-2023-12-13 18:53:48.267 | INFO     | data_juicer.core.executor:run:109 - Processing data...
-2023-12-13 18:53:48.279 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-3bcbe15cca616b89.arrow
-/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/table.py:1373: FutureWarning: promote has been superseded by mode='default'.
-  return cls._concat_blocks(pa_tables_to_concat_vertically, axis=0)
-2023-12-13 18:53:48.287 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-257c50cbc7a2b7d4.arrow
-2023-12-13 18:53:48.290 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-5d36ed7afcb76b59.arrow
-2023-12-13 18:53:48.293 | INFO     | data_juicer.core.executor:run:188 - Op [alphanumeric_filter] Done in 0.023(s). Left 11 samples.
-2023-12-13 18:53:48.301 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-46a18c4174dd9ac7.arrow
-2023-12-13 18:53:48.304 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-094b5f9c55fb7fc8.arrow
-2023-12-13 18:53:48.305 | INFO     | data_juicer.core.executor:run:188 - Op [average_line_length_filter] Done in 0.013(s). Left 11 samples.
-2023-12-13 18:53:48.308 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-cff9d38657629ec4.arrow
-2023-12-13 18:53:48.310 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-4403bb3ec9bc6569.arrow
-2023-12-13 18:53:48.311 | INFO     | data_juicer.core.executor:run:188 - Op [character_repetition_filter] Done in 0.006(s). Left 11 samples.
-2023-12-13 18:53:48.321 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-5688d1f57447a451.arrow
-2023-12-13 18:53:48.332 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-9133d88067d6daa2.arrow
-2023-12-13 18:53:48.332 | INFO     | data_juicer.core.executor:run:188 - Op [flagged_words_filter] Done in 0.021(s). Left 8 samples.
-language_id_score_filter_compute_stats:   0%|          | 0/8 [00:00<?, ? examples/s]                                                                                    language_id_score_filter_process:   0%|          | 0/8 [00:00<?, ? examples/s]                                                                              2023-12-13 18:53:48.349 | INFO     | data_juicer.core.executor:run:188 - Op [language_id_score_filter] Done in 0.016(s). Left 2 samples.
-maximum_line_length_filter_compute_stats:   0%|          | 0/2 [00:00<?, ? examples/s]                                                                                      maximum_line_length_filter_process:   0%|          | 0/2 [00:00<?, ? examples/s]                                                                                2023-12-13 18:53:48.362 | INFO     | data_juicer.core.executor:run:188 - Op [maximum_line_length_filter] Done in 0.013(s). Left 2 samples.
-perplexity_filter_compute_stats:   0%|          | 0/2 [00:00<?, ? examples/s]                                                                             perplexity_filter_process:   0%|          | 0/2 [00:00<?, ? examples/s]                                                                       2023-12-13 18:53:48.374 | INFO     | data_juicer.core.executor:run:188 - Op [perplexity_filter] Done in 0.012(s). Left 0 samples.
-2023-12-13 18:53:48.374 | INFO     | data_juicer.core.executor:run:192 - All Ops are done in 0.105(s).
-2023-12-13 18:53:48.375 | INFO     | data_juicer.core.executor:run:195 - Exporting dataset to disk...
-2023-12-13 18:53:48.375 | INFO     | data_juicer.core.exporter:_export_impl:106 - Export dataset into a single file...
-Creating json from Arrow format: 0ba [00:00, ?ba/s]Creating json from Arrow format: 0ba [00:00, ?ba/s]
-Creating json from Arrow format: 0ba [00:00, ?ba/s]Creating json from Arrow format: 0ba [00:00, ?ba/s]

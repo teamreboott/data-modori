@@ -21,7 +21,6 @@ class StopWordsFilter(Filter):
     value."""
 
     def __init__(self,
-                 lang: str = 'en',
                  tokenization: bool = False,
                  min_ratio: ClosedUnitInterval = 0.3,
                  stopwords_dir: str = ASSET_DIR,
@@ -49,13 +48,12 @@ class StopWordsFilter(Filter):
         :param kwargs: extra args
         """
         super().__init__(*args, **kwargs)
-        self.lang = lang
+        self.lang = "en"
         self.min_ratio = min_ratio
         self.use_words_aug = use_words_aug
         self.words_aug_group_sizes = words_aug_group_sizes
         self.words_aug_join_char = words_aug_join_char
         self.model_key = None
-        self.lang = lang
 
         self.STOPWORDS = load_words_asset(words_dir=stopwords_dir,
                                           words_type='stopwords')
