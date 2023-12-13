@@ -31,9 +31,9 @@ English | [한국어](README_ko.md)
 [![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
 [![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
 
-[📘Documentation]() |
+[📘Documentation](#documentation) |
 [🛠️Installation](#installation) |
-[🤔Reporting Issues]()
+[🤔Reporting Issues](https://github.com/teamreboott/data-modori/issues/new/choose)
 
 </div>
 
@@ -167,7 +167,7 @@ process:
       lang: 'en'
 ```
 
-## Documentation | 文档 <a name="documentation"/>
+## Documentation
 
 - [Overview](README.md) | [개요](README_ko.md)
 - [Operators](docs/Operators_en.md) | [연산자들](docs/Operators_ko.md)
