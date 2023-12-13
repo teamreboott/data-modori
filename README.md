@@ -32,7 +32,7 @@ English | [한국어](README_ko.md)
 [![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
 
 [📘Documentation]() |
-[🛠️Installation]() |
+[🛠️Installation](#installation) |
 [🤔Reporting Issues]()
 
 </div>
@@ -55,6 +55,11 @@ Table of Contents
   - [Data Analysis](#data-analysis)
   - [Data Visualization](#data-visualization)
   - [Build Up Config Files](#build-up-config-files)
+  - [Documentation](#documentation)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Acknowledgement](#acknowledgement)
+  - [References](#references)
 
 ### Installation
 
