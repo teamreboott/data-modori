@@ -42,6 +42,9 @@ class KoreannumericFilter(Filter):
         self.max_ratio = max_ratio
         self.model_key = None
 
+        print("TESTSETSTSETSE")
+        exit()
+
         if tokenization:
             # self.model_key = prepare_model(lang="ko",
             #                     model_type='konlpy')

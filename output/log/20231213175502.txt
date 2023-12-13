@@ -1,0 +1,198 @@
+2023-12-13 17:55:02.025 | INFO     | data_juicer.config.config:config_backup:398 - Back up the input config file [/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/./configs/process.yaml] into the work_dir [./output]
+2023-12-13 17:55:02.031 | INFO     | data_juicer.config.config:display_config:417 - Configuration table: 
+╒════════════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                    │ values                                                                                             │
+╞════════════════════════╪════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                 │ [Path_fr(./configs/process.yaml, cwd=/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer)] │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name           │ 'demo-process'                                                                                     │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type          │ 'default'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path           │ './data/test.json'                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path            │ './output/test.jsonl'                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size      │ 0                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel     │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                     │ 1                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys              │ 'content'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes               │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache              │ True                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir           │ PosixPath('/home/kyuheon/.cache/huggingface/datasets')                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress         │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint         │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir               │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer            │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace       │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num              │ 10                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion              │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                │ [{'alphanumeric_filter': {'max_ratio': 1.0,                                                        │
+│                        │                           'min_ratio': 0.0,                                                        │
+│                        │                           'text_key': 'content',                                                   │
+│                        │                           'tokenization': True}},                                                  │
+│                        │  {'average_line_length_filter': {'max_len': 10000,                                                 │
+│                        │                                  'min_len': 5,                                                     │
+│                        │                                  'text_key': 'content'}},                                          │
+│                        │  {'character_repetition_filter': {'max_ratio': 0.5,                                                │
+│                        │                                   'min_ratio': 0.0,                                                │
+│                        │                                   'rep_len': 50,                                                   │
+│                        │                                   'text_key': 'content'}},                                         │
+│                        │  {'flagged_words_filter': {'flagged_words_dir': './assets',                                        │
+│                        │                            'lang': 'ko',                                                           │
+│                        │                            'max_ratio': 0.0045,                                                    │
+│                        │                            'text_key': 'content',                                                  │
+│                        │                            'tokenization': False,                                                  │
+│                        │                            'use_words_aug': False,                                                 │
+│                        │                            'words_aug_group_sizes': [2],                                           │
+│                        │                            'words_aug_join_char': ''}}]                                            │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address            │ 'auto'                                                                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir               │ './output'                                                                                         │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ timestamp              │ '20231213175502'                                                                                   │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ add_suffix             │ False                                                                                              │
+╘════════════════════════╧════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2023-12-13 17:55:02.032 | INFO     | data_juicer.core.executor:__init__:40 - Using cache compression method: [None]
+2023-12-13 17:55:02.032 | INFO     | data_juicer.core.executor:__init__:45 - Setting up data formatter...
+2023-12-13 17:55:02.033 | INFO     | data_juicer.core.executor:__init__:67 - Preparing exporter...
+2023-12-13 17:55:02.033 | INFO     | data_juicer.core.executor:run:96 - Loading dataset from data formatter...
+2023-12-13 17:55:02.833 | INFO     | datasets.load:load_dataset:1791 - Downloading and preparing dataset json/default to /home/kyuheon/.cache/huggingface/datasets/json/default-1c67eea504f36f28/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e...
+Downloading data files:   0%|          | 0/1 [00:00<?, ?it/s]Downloading data files: 100%|##########| 1/1 [00:00<00:00, 3826.92it/s]
+Extracting data files:   0%|          | 0/1 [00:00<?, ?it/s]Extracting data files: 100%|##########| 1/1 [00:00<00:00, 754.51it/s]
+Generating json split: 0 examples [00:00, ? examples/s]                                                       2023-12-13 17:55:02.844 | INFO     | datasets.load:load_dataset:1791 - Dataset json downloaded and prepared to /home/kyuheon/.cache/huggingface/datasets/json/default-1c67eea504f36f28/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e. Subsequent calls will reuse this data.
+  0%|          | 0/1 [00:00<?, ?it/s]100%|##########| 1/1 [00:00<00:00, 262.39it/s]
+2023-12-13 17:55:02.856 | INFO     | data_juicer.format.formatter:unify_format:173 - Unifying the input dataset formats...
+2023-12-13 17:55:02.857 | INFO     | data_juicer.format.formatter:unify_format:188 - There are 10 sample(s) in the original dataset.
+Filter:   0%|          | 0/10 [00:00<?, ? examples/s]                                                     2023-12-13 17:55:02.866 | INFO     | data_juicer.format.formatter:unify_format:202 - 10 samples left after filtering empty text.
+2023-12-13 17:55:02.866 | INFO     | data_juicer.format.mixture_formatter:load_dataset:95 - sampled 10 from 10 with weight 1.0
+2023-12-13 17:55:02.872 | INFO     | data_juicer.format.mixture_formatter:load_dataset:101 - There are 10 in final dataset
+2023-12-13 17:55:02.872 | INFO     | data_juicer.core.executor:run:102 - Preparing process operators...
+using cached model. /home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/.cache/kobert_news_wiki_ko_cased-1087f8699e.spiece
+2023-12-13 17:55:02.890 | INFO     | data_juicer.core.executor:run:109 - Processing data...
+Flattening the indices:   0%|          | 0/10 [00:00<?, ? examples/s]                                                                     /home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/table.py:1373: FutureWarning: promote has been superseded by mode='default'.
+  return cls._concat_blocks(pa_tables_to_concat_vertically, axis=0)
+alphanumeric_filter_compute_stats:   0%|          | 0/10 [00:00<?, ? examples/s]['▁T', 'o', 'd', 'ay', '▁', 'is', '▁S', 'un', 'd', 'ay', '▁and', '▁', 'it', "'", 's', '▁', 'a', '▁', 'ha', 'p', 'p', 'y', '▁', 'd', 'ay', '!'] 0.7307692307692307
+['▁D', 'o', '▁', 'y', 'o', 'u', '▁', 'n', 'e', 'ed', '▁', 'a', '▁c', 'u', 'p', '▁of', '▁', 'co', 'f', 'f', 'e', 'e', '?'] 0.782608695652174
+['▁', '你好', ',', '请问你是谁'] 0.5
+['▁S', 'ur', '▁', 'l', 'a', '▁', 'p', 'l', 'at', 'e', 'f', 'or', 'm', 'e', '▁M', 'T', '4', ',', '▁', 'p', 'l', 'us', 'i', 'e', 'ur', 's', '▁', 'm', 'an', 'i', 'è', 're', 's', '▁', 'd', "'", 'ac', 'c', 'é', 'd', 'er', '▁', 'à', '▁c', 'es', '▁', 'f', 'on', 'c', 'tion', 'n', 'al', 'it', 'é', 's', '▁', 's', 'on', 't', '▁c', 'on', 'ç', 'u', 'es', '▁', 's', 'i', 'm', 'ul', 't', 'an', 'é', 'm', 'ent', '.'] 0.8266666666666667
+['▁', '欢迎来到阿里巴巴', '!'] 0.3333333333333333
+['▁T', 'h', 'is', '▁', 'p', 'a', 'p', 'er', '▁', 'p', 'ro', 'p', 'o', 's', 'ed', '▁', 'a', '▁', 'n', 'o', 'v', 'el', '▁', 'm', 'et', 'ho', 'd', '▁', 'on', '▁L', 'L', 'M', '▁', 'p', 're', 't', 'ra', 'in', 'ing', '.'] 0.8
+['▁본', '▁논', '문', '에서는', '▁L', 'L', 'M', '▁사전', '훈련', '에', '▁관한', '▁새로운', '▁방법', '을', '▁제안', '하', '였습니다', '.'] 0.9444444444444444
+['▁제기', '랄', '▁어제', '▁노', '는', '▁바람', '에', '▁시험', '에', '▁망', '쳐', '버', '렸', '어', '.'] 0.9333333333333333
+['▁제기', '랄', '▁어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '어', '▁노', '는', '▁바람', '에', '▁시험', '에', '▁망', '쳐', '버', '렸', '어', '.'] 0.975609756097561
+['▁본', '▁논', '문', '에서는', '▁L', 'L', 'M', '▁사전', '훈련', '에', '▁관한', '▁새로운', '▁방법', '을', '▁제안', '하', '였습니다', '.', '▁씨', '발'] 0.95
+                                                                                alphanumeric_filter_process:   0%|          | 0/10 [00:00<?, ? examples/s]                                                                          2023-12-13 17:55:02.930 | INFO     | data_juicer.core.executor:run:188 - Op [alphanumeric_filter] Done in 0.040(s). Left 10 samples.
+average_line_length_filter_compute_stats:   0%|          | 0/10 [00:00<?, ? examples/s]                                                                                       average_line_length_filter_process:   0%|          | 0/10 [00:00<?, ? examples/s]                                                                                 2023-12-13 17:55:02.944 | INFO     | data_juicer.core.executor:run:188 - Op [average_line_length_filter] Done in 0.014(s). Left 10 samples.
+character_repetition_filter_compute_stats:   0%|          | 0/10 [00:00<?, ? examples/s]                                                                                        character_repetition_filter_process:   0%|          | 0/10 [00:00<?, ? examples/s]                                                                                  2023-12-13 17:55:02.970 | INFO     | data_juicer.core.executor:run:188 - Op [character_repetition_filter] Done in 0.025(s). Left 10 samples.
+flagged_words_filter_compute_stats:   0%|          | 0/10 [00:00<?, ? examples/s]2023-12-13 17:55:02.984 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:117 - Loading sentencepiece model...
+2023-12-13 17:55:02.985 | INFO     | data_juicer.utils.model_utils:check_model:67 - Model [ko.sp.model] not found . Downloading...
+2023-12-13 17:55:03.623 | ERROR    | data_juicer.utils.model_utils:check_model:84 - Downloading model [ko.sp.model] error. Please retry later or download it into /home/kyuheon/.cache/data_juicer/models manually from https://dail-wlcb.oss-cn-wulanchabu.aliyuncs.com/data_juicer/models/ko.sp.model or https://huggingface.co/edugp/kenlm/resolve/refs%2Fpr%2F6/wikipedia/ko.sp.model 
+                                                                                 2023-12-13 17:55:03.625 | ERROR    | data_juicer.core.executor:run:173 - An error occurred during Op [flagged_words_filter].
+Traceback (most recent call last):
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 120, in prepare_sentencepiece_model
+    sentencepiece_model.load(check_model(model_name, lang))
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/sentencepiece/__init__.py", line 367, in Load
+    return self.LoadFromFile(model_file)
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/sentencepiece/__init__.py", line 171, in LoadFromFile
+    return _sentencepiece.SentencePieceProcessor_LoadFromFile(self, arg)
+OSError: Not found: "/home/kyuheon/.cache/data_juicer/models/ko.sp.model": No such file or directory Error #2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 72, in check_model
+    wget.download(model_link, mdp, bar=None)
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/wget.py", line 526, in download
+    (tmpfile, headers) = ulib.urlretrieve(binurl, tmpfile, callback)
+  File "/usr/lib/python3.8/urllib/request.py", line 247, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.8/urllib/request.py", line 531, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.8/urllib/request.py", line 640, in http_response
+    response = self.parent.error(
+  File "/usr/lib/python3.8/urllib/request.py", line 569, in error
+    return self._call_chain(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 649, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 78, in check_model
+    wget.download(backup_model_link, mdp, bar=None)
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/wget.py", line 526, in download
+    (tmpfile, headers) = ulib.urlretrieve(binurl, tmpfile, callback)
+  File "/usr/lib/python3.8/urllib/request.py", line 247, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.8/urllib/request.py", line 531, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.8/urllib/request.py", line 640, in http_response
+    response = self.parent.error(
+  File "/usr/lib/python3.8/urllib/request.py", line 569, in error
+    return self._call_chain(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.8/urllib/request.py", line 649, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/core/executor.py", line 144, in run
+    dataset = dataset.map(op.compute_stats,
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/core/data.py", line 180, in map
+    new_ds = NestedDataset(super().map(*args, **kargs))
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 563, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 528, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3004, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3358, in _map_single
+    example = apply_function_on_filtered_inputs(example, i, offset=offset)
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3261, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/core/data.py", line 46, in wrapped_f
+    return f(*args, **kargs)
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/core/data.py", line 46, in wrapped_f
+    return f(*args, **kargs)
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/ops/filter/flagged_words_filter.py", line 82, in compute_stats
+    tokenizer = get_model(self.model_key, lang=self.lang,
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 280, in get_model
+    prepare_model(lang=lang, model_type=model_type, model_key=model_key)
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 269, in prepare_model
+    MODEL_ZOO[model_key] = model_func(model_name, lang)
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 122, in prepare_sentencepiece_model
+    sentencepiece_model.load(check_model(model_name, lang, force=True))
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 88, in check_model
+    exit(1)
+  File "/usr/lib/python3.8/_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+SystemExit: 1

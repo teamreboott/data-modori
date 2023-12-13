@@ -1,0 +1,74 @@
+2023-12-13 19:23:16.763 | INFO     | data_juicer.config.config:config_backup:398 - Back up the input config file [/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/./configs/process.yaml] into the work_dir [./output]
+2023-12-13 19:23:16.769 | INFO     | data_juicer.config.config:display_config:417 - Configuration table: 
+╒════════════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                    │ values                                                                                             │
+╞════════════════════════╪════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                 │ [Path_fr(./configs/process.yaml, cwd=/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer)] │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name           │ 'demo-process'                                                                                     │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type          │ 'default'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path           │ './data/test.json'                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path            │ './output/test.jsonl'                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size      │ 0                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel     │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                     │ 1                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys              │ 'content'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes               │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache              │ True                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir           │ PosixPath('/home/kyuheon/.cache/huggingface/datasets')                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress         │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint         │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir               │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer            │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace       │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num              │ 10                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion              │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                │ [{'perplexity_filter': {'lang': 'ko', 'max_ppl': 1500, 'text_key': 'content'}}]                    │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address            │ 'auto'                                                                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir               │ './output'                                                                                         │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ timestamp              │ '20231213192316'                                                                                   │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ add_suffix             │ False                                                                                              │
+╘════════════════════════╧════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2023-12-13 19:23:16.769 | INFO     | data_juicer.core.executor:__init__:40 - Using cache compression method: [None]
+2023-12-13 19:23:16.770 | INFO     | data_juicer.core.executor:__init__:45 - Setting up data formatter...
+2023-12-13 19:23:16.770 | INFO     | data_juicer.core.executor:__init__:67 - Preparing exporter...
+2023-12-13 19:23:16.770 | INFO     | data_juicer.core.executor:run:96 - Loading dataset from data formatter...
+2023-12-13 19:23:17.600 | INFO     | logging:handle:954 - Found cached dataset json (/home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|##########| 1/1 [00:00<00:00, 719.06it/s]
+2023-12-13 19:23:17.605 | INFO     | data_juicer.format.formatter:unify_format:173 - Unifying the input dataset formats...
+2023-12-13 19:23:17.605 | INFO     | data_juicer.format.formatter:unify_format:188 - There are 11 sample(s) in the original dataset.
+2023-12-13 19:23:17.607 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-b72633ba65863c11/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-53f04966f89e1347.arrow
+2023-12-13 19:23:17.608 | INFO     | data_juicer.format.formatter:unify_format:202 - 11 samples left after filtering empty text.
+2023-12-13 19:23:17.609 | INFO     | data_juicer.format.mixture_formatter:load_dataset:95 - sampled 11 from 11 with weight 1.0
+2023-12-13 19:23:17.610 | INFO     | data_juicer.format.mixture_formatter:load_dataset:101 - There are 11 in final dataset
+2023-12-13 19:23:17.611 | INFO     | data_juicer.core.executor:run:102 - Preparing process operators...
+2023-12-13 19:23:17.613 | INFO     | data_juicer.utils.model_utils:prepare_sentencepiece_model:122 - Loading sentencepiece model...
+using cached model. /home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/.cache/kobert_news_wiki_ko_cased-1087f8699e.spiece
+2023-12-13 19:23:17.625 | INFO     | data_juicer.utils.model_utils:prepare_kenlm_model:144 - Loading kenlm language model...
+2023-12-13 19:23:17.626 | INFO     | data_juicer.utils.model_utils:check_model:67 - Model [ko.arpa.bin] not found . Downloading...
+TEST
+2023-12-13 19:23:18.330 | ERROR    | data_juicer.utils.model_utils:check_model:86 - Downloading model [ko.arpa.bin] error. Please retry later or download it into /home/kyuheon/.cache/data_juicer/models manually from https://dail-wlcb.oss-cn-wulanchabu.aliyuncs.com/data_juicer/models/ko.arpa.bin or https://huggingface.co/edugp/kenlm/resolve/refs%2Fpr%2F6/wikipedia/ko.arpa.bin 

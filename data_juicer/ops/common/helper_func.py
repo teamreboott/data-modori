@@ -4,6 +4,8 @@
 from typing import Dict
 
 import regex as re
+import os
+import hashlib
 
 
 class UnionFind:
@@ -195,3 +197,35 @@ def get_sentences_from_document(document, model_func=None):
     else:
         sentences = document.splitlines()
     return '\n'.join(sentences)
+
+
+def download(url, chksum=None, cachedir=".cache"):
+    cachedir_full = os.path.join(os.getcwd(), cachedir)
+    os.makedirs(cachedir_full, exist_ok=True)
+    filename = os.path.basename(url)
+    file_path = os.path.join(cachedir_full, filename)
+    if os.path.isfile(file_path):
+        if hashlib.md5(open(file_path, "rb").read()).hexdigest()[:10] == chksum[:10]:
+            print(f"using cached model. {file_path}")
+            return file_path, True
+
+    s3 = AwsS3Downloader()
+    file_path = s3.download(url, cachedir_full)
+    if chksum:
+        assert (
+            chksum[:10] == hashlib.md5(open(file_path, "rb").read()).hexdigest()[:10]
+        ), "corrupted file!"
+    return file_path, False
+
+
+# https://github.com/SKTBrain/KoBERT
+def get_tokenizer(cachedir=".cache"):
+    """Get KoBERT Tokenizer file path after downloading"""
+    tokenizer = {
+        "url": "s3://skt-lsl-nlp-model/KoBERT/tokenizers/kobert_news_wiki_ko_cased-1087f8699e.spiece",
+        "chksum": "ae5711deb3",
+    }
+
+    model_info = tokenizer
+    model_path, is_cached = download(model_info["url"], model_info["chksum"], cachedir=cachedir)
+    return model_path

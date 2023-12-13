@@ -75,7 +75,9 @@ def check_model(model_name, args=(), force=False):
                 if args == "ko":
                     backup_model_link = os.path.join(
                         KOREAN_MODEL_LINKS[model_name], true_model_name)
+                    print("TEST")
                     wget.download(backup_model_link, mdp, bar=None)
+                    print("AAAAAA")
                 else:
                     backup_model_link = os.path.join(
                         BACKUP_MODEL_LINKS[model_name], true_model_name)
@@ -114,12 +116,19 @@ def prepare_sentencepiece_model(model_name, lang):
     :return: model instance.
     """
     import sentencepiece
+    from gluonnlp.data import SentencepieceTokenizer
+    from ..ops.common import get_tokenizer
+
     logger.info('Loading sentencepiece model...')
-    sentencepiece_model = sentencepiece.SentencePieceProcessor()
-    try:
-        sentencepiece_model.load(check_model(model_name, lang))
-    except:  # noqa: E722
-        sentencepiece_model.load(check_model(model_name, lang, force=True))
+    if lang == 'ko':
+        tok_path = get_tokenizer()
+        sentencepiece_model = SentencepieceTokenizer(tok_path)
+    else:
+        sentencepiece_model = sentencepiece.SentencePieceProcessor()
+        try:
+            sentencepiece_model.load(check_model(model_name, lang))
+        except:  # noqa: E722
+            sentencepiece_model.load(check_model(model_name, lang, force=True))
     return sentencepiece_model
 
 

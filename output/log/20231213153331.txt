@@ -1,0 +1,201 @@
+2023-12-13 15:33:31.199 | INFO     | data_juicer.config.config:config_backup:398 - Back up the input config file [/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/./configs/process.yaml] into the work_dir [./output]
+2023-12-13 15:33:31.205 | INFO     | data_juicer.config.config:display_config:417 - Configuration table: 
+╒════════════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                    │ values                                                                                             │
+╞════════════════════════╪════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                 │ [Path_fr(./configs/process.yaml, cwd=/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer)] │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name           │ 'demo-process'                                                                                     │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type          │ 'default'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path           │ './data/test.json'                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path            │ './output/test.jsonl'                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size      │ 0                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel     │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                     │ 1                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys              │ 'content'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes               │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache              │ True                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir           │ PosixPath('/home/kyuheon/.cache/huggingface/datasets')                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress         │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint         │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir               │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer            │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace       │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num              │ 10                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion              │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                │ [{'alphanumeric_filter': {'max_ratio': 0.9,                                                        │
+│                        │                           'min_ratio': 0.0,                                                        │
+│                        │                           'text_key': 'content',                                                   │
+│                        │                           'tokenization': True}}]                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address            │ 'auto'                                                                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir               │ './output'                                                                                         │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ timestamp              │ '20231213153331'                                                                                   │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ add_suffix             │ False                                                                                              │
+╘════════════════════════╧════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2023-12-13 15:33:31.205 | INFO     | data_juicer.core.executor:__init__:40 - Using cache compression method: [None]
+2023-12-13 15:33:31.205 | INFO     | data_juicer.core.executor:__init__:45 - Setting up data formatter...
+2023-12-13 15:33:31.206 | INFO     | data_juicer.core.executor:__init__:67 - Preparing exporter...
+2023-12-13 15:33:31.206 | INFO     | data_juicer.core.executor:run:96 - Loading dataset from data formatter...
+2023-12-13 15:33:32.005 | INFO     | logging:handle:954 - Found cached dataset json (/home/kyuheon/.cache/huggingface/datasets/json/default-162365534be67af3/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|##########| 1/1 [00:00<00:00, 247.42it/s]
+2023-12-13 15:33:32.017 | INFO     | data_juicer.format.formatter:unify_format:173 - Unifying the input dataset formats...
+2023-12-13 15:33:32.017 | INFO     | data_juicer.format.formatter:unify_format:188 - There are 8 sample(s) in the original dataset.
+2023-12-13 15:33:32.020 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-162365534be67af3/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-0d1a7f259a2fdc6c.arrow
+2023-12-13 15:33:32.021 | INFO     | data_juicer.format.formatter:unify_format:202 - 8 samples left after filtering empty text.
+2023-12-13 15:33:32.021 | INFO     | data_juicer.format.mixture_formatter:load_dataset:95 - sampled 8 from 8 with weight 1.0
+2023-12-13 15:33:32.023 | INFO     | data_juicer.format.mixture_formatter:load_dataset:101 - There are 8 in final dataset
+2023-12-13 15:33:32.023 | INFO     | data_juicer.core.executor:run:102 - Preparing process operators...
+2023-12-13 15:33:32.075 | INFO     | logging:handle:954 - None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+2023-12-13 15:33:32.160 | INFO     | data_juicer.utils.model_utils:prepare_huggingface_tokenizer:180 - Loading tokenizer from HuggingFace...
+2023-12-13 15:33:32.671 | ERROR    | __main__:<module>:19 - An error has been caught in function '<module>', process 'MainProcess' (1426985), thread 'MainThread' (140070368487232):
+Traceback (most recent call last):
+
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/huggingface_hub/utils/_errors.py", line 261, in hf_raise_for_status
+    response.raise_for_status()
+    │        └ <function Response.raise_for_status at 0x7f64a7677820>
+    └ <Response [404]>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+          │         │                        └ <Response [404]>
+          │         └ '404 Client Error: Not Found for url: https://huggingface.co/kakaobrain/kogpt/resolve/main/config.json'
+          └ <class 'requests.exceptions.HTTPError'>
+
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/kakaobrain/kogpt/resolve/main/config.json
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/transformers/utils/hub.py", line 430, in cached_file
+    resolved_file = hf_hub_download(
+                    └ <function hf_hub_download at 0x7f64787138b0>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+           │   │       └ {'subfolder': None, 'repo_type': None, 'revision': None, 'cache_dir': '/home/kyuheon/.cache/huggingface/hub', 'user_agent': '...
+           │   └ ('kakaobrain/kogpt', 'config.json')
+           └ <function hf_hub_download at 0x7f6478713820>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/huggingface_hub/file_download.py", line 1232, in hf_hub_download
+    metadata = get_hf_file_metadata(
+               └ <function get_hf_file_metadata at 0x7f6478713af0>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+           │   │       └ {'url': 'https://huggingface.co/kakaobrain/kogpt/resolve/main/config.json', 'token': None, 'proxies': None, 'timeout': 10}
+           │   └ ()
+           └ <function get_hf_file_metadata at 0x7f6478713a60>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/huggingface_hub/file_download.py", line 1608, in get_hf_file_metadata
+    hf_raise_for_status(r)
+    │                   └ <Response [404]>
+    └ <function hf_raise_for_status at 0x7f64787a5c10>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/huggingface_hub/utils/_errors.py", line 271, in hf_raise_for_status
+    raise EntryNotFoundError(message, response) from e
+          │                  │        └ <Response [404]>
+          │                  └ '404 Client Error.\n\nEntry Not Found for url: https://huggingface.co/kakaobrain/kogpt/resolve/main/config.json.'
+          └ <class 'huggingface_hub.utils._errors.EntryNotFoundError'>
+
+huggingface_hub.utils._errors.EntryNotFoundError: 404 Client Error. (Request ID: Root=1-6579503c-0c8e62ee3db6d7760d77b638;db126dc9-f089-47cb-a59e-506c2b00195d)
+
+Entry Not Found for url: https://huggingface.co/kakaobrain/kogpt/resolve/main/config.json.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+> File "tools/process_data.py", line 19, in <module>
+    main()
+    └ <function main at 0x7f6482696820>
+
+  File "tools/process_data.py", line 15, in main
+    executor.run()
+    │        └ <function Executor.run at 0x7f6477b66700>
+    └ <data_juicer.core.executor.Executor object at 0x7f6477b0f8e0>
+
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/core/executor.py", line 103, in run
+    self.process_list, self.ops = load_ops(self.cfg.process,
+    │    │             │    │     │        │    │   └ [{'alphanumeric_filter': {'tokenization': True, 'min_ratio': 0.0, 'max_ratio': 0.9, 'text_key': 'content'}}]
+    │    │             │    │     │        │    └ Namespace(add_suffix=False, alphanumeric_filter=Namespace(max_ratio=9223372036854775807, min_ratio=0.25, text_key=None, token...
+    │    │             │    │     │        └ <data_juicer.core.executor.Executor object at 0x7f6477b0f8e0>
+    │    │             │    │     └ <function load_ops at 0x7f64826964c0>
+    │    │             │    └ None
+    │    │             └ <data_juicer.core.executor.Executor object at 0x7f6477b0f8e0>
+    │    └ [{'alphanumeric_filter': {'tokenization': True, 'min_ratio': 0.0, 'max_ratio': 0.9, 'text_key': 'content'}}]
+    └ <data_juicer.core.executor.Executor object at 0x7f6477b0f8e0>
+
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/ops/load.py", line 17, in load_ops
+    ops.append(OPERATORS.modules[op_name](**args))
+    │   │      │         │       │          └ {'tokenization': True, 'min_ratio': 0.0, 'max_ratio': 0.9, 'text_key': 'content'}
+    │   │      │         │       └ 'alphanumeric_filter'
+    │   │      │         └ <property object at 0x7f64ab3f3f40>
+    │   │      └ <data_juicer.utils.registry.Registry object at 0x7f64ab4e0670>
+    │   └ <method 'append' of 'list' objects>
+    └ []
+
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/ops/filter/alphanumeric_filter.py", line 46, in __init__
+    self.model_key = prepare_model(
+    │    │           └ <function prepare_model at 0x7f64a79a31f0>
+    │    └ None
+    └ <data_juicer.ops.filter.alphanumeric_filter.AlphanumericFilter object at 0x7f6475309700>
+
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 265, in prepare_model
+    MODEL_ZOO[model_key] = model_func(model_key)
+    │         │            │          └ 'kakaobrain/kogpt'
+    │         │            └ <function prepare_huggingface_tokenizer at 0x7f64a79a3040>
+    │         └ 'kakaobrain/kogpt'
+    └ {}
+
+  File "/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/data_juicer/utils/model_utils.py", line 181, in prepare_huggingface_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name,
+                │             │               └ 'kakaobrain/kogpt'
+                │             └ <classmethod object at 0x7f646bb797c0>
+                └ <class 'transformers.models.auto.tokenization_auto.AutoTokenizer'>
+
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 733, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             │          └ <classmethod object at 0x7f646bb968e0>
+             └ <class 'transformers.models.auto.configuration_auto.AutoConfig'>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/transformers/models/auto/configuration_auto.py", line 1048, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 │                │               │                                └ {'_from_auto': True, 'name_or_path': 'kakaobrain/kogpt'}
+                                 │                │               └ 'kakaobrain/kogpt'
+                                 │                └ <classmethod object at 0x7f646bb79220>
+                                 └ <class 'transformers.configuration_utils.PretrainedConfig'>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/transformers/configuration_utils.py", line 622, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          │   │                │                                └ {'_from_auto': True, 'name_or_path': 'kakaobrain/kogpt'}
+                          │   │                └ 'kakaobrain/kogpt'
+                          │   └ <classmethod object at 0x7f646bb790d0>
+                          └ <class 'transformers.configuration_utils.PretrainedConfig'>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/transformers/configuration_utils.py", line 677, in _get_config_dict
+    resolved_config_file = cached_file(
+                           └ <function cached_file at 0x7f647524e0d0>
+  File "/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/transformers/utils/hub.py", line 481, in cached_file
+    raise EnvironmentError(
+
+OSError: kakaobrain/kogpt does not appear to have a file named config.json. Checkout 'https://huggingface.co/kakaobrain/kogpt/main' for available files.

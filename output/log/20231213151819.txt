@@ -1,0 +1,102 @@
+2023-12-13 15:18:19.266 | INFO     | data_juicer.config.config:config_backup:398 - Back up the input config file [/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer/./configs/process.yaml] into the work_dir [./output]
+2023-12-13 15:18:19.279 | INFO     | data_juicer.config.config:display_config:417 - Configuration table: 
+╒════════════════════════╤════════════════════════════════════════════════════════════════════════════════════════════════════╕
+│ key                    │ values                                                                                             │
+╞════════════════════════╪════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ config                 │ [Path_fr(./configs/process.yaml, cwd=/home/kyuheon/jy_workspace/reboott_llm_pipeline/data-juicer)] │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ project_name           │ 'demo-process'                                                                                     │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ executor_type          │ 'default'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ dataset_path           │ './data/test.json'                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_path            │ './output/test.jsonl'                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_shard_size      │ 0                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ export_in_parallel     │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ np                     │ 4                                                                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ text_keys              │ 'content'                                                                                          │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ suffixes               │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_cache              │ True                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ds_cache_dir           │ PosixPath('/home/kyuheon/.cache/huggingface/datasets')                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cache_compress         │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ use_checkpoint         │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ temp_dir               │ None                                                                                               │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ open_tracer            │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_list_to_trace       │ []                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ trace_num              │ 10                                                                                                 │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ op_fusion              │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ process                │ [{'alphanumeric_filter': {'max_ratio': 0.9,                                                        │
+│                        │                           'min_ratio': 0.0,                                                        │
+│                        │                           'text_key': 'content',                                                   │
+│                        │                           'tokenization': True}}]                                                  │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ save_stats_in_one_file │ False                                                                                              │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ ray_address            │ 'auto'                                                                                             │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ work_dir               │ './output'                                                                                         │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ timestamp              │ '20231213151819'                                                                                   │
+├────────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ add_suffix             │ False                                                                                              │
+╘════════════════════════╧════════════════════════════════════════════════════════════════════════════════════════════════════╛
+2023-12-13 15:18:19.281 | INFO     | data_juicer.core.executor:__init__:40 - Using cache compression method: [None]
+2023-12-13 15:18:19.281 | INFO     | data_juicer.core.executor:__init__:45 - Setting up data formatter...
+2023-12-13 15:18:19.281 | INFO     | data_juicer.core.executor:__init__:67 - Preparing exporter...
+2023-12-13 15:18:19.282 | INFO     | data_juicer.core.executor:run:96 - Loading dataset from data formatter...
+2023-12-13 15:18:20.085 | INFO     | logging:handle:954 - Found cached dataset json (/home/kyuheon/.cache/huggingface/datasets/json/default-162365534be67af3/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|##########| 1/1 [00:00<00:00, 645.18it/s]
+2023-12-13 15:18:20.090 | INFO     | data_juicer.format.formatter:unify_format:173 - Unifying the input dataset formats...
+2023-12-13 15:18:20.091 | INFO     | data_juicer.format.formatter:unify_format:188 - There are 8 sample(s) in the original dataset.
+2023-12-13 15:18:20.099 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-162365534be67af3/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-693d856a3f5d50df_*_of_00004.arrow
+/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/table.py:1407: FutureWarning: promote has been superseded by mode='default'.
+  table = cls._concat_blocks(blocks, axis=0)
+2023-12-13 15:18:20.103 | INFO     | data_juicer.format.formatter:unify_format:202 - 8 samples left after filtering empty text.
+2023-12-13 15:18:20.103 | INFO     | data_juicer.format.mixture_formatter:load_dataset:95 - sampled 8 from 8 with weight 1.0
+2023-12-13 15:18:20.105 | INFO     | data_juicer.format.mixture_formatter:load_dataset:101 - There are 8 in final dataset
+2023-12-13 15:18:20.105 | INFO     | data_juicer.core.executor:run:102 - Preparing process operators...
+2023-12-13 15:18:20.167 | INFO     | logging:handle:954 - None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+2023-12-13 15:18:20.253 | INFO     | data_juicer.utils.model_utils:prepare_huggingface_tokenizer:180 - Loading tokenizer from HuggingFace...
+2023-12-13 15:18:20.553 | INFO     | logging:handle:954 - You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thouroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+2023-12-13 15:18:21.018 | INFO     | data_juicer.core.executor:run:109 - Processing data...
+2023-12-13 15:18:21.026 | INFO     | logging:handle:954 - Loading cached processed dataset at /home/kyuheon/.cache/huggingface/datasets/json/default-162365534be67af3/0.0.0/fe5dd6ea2639a6df622901539cb550cf8797e5a6b2dd7af1cf934bed8e233e6e/cache-27882cf26bf0f1d8.arrow
+/home/kyuheon/.virtualenvs/PKNU/lib/python3.8/site-packages/datasets/table.py:1373: FutureWarning: promote has been superseded by mode='default'.
+  return cls._concat_blocks(pa_tables_to_concat_vertically, axis=0)
+alphanumeric_filter_compute_stats (num_proc=4):   0%|          | 0/8 [00:00<?, ? examples/s]1 11
+--------------------------
+6 11
+--------------------------
+0 8
+--------------------------
+6 14
+13 30
+--------------------------
+--------------------------
+2 12
+--------------------------
+17 56
+--------------------------
+10 41
+--------------------------
+                                                                                            alphanumeric_filter_process (num_proc=4):   0%|          | 0/8 [00:00<?, ? examples/s]                                                                                      2023-12-13 15:18:21.392 | INFO     | data_juicer.core.executor:run:188 - Op [alphanumeric_filter] Done in 0.373(s). Left 8 samples.
+2023-12-13 15:18:21.393 | INFO     | data_juicer.core.executor:run:192 - All Ops are done in 0.374(s).
+2023-12-13 15:18:21.393 | INFO     | data_juicer.core.executor:run:195 - Exporting dataset to disk...
+2023-12-13 15:18:21.394 | INFO     | data_juicer.core.exporter:_export_impl:106 - Export dataset into a single file...
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 189.76ba/s]
+Creating json from Arrow format:   0%|          | 0/1 [00:00<?, ?ba/s]Creating json from Arrow format: 100%|##########| 1/1 [00:00<00:00, 768.19ba/s]

@@ -79,11 +79,14 @@ class FlaggedWordFilter(Filter):
         if context and words_key in sample[Fields.context]:
             words = sample[Fields.context][words_key]
         else:
-            tokenizer = get_model(self.model_key, lang=self.lang,
-                                                model_type='sentencepiece')
-            words = get_words_from_document(
-                sample[self.text_key],
-                token_func=tokenizer.encode_as_pieces if tokenizer else None)
+            tokenizer = get_model(self.model_key, lang=self.lang, model_type='sentencepiece')
+
+            if self.lang == 'en':
+                words = get_words_from_document(
+                    sample[self.text_key],
+                    token_func=tokenizer.encode_as_pieces if tokenizer else None)
+            else:
+                words = get_words_from_document(sample[self.text_key], token_func=tokenizer if tokenizer else None)
             if context:
                 sample[Fields.context][words_key] = words
 
@@ -112,7 +115,7 @@ class FlaggedWordFilter(Filter):
 
         flagged_words_ratio = (len(
             [word
-             for word in words if word in FLAGGED_WORDS_LIST]) /
+             for word in words if word.replace("▁", "") in FLAGGED_WORDS_LIST]) /
                                len(words)) if len(words) != 0 else 0.0
 
         if flagged_words_ratio > 1.0:
