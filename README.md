@@ -84,12 +84,6 @@ pip install -v -e .[tools] # install a subset of tools dependencies
 | `.[dev]`       | Install dependencies for developing the package as contributors.                             |
 | `.[tools]`     | Install dependencies for dedicated tools, such as quality classifiers.                       |
 
-- If you check the version you have installed
-```bash
-import data_juicer as dj
-print(dj.__version__)
-```
-
 ### Data Processing
 
 - Run `process_data.py` tool with your config as the argument to process your dataset.
@@ -144,7 +138,10 @@ streamlit run app.py
   - Besides the yaml files, you also have the flexibility to specify just
     one (of several) parameters on the command line, which will override
     the values in yaml files.
-    
+```bash
+python xxx.py --config configs/process.yaml --language_id_score_filter.lang=ko 
+```
+
 ```bash
 # Process config example for dataset
 
