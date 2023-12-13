@@ -1,6 +1,6 @@
 English | [한국어](README_KO.md)
 
-# Data-Nestor
+# Data-modori
 
 Streamline your data analysis and organization with Data-Nestor for efficient insights and structured data synthesis.
 
