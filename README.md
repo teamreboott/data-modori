@@ -32,7 +32,7 @@ English | [한국어](README_ko.md)
 [![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
 
 [📘Documentation]() |
-[🛠️Installation]() |
+[🛠️Installation](#installation) |
 [🤔Reporting Issues]()
 
 </div>
@@ -55,6 +55,11 @@ Table of Contents
   - [Data Analysis](#data-analysis)
   - [Data Visualization](#data-visualization)
   - [Build Up Config Files](#build-up-config-files)
+  - [Documentation](#documentation)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Acknowledgement](#acknowledgement)
+  - [References](#references)
 
 ### Installation
 
@@ -161,6 +166,13 @@ process:
   - language_id_score_filter:
       lang: 'en'
 ```
+
+## Documentation | 文档 <a name="documentation"/>
+
+- [Overview](README.md) | [개요](README_ko.md)
+- [Operators](docs/Operators_en.md) | [연산자들](docs/Operators_ko.md)
+- [Configs](configs/README_en.md) | [구성파일](configs/README_ko.md)
+- [Developer Guide](docs/DeveloperGuide_en.md) | [개발자 가이드](docs/DeveloperGuide_ko.md)
 
 ## License
 Data-Modori is released under Apache License 2.0.
