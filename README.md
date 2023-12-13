@@ -46,13 +46,15 @@ Data-Modori is a creative and advanced platform that guides you into the realm o
 
 ----
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Data Processing](#data-processing)
-- [Data Analysis](#data-analysis)
-- [Data Visualization](#data-visualization)
-- [Build Up Config Files](#build-up-config-files)
+Table of Contents
+=================
+- [Data-Modori: Explore a New Frontier in Data](#data-modori-explore-a-new-frontier-in-data)
+- [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Data Processing](#data-processing)
+  - [Data Analysis](#data-analysis)
+  - [Data Visualization](#data-visualization)
+  - [Build Up Config Files](#build-up-config-files)
 
 ### Installation
 
