@@ -33,13 +33,11 @@ save_stats_in_one_file: false                               # whether to store a
 # process schedule: a list of several process operators with their arguments
 process:
   # Mapper ops. Most of these ops need no arguments.
-  - chinese_convert_mapper:                                 # convert Chinese between Traditional Chinese, Simplified Chinese and Japanese Kanji.
-      mode: 's2t'                                             # Choose the mode to convert Chinese: ['s2t', 't2s', 's2tw', 'tw2s', 's2hk', 'hk2s', 's2twp', 'tw2sp', 't2tw', 'tw2t', 'hk2t', 't2hk', 't2jp', 'jp2t']
+  - clean_copyright_mapper:                                 # remove copyright comments.
   - clean_email_mapper:                                     # remove emails from text.
   - clean_html_mapper:                                      # remove html formats form text.
   - clean_ip_mapper:                                        # remove ip addresses from text.
   - clean_links_mapper:                                     # remove web links from text.
-  - clean_copyright_mapper:                                 # remove copyright comments.
   - expand_macro_mapper:                                    # expand macro definitions in Latex text.
   - fix_unicode_mapper:                                     # fix unicode errors in text.
   - nlpaug_en_mapper:                                       # simply augment texts in English based on the nlpaug library
@@ -54,14 +52,6 @@ process:
       delete_random_char: false                               # whether to open the augmentation method of deleting random characters from the original texts. e.g. "I love LLM" --> "I oe LLM"
       swap_random_char: false                                 # whether to open the augmentation method of swapping random contiguous characters in the original texts. e.g. "I love LLM" --> "I ovle LLM"
       insert_random_char: false                               # whether to open the augmentation method of inserting random characters into the original texts. e.g. "I love LLM" --> "I ^lKove LLM"
-  - nlpcda_zh_mapper:                                       # simply augment texts in Chinese based on the nlpaug library
-      sequential: false                                       # whether combine all augmentation methods to a sequence. If it's True, a sample will be augmented by all opened augmentation methods sequentially. If it's False, each opened augmentation method would generate its augmented samples independently.
-      aug_num: 1                                              # number of augmented samples to be generated. If `sequential` is True, there will be total aug_num augmented samples generated. If it's False, there will be (aug_num * #opened_aug_method) augmented samples generated.
-      replace_similar_word: false                             # whether to open the augmentation method of replacing random words with their similar words in the original texts. e.g. "这里一共有5种不同的数据增强方法" --> "这边一共有5种不同的数据增强方法"
-      replace_homophone_char: false                           # whether to open the augmentation method of replacing random characters with their homophones in the original texts. e.g. "这里一共有5种不同的数据增强方法" --> "这里一共有5种不同的濖据增强方法"
-      delete_random_char: false                               # whether to open the augmentation method of deleting random characters from the original texts. e.g. "这里一共有5种不同的数据增强方法" --> "这里一共有5种不同的数据增强"
-      swap_random_char: false                                 # whether to open the augmentation method of swapping random contiguous characters in the original texts. e.g. "这里一共有5种不同的数据增强方法" --> "这里一共有5种不同的数据强增方法"
-      replace_equivalent_num: false                           # whether to open the augmentation method of replacing random numbers with their equivalent representations in the original texts. **Notice**: Only for numbers for now. e.g. "这里一共有5种不同的数据增强方法" --> "这里一共有伍种不同的数据增强方法"
   - punctuation_normalization_mapper:                       # normalize unicode punctuations to English punctuations.
   - remove_bibliography_mapper:                             # remove bibliography from Latex text.
   - remove_comments_mapper:                                 # remove comments from Latex text, code, etc.
@@ -73,10 +63,6 @@ process:
   - remove_long_words_mapper:                               # remove much too long words from text.
       min_len: 1                                              # the min word length to keep words.
       max_len: 128                                            # the max word length to keep words.
-  - remove_non_chinese_character_mapper:                    # remove non Chinese character in text samples.
-      keep_alphabet: true                                     # whether to keep alpabet
-      keep_number: true                                       # whether to keep number
-      keep_punc: true                                         # whether to keep punctuation
   - remove_specific_chars_mapper:                           # remove characters specified by users
       chars_to_remove: '◆●■►▼▲▴∆▻▷❖♡□'                        # a string or a list including those characters that need to be removed
   - remove_table_text_mapper:                               # remove possible table texts from text.
@@ -122,14 +108,23 @@ process:
   - special_characters_filter:                              # filter text with special-char ratio out of specific range
       min_ratio: 0.0                                          # the min ratio of filter range
       max_ratio: 0.25                                         # the max ratio of filter range
-#   - stopwords_filter:                                       # filter text with stopword ratio smaller than a specific min value
-#       lang: en                                                # consider stopwords in what language
-#       tokenization: false                                     # whether to use model to tokenize documents
-#       min_ratio: 0.3                                          # the min ratio to filter text
-#       stopwords_dir: ./assets                                 # directory to store stopwords dictionaries
-#       use_words_aug: false                                    # whether to augment words, especially for Chinese and Vietnamese
-#       words_aug_group_sizes: [2]                              # the group size of words to augment
-#       words_aug_join_char: ""                                 # the join char between words to augment
+  - specified_field_filter:                                 # filter text with the specified field info out of specific range
+      field_key: ''                                           # the target key corresponding to multi-level field information need to be separated by '.'
+      target_value: []                                        # the range of specified field information corresponding to the samples that need to be retained
+  - specified_numeric_field_filter:                         # filter text with the specified numeric field info out of specific range
+      field_key: ''                                           # the target key corresponding to multi-level field information need to be separated by '.'
+      min_value: 0                                            # the min filter value in SpecifiedNumericField op
+      max_value: 10000                                        # the max filter value in SpecifiedNumericField op
+  - stopwords_filter:                                       # filter text with stopword ratio smaller than a specific min value
+      lang: en                                                # consider stopwords in what language
+      tokenization: false                                     # whether to use model to tokenize documents
+      min_ratio: 0.3                                          # the min ratio to filter text
+      stopwords_dir: ./assets                                 # directory to store stopwords dictionaries
+      use_words_aug: false                                    # whether to augment words, especially for Chinese and Vietnamese
+      words_aug_group_sizes: [2]                              # the group size of words to augment
+      words_aug_join_char: ""                                 # the join char between words to augment
+  - suffix_filter:                                          # filter to keep samples with specified suffix.
+      suffixes: []                                            # the suffix of text that will be keep. For example: '.txt', 'txt' or ['txt', '.pdf', 'docx']
   - text_length_filter:                                     # filter text with length out of specific range
       min_len: 10                                             # the min length of filter range
       max_len: 10000                                          # the max length of filter range
@@ -148,15 +143,6 @@ process:
       rep_len: 10                                             # repetition length for word-level n-gram
       min_ratio: 0.0                                          # the min ratio of filter range
       max_ratio: 0.5                                          # the max ratio of filter range
-  - suffix_filter:                                          # filter to keep samples with specified suffix.
-      suffixes: []                                            # the suffix of text that will be keep. For example: '.txt', 'txt' or ['txt', '.pdf', 'docx']
-  - specified_field_filter:                                 # filter text with the specified field info out of specific range
-      field_key: ''                                           # the target key corresponding to multi-level field information need to be separated by '.'
-      target_value: []                                        # the range of specified field information corresponding to the samples that need to be retained
-  - specified_numeric_field_filter:                         # filter text with the specified numeric field info out of specific range
-      field_key: ''                                           # the target key corresponding to multi-level field information need to be separated by '.'
-      min_value: 0                                            # the min filter value in SpecifiedNumericField op
-      max_value: 10000                                        # the max filter value in SpecifiedNumericField op
 
   # Deduplicator ops
   - document_deduplicator:                                  # deduplicate text samples using md5 hashing exact matching method
@@ -180,13 +166,13 @@ process:
       ignore_pattern: null                                    # whether to ignore sub-strings with specific pattern when computing simhash.
 
   # Selector ops
-  - topk_specified_field_selector:                          # selector to select top samples based on the sorted specified field
-      field_key: ''                                           # the target keys corresponding to multi-level field information need to be separated by '.'
-      top_ratio:                                              # ratio of selected top samples
-      topk:                                                   # number of selected top sample
-      reverse: True                                           # determine the sorting rule, if reverse=True, then sort in descending order
   - frequency_specified_field_selector:                     # selector to select samples based on the sorted frequency of specified field value
       field_key: ''                                           # the target keys corresponding to multi-level field information need to be separated by '.'
       top_ratio:                                              # ratio of selected top specified field value
       topk:                                                   # number of selected top specified field value
+      reverse: True                                           # determine the sorting rule, if reverse=True, then sort in descending order
+  - topk_specified_field_selector:                          # selector to select top samples based on the sorted specified field
+      field_key: ''                                           # the target keys corresponding to multi-level field information need to be separated by '.'
+      top_ratio:                                              # ratio of selected top samples
+      topk:                                                   # number of selected top sample
       reverse: True                                           # determine the sorting rule, if reverse=True, then sort in descending order
