@@ -56,7 +56,7 @@ setuptools.setup(
     version=version,
     url='https://github.com/teamreboott/data-modori',
     author='TeamAR of Teamreboott',
-    description='LM Ops Tool for Korean',
+    description='LMOps Tool for Korean',
     long_description=readme_md,
     long_description_content_type='text/markdown',
     license='Apache License 2.0',
