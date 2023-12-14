@@ -1,6 +1,8 @@
+fasttext==0.9.2
+sentencepiece >= 0.1.6, <=0.1.96
+pypi-kenlm==0.1.20220713
+transformers
 fasttext-wheel
-kenlm
-sentencepiece
 scipy
 ftfy
 simhash-py
@@ -11,6 +13,9 @@ nltk
 transformers
 opencc==1.1.6
 imagededup
-torch
+torch >= 1.7.0, <=1.10.1
 dlib
 spacy-pkuseg==0.0.32
+fasttext-wheel
+kenlm
+omegaconf

@@ -3,7 +3,6 @@ from loguru import logger
 from data_modori.config import init_configs
 from data_modori.core import Executor
 
-
 @logger.catch
 def main():
     cfg = init_configs()

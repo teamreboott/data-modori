@@ -30,21 +30,4 @@ numpy==1.23.1
 selectolax
 ftfy
 nlpaug
-fasttext==0.9.2
-sentencepiece >= 0.1.6, <=0.1.96
-pypi-kenlm==0.1.20220713
-transformers
-fasttext-wheel
-scipy
-ftfy
-simhash-py
-selectolax
-nlpaug
-nlpcda
-nltk
-transformers
-opencc==1.1.6
-imagededup
-torch >= 1.7.0, <=1.10.1
-dlib
-spacy-pkuseg==0.0.32
+ray
