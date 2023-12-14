@@ -52,7 +52,7 @@ with open('README.md', encoding='utf-8') as f:
     readme_md = f.read()
 
 setuptools.setup(
-    name='py-data-modori',
+    name='data-modori',
     version=version,
     url='https://github.com/teamreboott/data-modori',
     author='TeamAR of Teamreboott',
@@ -60,7 +60,7 @@ setuptools.setup(
     long_description=readme_md,
     long_description_content_type='text/markdown',
     license='Apache License 2.0',
-    packages=setuptools.find_packages(exclude=['data_modori*', 'tools*'])
+    packages=setuptools.find_packages(exclude=['tools*'])
             + list(get_package_dir().keys()),
     package_dir=get_package_dir(),
     entry_points={
