@@ -65,7 +65,7 @@ git clone https://github.com/teamreboott/data-modori
 cd data-modori
 ```
 
-- Run the following commands to install the latest basic data_juicer version in editable mode:
+- Run the following commands to install the latest basic data_modori version in editable mode:
 ```bash
 pip install -v -e .
 ```
@@ -96,7 +96,7 @@ python tools/process_data.py --config configs/process.yaml
 ```
 
 - **Note:** For some operators that involve third-party models or resources which are not stored locally on your computer, it might be slow for the first running because these ops need to download corresponding resources into a directory first.
-The default download cache directory is `~/.cache/data_juicer`. Change the cache location by setting the shell environment variable, `DATA_JUICER_CACHE_HOME` to another directory, and you can also change `DATA_JUICER_MODELS_CACHE` or `DATA_JUICER_ASSETS_CACHE` in the same way:
+The default download cache directory is `~/.cache/data_modori`. Change the cache location by setting the shell environment variable, `DATA_MODORI_CACHE_HOME` to another directory, and you can also change `DATA_MODORI_MODELS_CACHE` or `DATA_MODORI_ASSETS_CACHE` in the same way:
 
 ```bash
 # cache home
