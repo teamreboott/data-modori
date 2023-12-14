@@ -25,7 +25,7 @@ English | [한국어](README_ko.md)
 
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
 ![](https://img.shields.io/badge/language-Python-b44dff.svg)
-[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_en.md)
+[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide.md)
 
 [📘Documentation](#documentation) |
 [🛠️Installation](#installation) |
@@ -165,17 +165,17 @@ process:
 
 ## Documentation
 
-- [Overview](README.md) | [개요](README_ko.md)
-- [Operators](docs/Operators.md) | [연산자들](docs/Operators_ko.md)
-- [Configs](configs/README.md) | [구성파일](configs/README_ko.md)
-- [Developer Guide](docs/DeveloperGuide.md) | [개발자 가이드](docs/DeveloperGuide_ko.md)
+- [Overview](README.md)
+- [Operators](docs/Operators.md)
+- [Configs](configs/README.md)
+- [Developer Guide](docs/DeveloperGuide.md)
 
 ## License
 Data-Modori is released under Apache License 2.0.
 
 ## Contributing
 We are in a rapidly developing field and greatly welcome contributions of new 
-features, bug fixes and better documentations. Please refer to [How-to Guide for Developers](docs/DeveloperGuide_en.md).
+features, bug fixes and better documentations. Please refer to [How-to Guide for Developers](docs/DeveloperGuide.md).
 
 ## Acknowledgement
 Data-Modori is used across various LLM products and research initiatives,
