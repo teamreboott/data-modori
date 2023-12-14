@@ -52,7 +52,7 @@ with open('README.md', encoding='utf-8') as f:
     readme_md = f.read()
 
 setuptools.setup(
-    name='data-modori',
+    name='py-data-modori',
     version=version,
     url='https://github.com/teamreboott/data-modori',
     author='TeamAR of Teamreboott',
