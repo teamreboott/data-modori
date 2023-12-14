@@ -3,7 +3,7 @@ English | [한국어](README_ko.md)
 # Data-Modori: LM Ops Tool for Korean
 
 <div align="center">
-  <img src="https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39" width="300"/>
+  <img src="https://github.com/teamreboott/data-modori/blob/main/docs/imgs/buri_heart.png?raw=true" width="300"/>
   <div>&nbsp;</div>
   <div align="center">
     <b><font size="5">TEAMREBOOTT website </font></b>
@@ -26,10 +26,6 @@ English | [한국어](README_ko.md)
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
 ![](https://img.shields.io/badge/language-Python-b44dff.svg)
 [![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_en.md)
-
-<!-- [![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
-[![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
-[![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
 
 [📘Documentation](#documentation) |
 [🛠️Installation](#installation) |
@@ -65,8 +61,8 @@ Table of Contents
 
 - Get source code from **Github**
 ```bash
-git clone https://github.com/teamreboott/data-juicer
-cd data-juicer
+git clone https://github.com/teamreboott/data-modori
+cd data-modori
 ```
 
 - Run the following commands to install the latest basic data_juicer version in editable mode:
@@ -84,7 +80,7 @@ pip install -v -e .[tools] # install a subset of tools dependencies
 
 | Tag          | Description                                                                                  |
 |--------------|----------------------------------------------------------------------------------------------|
-| `.` or `.[mini]` | Install minimal dependencies for basic Data-Juicer.                                          |
+| `.` or `.[mini]` | Install minimal dependencies for basic Data-Modori.                                        |
 | `.[all]`       | Install all optional dependencies (including minimal dependencies and all of the following). |
 | `.[sci]`       | Install all dependencies for all OPs.                                                        |
 | `.[dist]`      | Install dependencies for distributed data processing. (Experimental)                         |
