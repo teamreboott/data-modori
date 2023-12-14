@@ -14,8 +14,6 @@ transformers
 opencc==1.1.6
 imagededup
 torch >= 1.7.0, <=1.10.1
-dlib
 spacy-pkuseg==0.0.32
 fasttext-wheel
-kenlm
 omegaconf
