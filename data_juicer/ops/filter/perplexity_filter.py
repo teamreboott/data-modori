@@ -59,7 +59,6 @@ class PerplexityFilter(Filter):
                 token_func=tokenizer if tokenizer else None)
             if context:
                 sample[Fields.context][words_key] = words
-            print(words)
         text = ' '.join(words)
         # compute perplexity
         logits, length = 0, 0

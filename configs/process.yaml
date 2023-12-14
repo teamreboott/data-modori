@@ -5,10 +5,10 @@ project_name: 'buri_translation_juicer'
 dataset_path: '/home/kyuheon/jy_workspace/DataGen/merged_dataset/buli-v0.0.2.jsonl'  # path to your dataset directory or file
 export_path: '/home/kyuheon/jy_workspace/DataGen/juicer_dataset/buli-v0.0.2.jsonl'
 
-np: 8  # number of subprocess to process your dataset
+np: 16  # number of subprocess to process your dataset
 text_keys: 'instruction'
 open_tracer: true
-trace_num: 1000 
+trace_num: 100 
 
 # process schedule
 # a list of several process operators with their arguments
@@ -32,9 +32,9 @@ process:
       use_words_aug: false                                    # whether to augment words, especially for Chinese and Vietnamese
       words_aug_group_sizes: [2]                              # the group size of words to augment
       words_aug_join_char: ""                                 # the join char between words to augment
-  - language_id_score_filter:                               # filter text in specific language with language scores larger than a specific max value
-      lang: ko                                                # keep text in what language
-      min_score: 0.3                                          # the min language scores to filter text
+#   - language_id_score_filter:                               # filter text in specific language with language scores larger than a specific max value
+#       lang: ko                                                # keep text in what language
+#       min_score: 0.3                                          # the min language scores to filter text
   - maximum_line_length_filter:                             # filter text with the maximum length of lines out of specific range
       min_len: 10                                             # the min length of filter range
       max_len: 10000                                          # the max length of filter range
@@ -75,15 +75,15 @@ process:
       tokenization: space                                     # tokenization method for text. One of [space, punctuation, character]
       window_size: 5                                          # window size of shingling
       num_permutations: 256                                   # number of permutations in minhash computing
-      jaccard_threshold: 0.7                                  # the min jaccard similarity threshold in near-duplicate detection. When the jaccard similarity of two sample texts is >= this threshold, they are regarded as similar samples and this op will only keep one of them after deduplication
+      jaccard_threshold: 0.9                                  # the min jaccard similarity threshold in near-duplicate detection. When the jaccard similarity of two sample texts is >= this threshold, they are regarded as similar samples and this op will only keep one of them after deduplication
       num_bands: null                                         # number of bands in LSH. Default it's None, and it will be determined by an optimal params computation algorithm by minimize the weighted sum of probs of False Positives and False Negatives
       num_rows_per_band: null                                 # number of rows in each band in LSH. Default it's None, and it will be determined by an optimal params computation algorithm
       lowercase: true                                         # whether to convert text to lower case
       ignore_pattern: null                                    # whether to ignore sub-strings with specific pattern when computing simhash.
-  - document_simhash_deduplicator:                          # deduplicate text samples using SimHash-LSH method
-      tokenization: space                                     # tokenization method for text. One of [space, punctuation, character]
-      window_size: 6                                          # window size of shingling
-      num_blocks: 6                                           # number of blocks in SimHash computing
-      hamming_distance: 4                                     # the max hamming distance to regard 2 samples as similar enough pair. Should be less than num_blocks always
-      lowercase: true                                         # whether to convert text to lower case
-      ignore_pattern: null                                    # whether to ignore sub-strings with specific pattern when computing simhash.
+#   - document_simhash_deduplicator:                          # deduplicate text samples using SimHash-LSH method
+#       tokenization: space                                     # tokenization method for text. One of [space, punctuation, character]
+#       window_size: 6                                          # window size of shingling
+#       num_blocks: 6                                           # number of blocks in SimHash computing
+#       hamming_distance: 4                                     # the max hamming distance to regard 2 samples as similar enough pair. Should be less than num_blocks always
+#       lowercase: true                                         # whether to convert text to lower case
+#       ignore_pattern: null                                    # whether to ignore sub-strings with specific pattern when computing simhash.
