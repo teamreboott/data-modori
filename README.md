@@ -1,6 +1,6 @@
 English | [한국어](README_ko.md)
 
-# Data-Modori: LM Ops Tool for Korean
+# Data-Modori: LMOps Tool for Korean
 
 <div align="center">
   <img src="https://github.com/teamreboott/data-modori/blob/main/docs/imgs/buri_heart.png?raw=true" width="300"/>
@@ -44,7 +44,7 @@ Data-Modori is a creative and advanced platform that guides you into the realm o
 
 Table of Contents
 =================
-- [Data-Modori: LM Ops Tool for Korean](#data-modori-lm-ops-tool-for-korean)
+- [Data-Modori: LMOps Tool for Korean](#data-modori-lmops-tool-for-korean)
 - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Data Processing](#data-processing)
