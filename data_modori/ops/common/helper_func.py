@@ -6,7 +6,7 @@ from typing import Dict
 import regex as re
 import os
 import hashlib
-
+from .aws_s3_downloader import AwsS3Downloader
 
 class UnionFind:
 

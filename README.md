@@ -100,11 +100,11 @@ The default download cache directory is `~/.cache/data_juicer`. Change the cache
 
 ```bash
 # cache home
-export DATA_JUICER_CACHE_HOME="/path/to/another/directory"
+export DATA_MODORI_CACHE_HOME="/path/to/another/directory"
 # cache models
-export DATA_JUICER_MODELS_CACHE="/path/to/another/directory/models"
+export DATA_MODORI_MODELS_CACHE="/path/to/another/directory/models"
 # cache assets
-export DATA_JUICER_ASSETS_CACHE="/path/to/another/directory/assets"
+export DATA_MODORI_ASSETS_CACHE="/path/to/another/directory/assets"
 ```
 
 ### Data Analysis
