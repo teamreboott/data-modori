@@ -1,6 +1,6 @@
 English | [한국어](README_ko.md)
 
-# Data-Modori: LM Ops Tool for korean
+# Data-Modori: LM Ops Tool for Korean
 
 <div align="center">
   <img src="https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39" width="300"/>
@@ -48,7 +48,7 @@ Data-Modori is a creative and advanced platform that guides you into the realm o
 
 Table of Contents
 =================
-- [Data-Modori: LM Ops Tool for korean](#data-modori-lm-ops-tool-for-korean)
+- [Data-Modori: LM Ops Tool for Korean](#data-modori-lm-ops-tool-for-korean)
 - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Data Processing](#data-processing)
