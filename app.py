@@ -15,14 +15,14 @@ import streamlit as st
 import yaml
 from loguru import logger
 
-from data_modori.analysis.diversity_analysis import (DiversityAnalysis,
+from data_juicer.analysis.diversity_analysis import (DiversityAnalysis,
                                                      get_diversity)
-from data_modori.config import init_configs
-from data_modori.core import Analyser, Executor
-from data_modori.ops.base_op import OPERATORS
-from data_modori.utils.constant import Fields, StatsKeys
-from data_modori.utils.logger_utils import get_log_file_path
-from data_modori.utils.model_utils import MODEL_ZOO, prepare_model
+from data_juicer.config import init_configs
+from data_juicer.core import Analyser, Executor
+from data_juicer.ops.base_op import OPERATORS
+from data_juicer.utils.constant import Fields, StatsKeys
+from data_juicer.utils.logger_utils import get_log_file_path
+from data_juicer.utils.model_utils import MODEL_ZOO, prepare_model
 
 
 @st.cache_data
@@ -233,7 +233,7 @@ class Visualize:
     @staticmethod
     def filter_dataset(dataset):
         if Fields.stats not in dataset.features:
-            return 
+            return
         text_key = st.session_state.get('text_key', 'text')
         text = dataset[text_key]
         stats = pd.DataFrame(dataset[Fields.stats])
@@ -662,6 +662,10 @@ class Visualize:
                 st.text_area(label='💻 Input Config Commands',
                              key='input_cfg_cmd',
                              value=f'--config {example_cfg_f}')
+                example_my_cmd = '--dataset_path ' \
+                                 './demos/data/demo-dataset.jsonl ' \
+                                 '--export_path '\
+                                 './outputs/demo/demo-processed.jsonl'
 
             with col2:
                 st.file_uploader(label='📁 Input Config File',
@@ -733,6 +737,30 @@ class Visualize:
             else:
                 st.warning('Please analyze original data first')
 
+    @staticmethod
+    def auxiliary():
+        st.markdown('[WIP] Auxiliary Models on Processed Data')
+        col1, col2 = st.columns(2)
+        with col1:
+            with st.expander('Quality Scorer', expanded=False):
+                wiki_socre_btn = st.button('Run Wiki-score classifier',
+                                           use_container_width=True)
+
+                if wiki_socre_btn:
+                    st.warning('No support for now')
+
+                wikibook_score_btn = st.button('Run WikiBook-score classifier',
+                                               use_container_width=True)
+                if wikibook_score_btn:
+                    st.warning('No support for now')
+
+        with col2:
+            with st.expander('[WIP] Proxy LM Models Training', expanded=False):
+                st.file_uploader(label='LM Training Cfg File', type=['yaml'])
+                st.button('Train proxy model')
+                st.markdown('[Training Monitoring](http://'
+                            '8.130.26.137:8083/dail/'
+                            'llama-re-2nd?workspace=user-dail)')
 
     @staticmethod
     def visualize():
@@ -741,6 +769,7 @@ class Visualize:
         Visualize.analyze_process()
         Visualize.filter()
         Visualize.diversity()
+        Visualize.auxiliary()
 
 
 def main():
