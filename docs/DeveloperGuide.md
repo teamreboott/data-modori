@@ -12,7 +12,7 @@
 - Before implementing a new op, please refer to [Operators](Operators.md) to avoid unnecessary duplication.
 - Assuming we want to add a new Filter operator called "TextLengthFilter" to get corpus of expected text length, we can follow these steps to build it.
 
-1. (Optional) Add a new StatsKeys in `data_juicer/utils/constant.py` to store the statistical variable of the new op.
+1. (Optional) Add a new StatsKeys in `data_modori/utils/constant.py` to store the statistical variable of the new op.
 
 ```python
 class StatsKeys(object):
@@ -20,7 +20,7 @@ class StatsKeys(object):
     text_len = 'text_len'
 ```
 
-2. Create a new op file `text_length_filter.py` in the corresponding `data_juicer/ops/filter/` directory as follows.
+2. Create a new op file `text_length_filter.py` in the corresponding `data_modori/ops/filter/` directory as follows.
    - Because it's a Filter op, so the new op needs to inherit from the basic `Filter` class in the `base_op.py`, and be decorated with `OPERATORS` to register itself automatically.
 
 ```python
@@ -74,7 +74,7 @@ class TextLengthFilter(Filter):
             return False
 ```
 
-3. After implemention, add it to the op dictionary in the `__init__.py` file in `data_juicer/ops/filter/` directory.
+3. After implemention, add it to the op dictionary in the `__init__.py` file in `data_modori/ops/filter/` directory.
 
 ```python
 from . import (...,              # other ops
@@ -175,7 +175,7 @@ optional arguments:
                         a list of several process operators with their arguments (type: List[Dict], default: null)
   --np NP               number of subprocess to process your dataset. (type: PositiveInt, default: null)
 
-<class 'data_juicer.ops.filter.alphanumeric_filter.AlphanumericFilter'>:
+<class 'data_modori.ops.filter.alphanumeric_filter.AlphanumericFilter'>:
   --alphanumeric_filter CONFIG
                         Path to a configuration file.
   --alphanumeric_filter.min MIN
@@ -183,7 +183,7 @@ optional arguments:
   --alphanumeric_filter.max MAX
                         the max filter rate in alphanumeric op. (type: ClosedUnitInterval, default: 0.25)
 
-<class 'data_juicer.ops.filter.text_length_filter.TextLengthFilter'>:
+<class 'data_modori.ops.filter.text_length_filter.TextLengthFilter'>:
   --text_length_filter CONFIG
                         Path to a configuration file.
   --text_length_filter.min MIN
