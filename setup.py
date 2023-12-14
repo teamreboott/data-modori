@@ -49,11 +49,11 @@ with open('README.md', encoding='utf-8') as f:
     readme_md = f.read()
 
 setuptools.setup(
-    name='py-data-juicer',
+    name='py-data-modori',
     version=version,
-    url='https://github.com/alibaba/data-juicer',
-    author='SysML team of Alibaba DAMO Academy',
-    description='A One-Stop Data Processing System for Large Language '
+    url='https://github.com/teamreboott/data-modori',
+    author='TeamAR of Teamreboott',
+    description='LM Ops Tool for Korean'
     'Models.',
     long_description=readme_md,
     long_description_content_type='text/markdown',
