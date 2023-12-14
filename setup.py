@@ -52,7 +52,7 @@ with open('README.md', encoding='utf-8') as f:
     readme_md = f.read()
 
 setuptools.setup(
-    name='py-data-modori',
+    name='data-modori',
     version=version,
     url='https://github.com/teamreboott/data-modori',
     author='TeamAR of Teamreboott',
@@ -65,8 +65,8 @@ setuptools.setup(
     package_dir=get_package_dir(),
     entry_points={
         'console_scripts': [
-            'dj-process = data_modori.tools.process_data:main',
-            'dj-analyze = data_modori.tools.analyze_data:main',
+            'dm-process = data_modori.tools.process_data:main',
+            'dm-analyze = data_modori.tools.analyze_data:main',
         ]
     },
     install_requires=min_requires,
