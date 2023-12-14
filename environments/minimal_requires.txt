@@ -22,4 +22,10 @@ multiprocess==0.70.12
 dill==0.3.4
 scipy
 boto3
-simhash
+simhash-py
+gluonnlp
+mxnet
+numpy==1.23.1
+selectolax
+ftfy
+nlpaug
