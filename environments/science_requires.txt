@@ -2,11 +2,7 @@ fasttext-wheel
 kenlm
 sentencepiece
 scipy
-tabulate
-pandas
 ftfy
-emoji==2.2.0
-regex
 simhash-py
 selectolax
 nlpaug
@@ -14,3 +10,7 @@ nlpcda
 nltk
 transformers
 opencc==1.1.6
+imagededup
+torch
+dlib
+spacy-pkuseg==0.0.32
