@@ -28,21 +28,23 @@ def get_install_requirements(require_f_paths, env_dir='environments'):
 # allowing selective installment based on users' needs
 # TODO: The specific taxonomy and dependencies will be determined
 #  after implementing some preliminary operators and detailed discussions
-min_requires = get_install_requirements(['minimal_requires.txt'])
-extra_requires = {
-    'mini':
-    min_requires,
-    'sci':
-    get_install_requirements(['science_requires.txt']),
-    'dist':
-    get_install_requirements(['dist_requires.txt']),
-    'dev':
-    get_install_requirements(['dev_requires.txt']),
-    'tools':
-    get_install_requirements(
-        ['preprocess_requires.txt', 'quality_classifier_requires.txt']),
-}
-extra_requires['all'] = [v for v in extra_requires.values()]
+# min_requires = get_install_requirements(['minimal_requires.txt'])
+# extra_requires = {
+#     'mini':
+#     min_requires,
+#     'sci':
+#     get_install_requirements(['science_requires.txt']),
+#     'dist':
+#     get_install_requirements(['dist_requires.txt']),
+#     'dev':
+#     get_install_requirements(['dev_requires.txt']),
+#     'tools':
+#     get_install_requirements(
+#         ['preprocess_requires.txt', 'quality_classifier_requires.txt']),
+# }
+# extra_requires['all'] = [v for v in extra_requires.values()]
+
+require_list = get_install_requirements(['requirements.txt'])
 
 with open('data_modori/__init__.py', 'r') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(),
@@ -69,8 +71,8 @@ setuptools.setup(
             'dm-analyze = data_modori.tools.analyze_data:main',
         ]
     },
-    install_requires=min_requires,
-    extras_require=extra_requires,
+    install_requires=require_list,
+    # extras_require=extra_requires,
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
