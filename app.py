@@ -40,7 +40,10 @@ def convert_to_jsonl(df):
 
 @st.cache_data
 def get_diversity_model(lang):
-    model_key = prepare_model(lang, 'spacy')
+    if lang == 'ko':
+        model_key = prepare_model(lang, 'spacy_ko')
+    else:
+        model_key = prepare_model(lang, 'spacy')
     diversity_model = MODEL_ZOO.get(model_key)
     return diversity_model
 
@@ -442,7 +445,7 @@ class Visualize:
                 col1, col2, col3, col4 = st.columns(4)
                 with col1:
                     label = 'Which language of your dataset'
-                    options = ['en', 'zh']
+                    options = ['en', 'ko']
                     lang_select = st.selectbox(
                         label=label,
                         options=options,
@@ -626,38 +629,37 @@ class Visualize:
     @staticmethod
     def setup():
         st.set_page_config(
-            page_title='Data-Juicer',
-            page_icon=':smile',
+            page_title='Data-Modori',
+            page_icon='🐦',
             layout='wide',
             # initial_sidebar_state="expanded",
         )
 
         readme_link = 'https://github.com/teamreboott/data-juicer'
         st.markdown(
-            '<div align = "center"> <font size = "70"> Data-Juicer for teamreboott \
+            '<div align = "center"> <font size = "70"> Data-Modori 🐦 \
             </font> </div>',
             unsafe_allow_html=True,
         )
         st.markdown(
-            f'<div align = "center"> A One-Stop Data Processing System for \
-                Large Language Models, \
-                see more details in our <a href={readme_link}>page</a></div>',
+            f'<div align = "center"> A Data Processing System for \
+                Large Language Models powered by TEAMREBOOTT Inc. [<a href={readme_link}>page</a>]</div>',
             unsafe_allow_html=True,
         )
 
     @staticmethod
     def parser():
         with st.expander('Configuration', expanded=True):
-            st.markdown('Please specify the cfg via '
-                        '(i) specifying the cfg file path with commands or '
-                        '(ii) uploading the cfg file.')
+            st.markdown('Please specify the configuration via '
+                        '(i) specifying the configuration file path with commands or '
+                        '(ii) uploading the configuration file.')
 
             col1, col2 = st.columns(2)
             with col1:
                 example_cfg_f = os.path.abspath(
                     os.path.join(os.path.dirname(__file__),
-                                 './configs/process.yaml'))
-                st.text_area(label='(i) Input Cfg Commands',
+                                 './configs/ko_process.yaml'))
+                st.text_area(label='💻 Input Config Commands',
                              key='input_cfg_cmd',
                              value=f'--config {example_cfg_f}')
                 example_my_cmd = '--dataset_path ' \
@@ -665,14 +667,8 @@ class Visualize:
                                  '--export_path '\
                                  './outputs/demo/demo-processed.jsonl'
 
-                st.text_area(
-                    label='cmd example. (the cmd-args will override '
-                    'yaml-file-args)',
-                    disabled=True,
-                    value=f'--config {example_cfg_f} {example_my_cmd}')
-
             with col2:
-                st.file_uploader(label='(ii) Input Cfg File',
+                st.file_uploader(label='📁 Input Config File',
                                  key='input_cfg_file',
                                  type=['yaml'])
 

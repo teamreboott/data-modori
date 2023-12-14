@@ -75,6 +75,7 @@ def check_model(model_name, args=(), force=False):
                 if args == "ko":
                     backup_model_link = os.path.join(
                         KOREAN_MODEL_LINKS[model_name], true_model_name)
+                    print(backup_model_link)
                     try:
                         wget.download(backup_model_link, mdp, bar=None)
                     except:
@@ -85,6 +86,7 @@ def check_model(model_name, args=(), force=False):
                         BACKUP_MODEL_LINKS[model_name], true_model_name)
                     wget.download(backup_model_link, mdp, bar=None)
             except:  # noqa: E722
+                print("ERRORR!!!!")
                 logger.error(
                     f'Downloading model [{true_model_name}] error. '
                     f'Please retry later or download it into {MODEL_PATH} '
@@ -217,7 +219,7 @@ def prepare_diversity_model(model_name, lang):
     :return: corresponding diversity model
     """
     import spacy
-    assert lang in ['zh', 'en'], 'Diversity only support zh and en'
+    assert lang in ['zh', 'en', 'ko'], 'Diversity only support ko, zh and en'
     model_name = model_name % lang
     logger.info(f'Loading spacy model [{model_name}]...')
     compressed_model = '%s.zip' % model_name
@@ -232,13 +234,16 @@ def prepare_diversity_model(model_name, lang):
         with zipfile.ZipFile(compressed_model_path) as zf:
             zf.extractall(MODEL_PATH)
         return decompressed_model_path
-
-    try:
-        diversity_model = spacy.load(
-            decompress_model(check_model(compressed_model)))
-    except:  # noqa: E722
-        diversity_model = spacy.load(
-            decompress_model(check_model(compressed_model, force=True)))
+    
+    if lang == 'ko':
+        diversity_model = spacy.load("ko_core_news_md")
+    else:
+        try:
+            diversity_model = spacy.load(
+                decompress_model(check_model(compressed_model)))
+        except:  # noqa: E722
+            diversity_model = spacy.load(
+                decompress_model(check_model(compressed_model, force=True)))
     return diversity_model
 
 
@@ -260,6 +265,7 @@ def prepare_model(lang='en', model_type='sentencepiece', model_key=None):
         'nltk': ('punkt.%s.pickle', prepare_nltk_model),
         'huggingface': ('%s', prepare_huggingface_tokenizer),
         'spacy': ('%s_core_web_md-3.5.0', prepare_diversity_model),
+        'spacy_ko': ('%s_core_news_md-3.7.0', prepare_diversity_model),
         'konlpy': ('%s', prepare_konlpy_model),
     }
     assert model_type in type_to_name.keys(
