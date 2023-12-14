@@ -69,47 +69,47 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 
 ## Filter <a name="filter"/>
 
-| Operator                       | Domain  | Lang   | Description                                                                                |
-|--------------------------------|---------|--------|--------------------------------------------------------------------------------------------|
-| alphanumeric_filter            | General | en, ko | Keeps samples with alphanumeric ratio within the specified range                           |
-| average_line_length_filter     | Code    | en, ko | Keeps samples with average line length within the specified range                          |
-| character_repetition_filter    | General | en, ko | Keeps samples with char-level n-gram repetition ratio within the specified range           |
-| clip_similarity_filter         | Multimodal |   -    |  Keeps samples with similarity between text and images within the specified range           |
-| flagged_words_filter           | General | en, zh | Keeps samples with flagged-word ratio below the specified threshold                        |
-| image_aspect_ratio_filter      | Image   |   -    | Keeps samples contains images with aspect ratios within specific range                     |
-| image_shape_filter             | Image   |   -    | Keeps samples contains images with widths and heights within specific ranges               |
-| image_size_filter              | Image   |   -    | Keeps samples contains images whose size in bytes are within specific range                     |
-| language_id_score_filter       | General | en, ko | Keeps samples of the specified language, judged by a predicted confidence score            |
-| maximum_line_length_filter     | Code    | en, ko | Keeps samples with maximum line length within the specified range                          |
-| perplexity_filter              | General | en, ko | Keeps samples with perplexity score below the specified threshold                          |
-| special_characters_filter      | General | en, ko | Keeps samples with special-char ratio within the specified range                           |
-| specified_field_filter         | General | en, ko | Filters samples based on field, with value lies in the specified targets                   |
-| specified_numeric_field_filter | General | en, ko | Filters samples based on field, with value lies in the specified range (for numeric types) |
-| stopwords_filter               | General | en, ko | Keeps samples with stopword ratio above the specified threshold                            |
-| suffix_filter                  | General | en, ko | Keeps samples with specified suffixes                                                      |
-| text_length_filter             | General | en, ko | Keeps samples with total text length within the specified range                            |
-| token_num_filter               | General | en, ko | Keeps samples with token count within the specified range                                  |
-| word_num_filter                | General | en, ko | Keeps samples with word count within the specified range                                   |
-| word_repetition_filter         | General | en, ko | Keeps samples with word-level n-gram repetition ratio within the specified range           |
+| Operator                       | Domain  | Lang   | Description                                                                        |
+|--------------------------------|---------|--------|------------------------------------------------------------------------------------|
+| alphanumeric_filter            | General | en, ko | 알파벳 및 숫자 비율이 지정된 범위 내에 있는 샘플을 유지합니다.                                               |
+| average_line_length_filter     | Code    | en, ko | 평균 줄 길이가 지정된 범위 내에 있는 샘플을 유지합니다.                                                   |
+| character_repetition_filter    | General | en, ko | 문자 수준 n-그램 반복 비율이 지정된 범위 내에 있는 샘플을 유지합니다.                                          |
+| clip_similarity_filter         | Multimodal |   -    | 텍스트 및 이미지 간 유사성이 지정된 범위 내에 있는 샘플을 유지합니다.                                           |
+| flagged_words_filter           | General | en, ko | flagged-word 비율이 지정된 임계값 아래인 샘플을 유지합니다.                                            |
+| image_aspect_ratio_filter      | Image   |   -    | 지정된 범위 내의 가로 세로 비율을 갖는 이미지를 포함한 샘플을 유지합니다.                                         |
+| image_shape_filter             | Image   |   -    | 지정된 범위 내의 너비와 높이를 갖는 이미지를 포함한 샘플을 유지합니다.                                           |
+| image_size_filter              | Image   |   -    | 지정된 범위 내의 바이트 크기를 갖는 이미지를 포함한 샘플을 유지합니다.                                           |
+| language_id_score_filter       | General | en, ko | 예측된 신뢰도 점수에 따라 특정 언어의 샘플을 유지합니다.                                                   |
+| maximum_line_length_filter     | Code    | en, ko | 최대 줄 길이가 지정된 범위 내에 있는 샘플을 유지합니다.                                                   |
+| perplexity_filter              | General | en, ko | perplexity 점수가 지정된 임계값 아래인 샘플을 유지합니다.                                              |
+| special_characters_filter      | General | en, ko | 특수 문자 비율이 지정된 범위 내에 있는 샘플을 유지합니다.                        |
+| specified_field_filter         | General | en, ko | 필드를 기반으로 샘플을 필터링하고, 값이 지정된 대상 내에 있는 경우 유지합니다.
+| specified_numeric_field_filter | General | en, ko | 필드를 기반으로 샘플을 필터링하고, 값이 지정된 범위 내에 있는 경우 유지합니다. (숫자 유형에 대한 경우) |
+| stopwords_filter               | General | en, ko | 불용어 비율이 지정된 임계값 위인 샘플을 유지합니다.                         |
+| suffix_filter                  | General | en, ko | 지정된 접미사를 갖는 샘플을 유지합니다.                                               |
+| text_length_filter             | General | en, ko | 지정된 범위 내의 전체 텍스트 길이를 갖는 샘플을 유지합니다.                       |
+| token_num_filter               | General | en, ko | 지정된 범위 내의 토큰 수를 갖는 샘플을 유지합니다.                            |
+| word_num_filter                | General | en, ko | 지정된 범위 내의 단어 수를 갖는 샘플을 유지합니다.                            |
+| word_repetition_filter         | General | en, ko | 지정된 범위 내의 단어 수준 n-그램 반복 비율을 갖는 샘플을 유지합니다.    |
 
 
 ## Deduplicator <a name="deduplicator"/>
 
-| Operator                      | Domain  | Lang   | Description                                                 |
-|-------------------------------|---------|--------|-------------------------------------------------------------|
-| document_deduplicator         | General | en, ko | Deduplicate samples at document-level by comparing MD5 hash |
-| document_minhash_deduplicator | General | en, ko | Deduplicate samples at document-level using MinHashLSH      |
-| document_simhash_deduplicator | General | en, ko | Deduplicate samples at document-level using SimHash         |
-| image_deduplicator            | Image   |   -    | Deduplicate samples at document-level using exact matching of images between documents |
+| Operator                      | Domain  | Lang   | Description                                             |
+|-------------------------------|---------|--------|---------------------------------------------------------|
+| document_deduplicator         | General | en, ko | MD5 해시를 비교하여 문서 수준에서 샘플 중복 제거 |
+| document_minhash_deduplicator | General | en, ko | MinHashLSH를 사용하여 문서 수준에서 샘플 중복 제거    |
+| document_simhash_deduplicator | General | en, ko | SimHash를 사용하여 문서 수준에서 샘플 중복 제거       |
+| image_deduplicator            | Image   |   -    | 이미지 간의 정확한 일치를 사용하여 문서 수준에서 샘플 중복 제거 |
 
 
 ## Selector <a name="selector"/>
 
-| Operator                           | Domain  | Lang   | Description                                                           |
-|------------------------------------|---------|--------|-----------------------------------------------------------------------|
-| frequency_specified_field_selector | General | en, ko | Selects top samples by comparing the frequency of the specified field |
-| topk_specified_field_selector      | General | en, ko | Selects top samples by comparing the values of the specified field    |
+| Operator                           | Domain  | Lang   | Description                                                         |
+|------------------------------------|---------|--------|---------------------------------------------------------------------|
+| frequency_specified_field_selector | General | en, ko | 지정된 필드의 빈도를 비교하여 상위 샘플을 선택합니다. |
+| topk_specified_field_selector      | General | en, ko | 지정된 필드의 값 비교를 통해 상위 샘플을 선택합니다.   |
 
 
 ## Contributing
-We welcome contributions of adding new operators. Please refer to [How-to Guide for Developers](DeveloperGuide_en.md).
+새로운 연산자를 추가하는 기여를 환영합니다. [개발자를 위한 How-to 가이드]((DeveloperGuide_ko.md))를 참조하세요.
