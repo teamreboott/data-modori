@@ -53,12 +53,11 @@ setuptools.setup(
     version=version,
     url='https://github.com/teamreboott/data-modori',
     author='TeamAR of Teamreboott',
-    description='LM Ops Tool for Korean'
-    'Models.',
+    description='LM Ops Tool for Korean',
     long_description=readme_md,
     long_description_content_type='text/markdown',
     license='Apache License 2.0',
-    packages=setuptools.find_packages(exclude=['tests*', 'tools*'])
+    packages=setuptools.find_packages(exclude=['data_modori*', 'tools*'])
             + list(get_package_dir().keys()),
     package_dir=get_package_dir(),
     entry_points={
