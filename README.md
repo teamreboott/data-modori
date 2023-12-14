@@ -1,3 +1,7 @@
+English | [한국어](README_ko.md)
+
+# Data-Modori: Explore a New Frontier in Data
+
 <div align="center">
   <img src="https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39" width="300"/>
   <div>&nbsp;</div>
@@ -19,34 +23,43 @@
   <div>&nbsp;</div>
 
 
-[![platform](https://img.shields.io/badge/platform-Linux%7CWindows%7CmacOS-blue&color=498bdf)]()
-![](https://img.shields.io/badge/language-Python-b44dff.svg)
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
-[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide.md)
+![](https://img.shields.io/badge/language-Python-b44dff.svg)
+[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_en.md)
 
-[![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
+<!-- [![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
 [![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
-[![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation)
+[![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
 
-[📘Documentation]() |
-[🛠️Installation]() |
-[🤔Reporting Issues]()
-
-</div>
-
-<div align="center">
-
-English | [한국어](README_KO.md)
+[📘Documentation](#documentation) |
+[🛠️Installation](#installation) |
+[🤔Reporting Issues](https://github.com/teamreboott/data-modori/issues/new/choose)
 
 </div>
 
-## Table of Contents
+Data-Modori is a creative and advanced platform that guides you into the realm of data, offering diverse possibilities by collecting information from various sources. We gather all the puzzle pieces of data, assemble them into one, and invite you into the world of the information you desire.
 
-- [Installation](#installation)
-- [Data Processing](#data-processing)
-- [Data Analysis](#data-analysis)
-- [Data Visualization](#data-visualization)
-- [Build Up Config Files](#build-up-config-files)
+- Data Integration: We collect data from various sources, integrating them into one central hub for your convenience.
+- Flexible Analysis: Utilize advanced analysis tools to delve into your data, gaining new insights and perspectives.
+- Customized Results: Organize and present data according to your requirements, delivering tailored results.
+- User-Friendly Interface: An intuitive and easy-to-use interface allows users to harness the power of data without requiring advanced knowledge.
+
+----
+
+Table of Contents
+=================
+- [Data-Modori: Explore a New Frontier in Data](#data-modori-explore-a-new-frontier-in-data)
+- [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Data Processing](#data-processing)
+  - [Data Analysis](#data-analysis)
+  - [Data Visualization](#data-visualization)
+  - [Build Up Config Files](#build-up-config-files)
+  - [Documentation](#documentation)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Acknowledgement](#acknowledgement)
+  - [References](#references)
 
 ### Installation
 
@@ -77,12 +90,6 @@ pip install -v -e .[tools] # install a subset of tools dependencies
 | `.[dist]`      | Install dependencies for distributed data processing. (Experimental)                         |
 | `.[dev]`       | Install dependencies for developing the package as contributors.                             |
 | `.[tools]`     | Install dependencies for dedicated tools, such as quality classifiers.                       |
-
-- If you check the version you have installed
-```bash
-import data_juicer as dj
-print(dj.__version__)
-```
 
 ### Data Processing
 
@@ -134,11 +141,14 @@ streamlit run app.py
     arguments. You just need to **remove** ops that you won't use and refine
     some arguments of ops.
   - ➕：Build up your own config files **from scratch**. You can refer our
-    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide.md#build-your-own-configs).
+    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide_en.md#build-your-own-configs).
   - Besides the yaml files, you also have the flexibility to specify just
     one (of several) parameters on the command line, which will override
     the values in yaml files.
-    
+```bash
+python xxx.py --config configs/process.yaml --language_id_score_filter.lang=ko 
+```
+
 ```bash
 # Process config example for dataset
 
@@ -155,4 +165,41 @@ text_keys: 'content'
 process:
   - language_id_score_filter:
       lang: 'en'
+```
+
+## Documentation
+
+- [Overview](README.md) | [개요](README_ko.md)
+- [Operators](docs/Operators.md) | [연산자들](docs/Operators_ko.md)
+- [Configs](configs/README.md) | [구성파일](configs/README_ko.md)
+- [Developer Guide](docs/DeveloperGuide.md) | [개발자 가이드](docs/DeveloperGuide_ko.md)
+
+## License
+Data-Modori is released under Apache License 2.0.
+
+## Contributing
+We are in a rapidly developing field and greatly welcome contributions of new 
+features, bug fixes and better documentations. Please refer to [How-to Guide for Developers](docs/DeveloperGuide_en.md).
+
+## Acknowledgement
+Data-Modori is used across various LLM products and research initiatives,
+including industrial LLMs from Teamreboott AI TEAM(AR), 
+such as AUT for trade and AUW for work. 
+
+We look forward to more of your experience, suggestions and discussions for collaboration!
+
+Data-Modori thanks and refers to several community projects, such as 
+[data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
+
+## References
+If you find our work useful for your research or development, please kindly cite the following [paper](https://arxiv.org/abs/2309.02033).
+```
+@misc{chen2023datajuicer,
+title={Data-Juicer: A One-Stop Data Processing System for Large Language Models},
+author={Daoyuan Chen and Yilun Huang and Zhijian Ma and Hesen Chen and Xuchen Pan and Ce Ge and Dawei Gao and Yuexiang Xie and Zhaoyang Liu and Jinyang Gao and Yaliang Li and Bolin Ding and Jingren Zhou},
+year={2023},
+eprint={2309.02033},
+archivePrefix={arXiv},
+primaryClass={cs.LG}
+}
 ```
