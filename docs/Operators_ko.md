@@ -38,7 +38,7 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 | tsv_formatter     | General | en, ko | 로컬 `.tsv` 파일을 준비합니다                                                                              |
 | json_formatter    | General | en, ko | 로컬 `.json`, `.jsonl`, `.jsonl.zst` 파일을 준비합니다                                                         |
 | parquet_formatter | General | en, ko | 로컬 `.parquet` 파일을 준비합니다                                                                          |
-| text_formatter    | General | en, ko | 기타 로컬 텍스트 파일을 준비합니다 ([complete list](../data_juicer/format/text_formatter.py#L63,73)) |
+| text_formatter    | General | en, ko | 기타 로컬 텍스트 파일을 준비합니다 ([complete list](../data_modori/format/text_formatter.py#L63,73)) |
 | mixture_formatter | General | en, ko | 모든 지원되는 로컬 파일 유형의 혼합을 처리합니다                                          | 
 
 

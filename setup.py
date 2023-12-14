@@ -7,7 +7,7 @@ import setuptools
 
 def get_package_dir():
     pkg_dir = {
-        'data_juicer.tools': 'tools',
+        'data_modori.tools': 'tools',
     }
     return pkg_dir
 
@@ -41,7 +41,7 @@ extra_requires = {
 }
 extra_requires['all'] = [v for v in extra_requires.values()]
 
-with open('data_juicer/__init__.py', 'r') as f:
+with open('data_modori/__init__.py', 'r') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(),
                         re.MULTILINE).group(1)
 
@@ -63,8 +63,8 @@ setuptools.setup(
     package_dir=get_package_dir(),
     entry_points={
         'console_scripts': [
-            'dj-process = data_juicer.tools.process_data:main',
-            'dj-analyze = data_juicer.tools.analyze_data:main',
+            'dj-process = data_modori.tools.process_data:main',
+            'dj-analyze = data_modori.tools.analyze_data:main',
         ]
     },
     install_requires=min_requires,

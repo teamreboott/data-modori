@@ -1,7 +1,7 @@
 import argparse
 
-from data_juicer.core.exporter import Exporter
-from data_juicer.format import load_formatter
+from data_modori.core.exporter import Exporter
+from data_modori.format import load_formatter
 
 
 def parse_args():

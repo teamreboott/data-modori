@@ -28,7 +28,7 @@ import sys
 
 from jsonargparse.typing import PositiveInt
 
-from data_juicer.utils.constant import Fields, StatsKeys
+from data_modori.utils.constant import Fields, StatsKeys
 
 from ..base_op import OPERATORS, Filter
 
@@ -98,7 +98,8 @@ process:
 
 ```python
 import unittest
-from data_juicer.ops.filter.text_length_filter import TextLengthFilter
+from data_modori.ops.filter.text_length_filter import TextLengthFilter
+
 
 class TextLengthFilterTest(unittest.TestCase):
 

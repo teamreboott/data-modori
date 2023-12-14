@@ -7,10 +7,10 @@ import fire
 import pandas as pd
 from loguru import logger
 
-from data_juicer.format import load_formatter
-from data_juicer.ops.filter.language_id_score_filter import \
+from data_modori.format import load_formatter
+from data_modori.ops.filter.language_id_score_filter import \
     LanguageIDScoreFilter
-from data_juicer.utils.constant import Fields, StatsKeys
+from data_modori.utils.constant import Fields, StatsKeys
 
 
 def keep_by_lang(sample, lang):

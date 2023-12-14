@@ -1,6 +1,6 @@
 from loguru import logger
 
-from data_juicer.core import Analyser
+from data_modori.core import Analyser
 
 
 @logger.catch

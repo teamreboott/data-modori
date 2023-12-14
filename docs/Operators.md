@@ -39,7 +39,7 @@ All the specific operators are listed below, each featured with several capabili
 | tsv_formatter     | General | en, ko | Prepares local `.tsv` files                                                                       |
 | json_formatter    | General | en, ko | Prepares local `.json`, `.jsonl`, `.jsonl.zst` files                                              |
 | parquet_formatter | General | en, ko | Prepares local `.parquet` files                                                                   |
-| text_formatter    | General | en, ko | Prepares other local text files ([complete list](../data_juicer/format/text_formatter.py#L63,73)) |
+| text_formatter    | General | en, ko | Prepares other local text files ([complete list](../data_modori/format/text_formatter.py#L63,73)) |
 | mixture_formatter | General | en, ko | Handles a mixture of all the supported local file types                                           | 
 
 

@@ -15,14 +15,14 @@ import streamlit as st
 import yaml
 from loguru import logger
 
-from data_juicer.analysis.diversity_analysis import (DiversityAnalysis,
+from data_modori.analysis.diversity_analysis import (DiversityAnalysis,
                                                      get_diversity)
-from data_juicer.config import init_configs
-from data_juicer.core import Analyser, Executor
-from data_juicer.ops.base_op import OPERATORS
-from data_juicer.utils.constant import Fields, StatsKeys
-from data_juicer.utils.logger_utils import get_log_file_path
-from data_juicer.utils.model_utils import MODEL_ZOO, prepare_model
+from data_modori.config import init_configs
+from data_modori.core import Analyser, Executor
+from data_modori.ops.base_op import OPERATORS
+from data_modori.utils.constant import Fields, StatsKeys
+from data_modori.utils.logger_utils import get_log_file_path
+from data_modori.utils.model_utils import MODEL_ZOO, prepare_model
 
 
 @st.cache_data
@@ -635,7 +635,7 @@ class Visualize:
             # initial_sidebar_state="expanded",
         )
 
-        readme_link = 'https://github.com/teamreboott/data-juicer'
+        readme_link = 'https://github.com/teamreboott/data-modori'
         st.markdown(
             '<div align = "center"> <font size = "70"> Data-Modori 🐦 \
             </font> </div>',

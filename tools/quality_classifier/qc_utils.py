@@ -12,8 +12,8 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, rand, udf
 from pyspark.sql.types import ArrayType, DoubleType, IntegerType, StringType
 
-from data_juicer.utils.cache_utils import DATA_JUICER_MODELS_CACHE
-from data_juicer.utils.model_utils import (MODEL_LINKS,
+from data_modori.utils.cache_utils import DATA_JUICER_MODELS_CACHE
+from data_modori.utils.model_utils import (MODEL_LINKS,
                                            prepare_sentencepiece_model)
 
 
