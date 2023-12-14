@@ -50,6 +50,10 @@ class PerplexityFilter(Filter):
             words = sample[Fields.context][words_key]
         else:
             tokenizer = get_model(self.sp_model_key, "en", 'sentencepiece')
+            # if self.lang == 'ko':
+            #     words = get_words_from_document(sample[self.text_key], token_func=tokenizer if tokenizer else None)
+            #     #words = [s.replace("▁", "") for s in words]
+            # else:
             words = get_words_from_document(
                 sample[self.text_key],
                 token_func=tokenizer if tokenizer else None)
