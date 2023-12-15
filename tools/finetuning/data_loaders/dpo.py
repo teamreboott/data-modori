@@ -10,7 +10,8 @@ def load_dpo_dataset_from_hf(
     data_config: dict = None,
     train_or_test: str = 'train'
 ) -> Dataset:
-    """Load the stack-exchange-paired dataset from Hugging Face and convert it to the necessary format.
+    """https://github.com/huggingface/trl/blob/main/examples/research_projects/stack_llama_2/scripts/dpo_llama2.py
+    Load the stack-exchange-paired dataset from Hugging Face and convert it to the necessary format.
 
     The dataset is converted to a dictionary with the following structure:
     {
