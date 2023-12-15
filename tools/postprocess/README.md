@@ -1,6 +1,6 @@
 # Postprocess tools
 
-This folder contains some postprocess scripts for additional processing of your processed dataset using Data-Juicer.
+This folder contains some postprocess scripts for additional processing of your processed dataset using **Data-Modori**.
 
 ## Usage
 
@@ -44,8 +44,8 @@ python tools/postprocess/data_mixture.py  --help
 
 - `data_path`: a dataset file or a list of dataset files or a list of both them, optional weights, if not set, 1.0 as default.
 - `export_path`: a dataset file name for exporting mixed dataset, support `json` / `jsonl` / `parquet`.
-- `export_shard_size`:  dataset file size in Byte. If not set, mixed dataset will be exported into only one file.
-- `num_proc`:  process num to load and export datasets.
+- `export_shard_size`: dataset file size in Byte. If not set, mixed dataset will be exported into only one file.
+- `num_proc`: process num to load and export datasets.
 
 - e.g., `python tools/postprocess/data_mixture.py  --data_path  <w1> ds.jsonl <w2> ds_dir <w3> ds_file.json`
 
@@ -71,4 +71,4 @@ python tools/postprocess/deserialize_meta.py --help
 - `serialized_key`: the key corresponding to the field that will be deserialized. Default it's 'source_info'.
 - `num_proc` (optional): number of process workers. Default it's 1.
 
-**Note:** After deserialization, all serialized fields in the original file will be placed in `'serialized_key'`, this is to ensure that the fields generated after data-juicer processing will not conflict with the original meta fields.
+**Note:** After deserialization, all serialized fields in the original file will be placed in `'serialized_key'`, this is to ensure that the fields generated after **Data-Modori** processing will not conflict with the original meta fields.
