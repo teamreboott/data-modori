@@ -48,6 +48,7 @@ Table of Contents
   - [Data Visualization](#data-visualization)
   - [Build Up Config Files for Preprocessing](#build-up-config-files)
   - [Supervised Fine-Tuning](tools/finetuning/README.md)
+  - [Korean Language Model Evaluation Harness](tools/evaluator/README.md)
   - [Documentation](#documentation)
   - [License](#license)
   - [Contributing](#contributing)
@@ -165,5 +166,5 @@ including industrial LLMs.
 We look forward to more of your experience, suggestions and discussions for collaboration!
 
 We thank and refers to several community projects, such as 
-[data-juicer](https://github.com/alibaba/data-juicer), [KoBERT](https://github.com/SKTBrain/KoBERT/tree/master), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
+[data-juicer](https://github.com/alibaba/data-juicer), [KoBERT](https://github.com/SKTBrain/KoBERT/tree/master), [komt](https://github.com/davidkim205/komt), [ko-lm-evaluation-harness](https://github.com/Beomi/ko-lm-evaluation-harness), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
 

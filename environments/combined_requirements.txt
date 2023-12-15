@@ -71,3 +71,9 @@ sphinx
 sphinx-autobuild
 sphinx_rtd_theme
 recommonmark
+sacrebleu==2.4.0
+sqlitedict==2.1.0
+pycountry==23.12.11
+rouge-score==0.1.2
+evaluate==0.4.1
+pytablewriter
