@@ -75,7 +75,7 @@ pip install -r environments/combined_requirements.txt
 - `process_data.py`와 config 파일을 사용해 데이터셋을 처리합니다.
 
 ```bash
-python tools/process_data.py --config configs/ko_process.yaml
+python tools/process_data.py --config configs/process.yaml
 ```
 
 - **참고:** 로컬에 저장되지 않은 third-party models 또는 리소스가 필요한 일부 연산자의 경우, 리소스를 다운하기 위해 처음 실행할 때 시간이 걸릴 수 있습니다.
@@ -96,7 +96,7 @@ export DATA_MODORI_ASSETS_CACHE="/path/to/another/directory/assets"
 - `analyze_data.py`와 config 파일을 사용해 데이터셋을 분석합니다.
 
 ```bash
-python tools/analyze_data.py --config configs/ko_process.yaml
+python tools/analyze_data.py --config configs/analyze.yaml
 ```
 
 - **참고:** `analyze_data.py`는 Filter ops의 통계만 계산합니다. 따라서 Mapper or Deduplicator ops는 분석 프로세스에서 무시됩니다.
