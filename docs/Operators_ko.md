@@ -106,4 +106,4 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 
 
 ## Contributing
-새로운 연산자를 추가하는 기여를 환영합니다. [개발자를 위한 How-to 가이드]((DeveloperGuide_ko.md))를 참조하세요.
+새로운 연산자를 추가하는 기여를 환영합니다. [개발자를 위한 How-to 가이드](DeveloperGuide_ko.md)를 참조하세요.
