@@ -8,7 +8,7 @@
 
 ## Build your own ops
 
-- Data-Juicer allows everybody to build their own ops.
+- **Data-modori** allows everybody to build their own ops.
 - Before implementing a new op, please refer to [Operators](Operators.md) to avoid unnecessary duplication.
 - Assuming we want to add a new Filter operator called "TextLengthFilter" to get corpus of expected text length, we can follow these steps to build it.
 
@@ -92,25 +92,6 @@ process:
   - text_length_filter:  # add this op to your process list and set the parameters
       min_len: 10
       max_len: 1000
-```
-
-5. (Strongly Recommend) It's better to add corresponding tests for your own ops. For `TextLengthFilter` above, you would like to add `test_text_length_filter.py` into `tests/ops/filter/` directory as below.
-
-```python
-import unittest
-from data_modori.ops.filter.text_length_filter import TextLengthFilter
-
-
-class TextLengthFilterTest(unittest.TestCase):
-
-    def test_func1(self):
-        pass
-
-    def test_func2(self):
-        pass
-
-    def test_func3(self):
-        pass
 ```
 
 ## Build your own configs
