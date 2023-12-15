@@ -12,7 +12,10 @@ from .load_hf_instruction_data import *
 
 
 HF_DATA_LIST = {
-    "kyujinpy/KOpen-platypus": KOpenPlatypus
+    "kyujinpy/KOpen-platypus": KOpenPlatypus,
+    "psymon/namuwiki_alpaca_dataset": NamuWiki,
+    "heegyu/korquad-chat-v1": KorquadChat,
+    "kyujinpy/KoCoT_2000": KoCOT
 }
 
 
