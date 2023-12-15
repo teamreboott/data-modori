@@ -6,19 +6,13 @@
   <img src="https://github.com/teamreboott/data-modori/blob/main/docs/imgs/buri_heart.png?raw=true" width="300"/>
   <div>&nbsp;</div>
   <div align="center">
-    <b><font size="5">TEAMREBOOTT website </font></b>
+    <b><font size="5">TEAMREBOOTT Inc. </font></b>
     <sup>
       <a href="https://reboott.ai">
         <i><font size="4">HOT</font></i>
       </a>
     </sup>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b><font size="5">TeamAR platform</font></b>
-    <sup>
-      <a href="https://askyour.trade">
-        <i><font size="4">TRY IT OUT</font></i>
-      </a>
-    </sup>
   </div>
   <div>&nbsp;</div>
 
@@ -33,12 +27,13 @@
 
 </div>
 
-**Data-Modori**는 수집한 데이터를 이용해 다양한 가능성을 제공하는 창의적이고 진보적입니다. 우리는 데이터의 모든 조각들을 하나로 조립하여 원하는 정보의 세계로 여러분을 초대합니다.
+**LMOps**는 복잡하고 도전적인 분야이지만 대형 언어 모델의 성공적인 배포와 관리에서 핵심적인 역할을 합니다.   
+**Data-Modori**는 여러 소스에서 유용한 정보를 분석하여 다양한 가능성을 제공하며 여러분을 LLM의 영역으로 안내하는 통합 플랫폼입니다. 🌐 우리는 LLM 개발 과정의 모든 퍼즐 조각을 수집하여 하나로 조립하고 여러분을 원하는 정보의 세계로 초대합니다.
 
-- 데이터 통합: 다양한 소스로부터 데이터를 수집하여 하나의 중앙 허브로 통합하여 편리하게 사용할 수 있습니다.
-- 유연한 분석: 고급 분석 도구를 활용하여 데이터를 심층적으로 분석하고 새로운 인사이트와 관점을 얻을 수 있습니다.
-- 맞춤형 결과: 요구 사항에 따라 데이터를 구성하고 표시하여 맞춤형 결과를 제공합니다.
-- 사용자 친화적인 인터페이스: 직관적이고 사용하기 쉬운 인터페이스를 통해 사용자는 고급 지식 없이도 데이터의 힘을 활용할 수 있습니다.
+- 🛠️ 유연한 분석: 고급 분석 도구를 활용하여 데이터를 자세히 살펴보고 새로운 통찰과 시각을 얻을 수 있습니다.
+- 📊 맞춤형 결과: 귀하의 요구에 따라 데이터를 조직하고 제시하여 맞춤형 결과를 전달합니다.
+- 🖥️ 사용자 친화적 인터페이스: 직관적이고 사용하기 쉬운 인터페이스를 통해 사용자들은 고급 지식이 필요하지 않고도 데이터의 힘을 활용할 수 있습니다.
+- 🤖 쉬운 학습: 우리는 LLM에 대한 미세 조정 및 자동 평가 코드를 포함한 직관적인 코드를 제공합니다.
 
 ----
 
@@ -50,12 +45,12 @@
   - [데이터 전처리](#데이터-전처리)
   - [데이터 분석](#데이터-분석)
   - [데이터 시각화](#데이터-시각화)
-  - [설정 파일 구성](#설정-파일-구성)
+  - [데이터 전처리용 설정 파일 구성](#설정-파일-구성)
+  - [LLM 튜닝하기](tools/finetuning/README.md)
   - [문서](#문서)
   - [License](#license)
   - [기여하기](#기여하기)
   - [감사한분들](#감사한분들)
-  - [참고문헌](#참고문헌)
 
 ### 설치
 
@@ -103,11 +98,14 @@ python tools/analyze_data.py --config configs/analyser.yaml
 
 ### 데이터 시각화
 
-- `app.py` 를 실행하여 브라우저에서 데이터셋을 시각화합니다.
+- `app.py` 를 실행하여 브라우저에서 데이터셋을 분석하며 시각화된 정보를 얻습니다.
 
 ```bash
 streamlit run app.py
 ```
+
+![Example of App](docs/imgs/streamlit_ex.png "Streamlit App")
+
 
 ### 설정 파일 구성
 
@@ -157,23 +155,7 @@ process:
 
 ## 감사한분들
 **Data-Modori**는 다양한 LLM 제품 및 연구 이니셔티브에서 사용됩니다,
-다양한 LLM 제품 및 연구 이니셔티브에 사용됩니다, 
-무역용 AUT, 업무용 AUW 등 다양한 산업 LLM에 사용됩니다. 
-
 협업을 위한 여러분의 더 많은 경험, 제안, 토론을 기다리겠습니다!
 
 **Data-Modori**는 다음과 같은 여러 커뮤니티 프로젝트에 감사를 표하고 참조합니다. 
-[data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
-
-## 참고문헌
-저희의 연구가 귀사의 연구나 개발에 도움이 된다면 다음 [논문](https://arxiv.org/abs/2309.02033)을 인용해 주시기 바랍니다.
-```
-@misc{chen2023datajuicer,
-title={Data-Juicer: A One-Stop Data Processing System for Large Language Models},
-author={Daoyuan Chen and Yilun Huang and Zhijian Ma and Hesen Chen and Xuchen Pan and Ce Ge and Dawei Gao and Yuexiang Xie and Zhaoyang Liu and Jinyang Gao and Yaliang Li and Bolin Ding and Jingren Zhou},
-year={2023},
-eprint={2309.02033},
-archivePrefix={arXiv},
-primaryClass={cs.LG}
-}
-```
+[data-juicer](https://github.com/alibaba/data-juicer), [KoBERT](https://github.com/SKTBrain/KoBERT/tree/master), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....

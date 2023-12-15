@@ -769,7 +769,6 @@ class Visualize:
         Visualize.analyze_process()
         Visualize.filter()
         Visualize.diversity()
-        Visualize.auxiliary()
 
 
 def main():

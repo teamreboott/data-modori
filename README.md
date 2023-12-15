@@ -52,7 +52,6 @@ Table of Contents
   - [License](#license)
   - [Contributing](#contributing)
   - [Acknowledgement](#acknowledgement)
-  - [References](#references)
 
 ### Installation
 
@@ -104,6 +103,9 @@ python tools/analyze_data.py --config configs/analyser.yaml
 ```bash
 streamlit run app.py
 ```
+
+![Example of App](docs/imgs/streamlit_ex.png "Streamlit App")
+
 
 ### Build Up Config Files
 
@@ -158,21 +160,10 @@ We are in a rapidly developing field and greatly welcome contributions of new
 features, bug fixes and better documentations. Please refer to [How-to Guide for Developers](docs/DeveloperGuide.md).
 
 ## Acknowledgement
-**Data-Modori** is used across various LLM products and research initiatives,
+**Data-Modori** is used across various LLM projects and research initiatives,
 including industrial LLMs.
 We look forward to more of your experience, suggestions and discussions for collaboration!
 
-**Data-Modori** thanks and refers to several community projects, such as 
-[data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
+We thank and refers to several community projects, such as 
+[data-juicer](https://github.com/alibaba/data-juicer), [KoBERT](https://github.com/SKTBrain/KoBERT/tree/master), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
 
-## References
-```
-@misc{chen2023datajuicer,
-title={Data-Juicer: A One-Stop Data Processing System for Large Language Models},
-author={Daoyuan Chen and Yilun Huang and Zhijian Ma and Hesen Chen and Xuchen Pan and Ce Ge and Dawei Gao and Yuexiang Xie and Zhaoyang Liu and Jinyang Gao and Yaliang Li and Bolin Ding and Jingren Zhou},
-year={2023},
-eprint={2309.02033},
-archivePrefix={arXiv},
-primaryClass={cs.LG}
-}
-```
