@@ -15,7 +15,7 @@
 python wandb_writer.py --config <config_file> [--print-only]
 ```
 
-- `config_file`: 구성 파일 경로 (세부 사항은 [구성](#configuration) 참조)
+- `config_file`: 구성 파일 경로 (세부 사항은 [구성](#구성) 참조)
 - `--print-only`: 결과를 명령 줄에만 출력하고 wandb에 기록하지 않습니다.
 
 ## 구성
