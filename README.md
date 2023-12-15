@@ -103,7 +103,6 @@ python tools/analyze_data.py --config configs/analyser.yaml
 ### Data Visualization
 
 - Run `app.py` tool to visualize your dataset in your browser.
-- **Note**: only available for installation from source.
 
 ```bash
 streamlit run app.py
@@ -124,6 +123,7 @@ streamlit run app.py
   - Besides the yaml files, you also have the flexibility to specify just
     one (of several) parameters on the command line, which will override
     the values in yaml files.
+    
 ```bash
 python xxx.py --config configs/process.yaml --language_id_score_filter.lang=ko 
 ```
@@ -154,20 +154,20 @@ process:
 - [Developer Guide](docs/DeveloperGuide.md)
 
 ## License
-Data-Modori is released under Apache License 2.0.
+**Data-Modori** is released under Apache License 2.0.
 
 ## Contributing
 We are in a rapidly developing field and greatly welcome contributions of new 
 features, bug fixes and better documentations. Please refer to [How-to Guide for Developers](docs/DeveloperGuide.md).
 
 ## Acknowledgement
-Data-Modori is used across various LLM products and research initiatives,
+**Data-Modori** is used across various LLM products and research initiatives,
 including industrial LLMs from Teamreboott AI TEAM(AR), 
 such as AUT for trade and AUW for work. 
 
 We look forward to more of your experience, suggestions and discussions for collaboration!
 
-Data-Modori thanks and refers to several community projects, such as 
+**Data-Modori** thanks and refers to several community projects, such as 
 [data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
 
 ## References
