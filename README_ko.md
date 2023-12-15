@@ -1,9 +1,9 @@
 [English](README.md) | 한국어
 
-# Data-Modori: 데이터 세계의 새로운 지평을 열다
+# Data-Modori: 한국어용 LMOps 도구
 
 <div align="center">
-  <img src="https://github.com/teamreboott/data-juicer/assets/40276516/86ec78ca-fb84-4367-a7d5-b67220114e39" width="300"/>
+  <img src="https://github.com/teamreboott/data-modori/blob/main/docs/imgs/buri_heart.png?raw=true" width="300"/>
   <div>&nbsp;</div>
   <div align="center">
     <b><font size="5">TEAMREBOOTT website </font></b>
@@ -25,15 +25,11 @@
 
 ![](https://img.shields.io/badge/license-Apache--2.0-ff655b.svg)
 ![](https://img.shields.io/badge/language-Python-b44dff.svg)
-[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_en.md)
+[![Contributing](https://img.shields.io/badge/Contribution-welcome-5bc4ff.svg)](docs/DeveloperGuide_ko.md)
 
-<!-- [![pypi version](https://img.shields.io/pypi/v/py-data-juicer?logo=pypi&color=ffb84d)](https://pypi.org/project/py-data-juicer)
-[![Docker version](https://img.shields.io/docker/v/datajuicer/data-juicer?logo=docker&label=Docker&color=0100FF)](https://hub.docker.com/r/datajuicer/data-juicer)
-[![Document_List](https://img.shields.io/badge/Docs-English-FAED7D?logo=Markdown)](README.md#documentation) -->
-
-[📘문서]() |
-[🛠️설치]() |
-[🤔문제]()
+[📘문서](#문서) |
+[🛠️설치방법](#설치방법) |
+[🤔이슈보고](https://github.com/teamreboott/data-modori/issues/new/choose)
 
 </div>
 
@@ -46,77 +42,64 @@ Data-Modori는 수집한 데이터를 이용해 다양한 가능성을 제공하
 
 ----
 
-## Table of Contents
+목차
+=================
+- [Data-Modori: 한국어용 LMOps 도구](#data-modori-한국어용-lmops-도구)
+- [목차](#목차)
+  - [설치방법](#설치방법)
+  - [데이터 전처리](#데이터-전처리)
+  - [데이터 분석](#데이터-분석)
+  - [데이터 시각화](#데이터-시각화)
+  - [설정 파일 구성](#설정-파일-구성)
+  - [문서](#문서)
+  - [License](#license)
+  - [기여하기](#기여하기)
+  - [감사한분들](#감사한분들)
+  - [참고문헌](#참고문헌)
 
-- [설치](#installation)
-- [데이터 전처리](#data-processing)
-- [데이터 분석](#data-analysis)
-- [데이터 시각화](#data-visualization)
-- [Config 파일 구축](#build-up-config-files)
-
-### 설치
+### 설치방법
 
 - **Github**에서 소스 코드 가져오기
 ```bash
-git clone https://github.com/teamreboott/data-juicer
-cd data-juicer
+git clone https://github.com/teamreboott/data-modori
+cd data-modori
 ```
 
-- 다음 명령을 실행하여 최신 Data-Modori 버전을 설치합니다:
+- 다음 명령을 실행하여 **data-modori**에서 필요한 모듈을 설치합니다:
 ```bash
-pip install -v -e .
+pip install -r environments/combined_requirements.txt
 ```
-
-- 일부 OP는 너무 크거나 플랫폼 호환성이 낮은 타사 라이브러리에 의존합니다. 필요에 따라 선택적 종속성을 설치할 수 있습니다:
-```bash
-pip install -v -e .  # install a minimal dependencies, which support the basic functions
-pip install -v -e .[tools] # install a subset of tools dependencies
-```
-
-- The dependency options are listed below:
-
-| Tag          | Description                                                           |
-|--------------|-----------------------------------------------------------------------|
-| `.` or `.[mini]` | 기본 Data-Modori를 위한 최소한의 종속성을 설치합니다.                                   |
-| `.[all]`       | 모든 선택적 종속성을 설치합니다 (최소한의 종속성 및 아래의 모든 종속성).                            |
-| `.[sci]`       | 모든 OPs에 대한 모든 종속성을 설치합니다.                                             |
-| `.[dist]`      | 분산 데이터 처리를 위한 종속성을 설치합니다. (실험적인 기능)                                   |
-| `.[dev]`       | 패키지를 개발자로서 개발하는 데 필요한 종속성을 설치합니다.                                     |
-| `.[tools]`     | 품질 분류기와 같은 특수 도구를 위한 종속성을 설치합니다. |
 
 ### 데이터 전처리
 
-- `process_data.py` 도구와 config 파일을 사용하여 데이터셋을 처리합니다.
+- `process_data.py`와 config 파일을 사용해 데이터셋을 처리합니다.
 
 ```bash
 python tools/process_data.py --config configs/process.yaml
 ```
 
 - **참고:** 로컬에 저장되지 않은 third-party models 또는 리소스가 필요한 일부 연산자의 경우, 리소스를 다운하기 위해 처음 실행할 때 시간이 걸릴 수 있습니다.
-기본 다운로드 캐시 디렉터리는 ~/.cache/data_juicer에 위치합니다. 다른 디렉토리로 캐시 위치를 변경하려면 셸 환경 변수 DATA_JUICER_CACHE_HOME을 다른 디렉터리로 설정하고
-DATA_JUICER_MODELS_CACHE 또는 DATA_JUICER_ASSETS_CACHE도 동일한 방식으로 변경할 수 있습니다.
-
-- **Note:** For some operators that involve third-party models or resources which are not stored locally on your computer, it might be slow for the first running because these ops need to download corresponding resources into a directory first.
-The default download cache directory is `~/.cache/data_juicer`. Change the cache location by setting the shell environment variable, `DATA_JUICER_CACHE_HOME` to another directory, and you can also change `DATA_JUICER_MODELS_CACHE` or `DATA_JUICER_ASSETS_CACHE` in the same way:
+기본 다운로드 캐시 디렉터리는 `~/.cache/data_modori`에 위치합니다. 다른 디렉토리로 캐시 위치를 변경하려면 셸 환경 변수 `DATA_MODORI_CACHE_HOME`을 다른 디렉터리로 설정하고
+`DATA_MODORI_MODELS_CACHE` 또는 `DATA_MODORI_ASSETS_CACHE`도 동일한 방식으로 변경할 수 있습니다:
 
 ```bash
 # cache home
-export DATA_JUICER_CACHE_HOME="/path/to/another/directory"
+export DATA_MODORI_CACHE_HOME="/path/to/another/directory"
 # cache models
-export DATA_JUICER_MODELS_CACHE="/path/to/another/directory/models"
+export DATA_MODORI_MODELS_CACHE="/path/to/another/directory/models"
 # cache assets
-export DATA_JUICER_ASSETS_CACHE="/path/to/another/directory/assets"
+export DATA_MODORI_ASSETS_CACHE="/path/to/another/directory/assets"
 ```
 
 ### 데이터 분석
 
-- `analyze_data.py` 도구와 config 파일을 사용하여 데이터셋을 분석합니다.
+- `analyze_data.py`와 config 파일을 사용해 데이터셋을 분석합니다.
 
 ```bash
 python tools/analyze_data.py --config configs/analyser.yaml
 ```
 
-- **참고:** 분석기는 Filter ops의 통계만 계산합니다. 따라서 Mapper or Deduplicator ops는 분석 프로세스에서 무시됩니다.
+- **참고:** `analyze_data.py`는 Filter ops의 통계만 계산합니다. 따라서 Mapper or Deduplicator ops는 분석 프로세스에서 무시됩니다.
 
 ### 데이터 시각화
 
@@ -126,56 +109,57 @@ python tools/analyze_data.py --config configs/analyser.yaml
 streamlit run app.py
 ```
 
-### Config 파일 구축
+### 설정 파일 구성
 
-- Config 파일은 전역 인수와 데이터 프로세스를 위해 사용되는 연산자 목록을 지정합니다.
-  - 전역 인수: 입력/출력 데이터셋 경로, 워커 수 등을 설정합니다.
-  - 연산자 목록: 데이터셋을 처리하는 데 사용되는 연산자와 해당 인수를 나열합니다.
-- 다음 중 하나로 자체 구성 파일을 작성할 수 있습니다.
-  - ➖: config_all.yaml 예제 구성 파일에서 수정 (사용하지 않을 연산자를 제거하고 인수를 정리하세요).
-  - ➕: 처음부터 자체 구성 파일 작성. 예제 구성 파일 [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md) 및 [Build-Up Guide for developers](docs/DeveloperGuide_en.md#build-your-own-configs)을 참조할 수 있습니다.
-  - yaml 파일 외에도 명령 줄에서 파라미터 하나만 지정하여 yaml 파일의 값을 무시하고 변경할 수 있습니다.
+- 설정 파일은 전역 인수 및 데이터 처리를 위한 연산자 목록을 지정합니다. 다음을 설정해야 합니다:
+  - 전역 인수: 입력/출력 데이터셋 경로, 작업자 수 등
+  - 연산자 목록: 데이터셋을 처리하는 데 사용되는 연산자와 해당 인수 목록
+- 다음 방법으로 자체 설정 파일을 작성할 수 있습니다:
+  - ➖: 우리의 예제 설정 파일 config_all.yaml을 수정합니다. 이 파일에는 모든 연산자와 기본 인수가 포함되어 있습니다. 사용하지 않을 연산자를 제거하고 일부 연산자의 인수를 수정하면 됩니다.
+  - ➕: 예제 설정 파일 [`config_all.yaml`](configs/config_all.yaml), [연산자 문서](docs/Operators_ko.md), 그리고 [개발자를 위한 사용법 가이드](docs/DeveloperGuide_ko.md#build-your-own-configs)를 참조하여 처음부터 자체 설정 파일을 작성합니다.
+- yaml 파일 외에도 명령 줄에서 하나의 (여러 개 중의 하나) 매개변수만 지정하여 yaml 파일의 값을 무시하고 변경할 수 있습니다.
+
 ```bash
 python xxx.py --config configs/process.yaml --language_id_score_filter.lang=ko 
 ```
     
 ```bash
-# Process config example for dataset
+# 데이터 셋에 대한 프로세스 구성 예제
 
-# global parameters
+# 전역변수
 project_name: 'demo-process'
-dataset_path: './data/test.json'  # path to your dataset directory or file
+dataset_path: './data/test.json'  # 데이터 세트 디렉토리 또는 파일 경로
 export_path: './output/test.jsonl'
 
-np: 4  # number of subprocess to process your dataset
+np: 4  # 데이터 셋을 처리할 프로세스 개수
 text_keys: 'content'
 
-# process schedule
-# a list of several process operators with their arguments
+# 프로세스 스케줄
+# 인수가 포함된 여러 프로세스 연산자 목록
 process:
   - language_id_score_filter:
       lang: 'en'
 ```
 
 ## License
-Data-Modori is released under Apache License 2.0.
+**Data-Modori**는 Apache 라이선스 2.0에 따라 배포됩니다.
 
-## Contributing
-We are in a rapidly developing field and greatly welcome contributions of new 
-features, bug fixes and better documentations. Please refer to[How-to Guide for Developers](docs/DeveloperGuide_en.md).
+## 기여하기
+저희는 빠르게 발전하는 분야에 속해 있으며 새로운 기능, 버그 수정, 더 나은 문서를 기능, 버그 수정 및 더 나은 문서에 대한 기여를 크게 환영합니다. 
+[개발자를 위한 사용법 가이드](docs/DeveloperGuide_ko.md)를 참조하세요.
 
-## Acknowledgement
-Data-Modori is used across various LLM products and research initiatives,
-including industrial LLMs from Teamreboott AI TEAM(AR), 
-such as AUT for trade and AUW for work. 
+## 감사한분들
+**Data-Modori**는 다양한 LLM 제품 및 연구 이니셔티브에서 사용됩니다,
+다양한 LLM 제품 및 연구 이니셔티브에 사용됩니다, 
+무역용 AUT, 업무용 AUW 등 다양한 산업 LLM에 사용됩니다. 
 
-We look forward to more of your experience, suggestions and discussions for collaboration!
+협업을 위한 여러분의 더 많은 경험, 제안, 토론을 기다리겠습니다!
 
-Data-Modori thanks and refers to several community projects, such as 
-[data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [RedPajama](https://github.com/togethercomputer/RedPajama-Data), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Alpaca-Cot](https://huggingface.co/datasets/QingyiSi/Alpaca-CoT), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
+**Data-Modori**는 다음과 같은 여러 커뮤니티 프로젝트에 감사를 표하고 참조합니다. 
+[data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
 
-## References
-If you find our work useful for your research or development, please kindly cite the following [paper](https://arxiv.org/abs/2309.02033).
+## 참고문헌
+저희의 연구가 귀사의 연구나 개발에 도움이 된다면 다음 [논문](https://arxiv.org/abs/2309.02033)을 인용해 주시기 바랍니다.
 ```
 @misc{chen2023datajuicer,
 title={Data-Juicer: A One-Stop Data Processing System for Large Language Models},
