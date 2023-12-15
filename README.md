@@ -33,7 +33,7 @@ English | [한국어](README_ko.md)
 
 </div>
 
-Data-Modori is a creative and advanced platform that guides you into the realm of data, offering diverse possibilities by collecting information from various sources. We gather all the puzzle pieces of data, assemble them into one, and invite you into the world of the information you desire.
+**Data-Modori** is a creative and advanced platform that guides you into the realm of data, offering diverse possibilities by collecting information from various sources. We gather all the puzzle pieces of data, assemble them into one, and invite you into the world of the information you desire.
 
 - Data Integration: We collect data from various sources, integrating them into one central hub for your convenience.
 - Flexible Analysis: Utilize advanced analysis tools to delve into your data, gaining new insights and perspectives.
