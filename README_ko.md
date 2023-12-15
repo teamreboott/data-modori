@@ -141,6 +141,13 @@ process:
       lang: 'en'
 ```
 
+## 문서
+
+- [개요](README_ko.md)
+- [연산자](docs/Operators_ko.md)
+- [설정파일](configs/README_ko.md)
+- [개발자 가이드](docs/DeveloperGuide_ko.md)
+
 ## License
 **Data-Modori**는 Apache 라이선스 2.0에 따라 배포됩니다.
 
