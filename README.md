@@ -42,6 +42,7 @@ Table of Contents
 =================
 - [Data-Modori: LMOps Tool for Korean](#data-modori-lmops-tool-for-korean)
 - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Data Processing](#data-processing)
   - [Data Analysis](#data-analysis)
@@ -53,6 +54,11 @@ Table of Contents
   - [License](#license)
   - [Contributing](#contributing)
   - [Acknowledgement](#acknowledgement)
+
+### Prerequisites
+
+- Recommend Python==3.8
+- gcc >= 5 (at least C++14 support)
 
 ### Installation
 
