@@ -156,13 +156,13 @@ process:
 [개발자를 위한 사용법 가이드](docs/DeveloperGuide_ko.md)를 참조하세요.
 
 ## 감사한분들
-**Data-Modori**는 다양한 LLM 제품 및 연구 이니셔티브에서 사용됩니다,
+**Data-Modori**는 다양한 LLM 제품 및 연구 이니셔티브에서 사용됩니다,
 다양한 LLM 제품 및 연구 이니셔티브에 사용됩니다, 
 무역용 AUT, 업무용 AUW 등 다양한 산업 LLM에 사용됩니다. 
 
 협업을 위한 여러분의 더 많은 경험, 제안, 토론을 기다리겠습니다!
 
-**Data-Modori**는 다음과 같은 여러 커뮤니티 프로젝트에 감사를 표하고 참조합니다. 
+**Data-Modori**는 다음과 같은 여러 커뮤니티 프로젝트에 감사를 표하고 참조합니다. 
 [data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
 
 ## 참고문헌
