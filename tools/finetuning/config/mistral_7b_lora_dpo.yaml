@@ -1,0 +1,44 @@
+MODE: 'train'
+BASE_DIR: "/home/minsung/workspace/nas_data/"
+SAVE_DIR: "/home/minsung/workspace/nas_data/mistral_7b_dpo"
+MODEL_PATH: "mistralai/Mistral-7B-v0.1"
+
+LLM:
+  is_hf: true
+  bits: 4
+  cache_dir: ${BASE_DIR}
+
+DATASET:
+  dataset: "Intel/orca_dpo_pairs"
+  is_hf: true
+  chosen_key: "chosen"
+  rejected_key: "rejected"
+  train_path: none
+  eval_path: none
+  cache_dir: ${BASE_DIR}
+
+TRAINER:
+  optim: "paged_adamw_8bit"
+  model_max_length: 2048 # "Maximum sequence length. Sequences will be right padded (and possibly truncated)."
+  per_device_train_batch_size: 2 #"Batch size per GPU/TPU/MPS/NPU core/CPU for training."
+  per_device_eval_batch_size: 2 #"Batch size per GPU/TPU/MPS/NPU core/CPU for evaluation."
+  num_train_epochs: 3 #"Total number of training epochs to perform."
+  warmup_steps: 100 #"Linear warmup over warmup_steps."
+  logging_steps: 1 # "Log every X updates steps. Should be an integer or a float in range `[0,1)`."
+  lr_scheduler_type: 'cosine'
+  fp16: false #"Whether to use fp16 (mixed) precision instead of 32-bit"
+  bf16: true
+  learning_rate: 1e-5 #"The initial learning rate for AdamW."
+  report_to: "wandb" # choices ='tensorboard')
+  save_steps: 10 # save ckpt
+  gradient_checkpointing: true # "If True, use gradient checkpointing to save memory at the expense of slower backward pass."
+  use_neft: true
+
+DPO:
+  beta: 0.1
+
+
+WANDB:
+  PROJECT_NAME: "Mistral_LORA"
+  NAME: "LLaMA_7B_DPO_Test"
+  SAVE_CKPT: false

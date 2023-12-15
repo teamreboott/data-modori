@@ -7,7 +7,8 @@ from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model
 def load_peft_models(base_dir: str,
                      model_name_or_path: str,
                      llm_config: dict,
-                     max_len: int) -> Tuple[AutoModelForCausalLM, AutoTokenizer]:
+                     max_len: int,
+                     dpo: bool = False) -> Tuple[AutoModelForCausalLM, AutoTokenizer]:
     n_gpus = torch.cuda.device_count()
     print(f"{n_gpus} Found.")
     if not llm_config['is_hf']:

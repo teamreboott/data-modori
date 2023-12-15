@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2 python dpo_lora.py --cmd_config_path config/mistral_7b_lora_dpo.yaml
