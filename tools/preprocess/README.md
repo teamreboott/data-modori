@@ -1,6 +1,6 @@
 # Preprocess Tools
 
-This folder contains some preprocess scripts for additional processing of your dataset before using Data-Juicer.
+This folder contains some preprocess scripts for additional processing of your dataset before using **Data-Modori**.
 
 ## Usage
 
@@ -28,7 +28,7 @@ python tools/preprocess/dataset_split_by_language.py --help
 
 ### Convert raw arXiv data to jsonl
 
-This tool is used to convert the raw arXiv data downloaded from S3 into the jsonl format which is friendly to Data-Juicer.
+This tool is used to convert the raw arXiv data downloaded from S3 into the jsonl format which is friendly to **Data-Modori**.
 
 
 
@@ -146,7 +146,7 @@ python tools/preprocess/reformat_jsonl_nan_value.py --help
 
 ### Serialize meta fields in jsonl file
 
-In some jsonl files, different samples may have different meta fields, and even the data types in the same meta field may be different, which will cause failure to read the dataset using [HuggingFace Dataset](https://huggingface.co/docs/datasets/index). This tool is used to serialize all meta fields except `text_key` in these jsonl files into strings to facilitate subsequent Data-juicer processing. After the dataset is processed, it usually needs to be deserialized using [deserialize_meta.py](../postprocess/deserialize_meta.py).
+In some jsonl files, different samples may have different meta fields, and even the data types in the same meta field may be different, which will cause failure to read the dataset using [HuggingFace Dataset](https://huggingface.co/docs/datasets/index). This tool is used to serialize all meta fields except `text_key` in these jsonl files into strings to facilitate subsequent **Data-Modori** processing. After the dataset is processed, it usually needs to be deserialized using [deserialize_meta.py](../postprocess/deserialize_meta.py).
 
 
 
