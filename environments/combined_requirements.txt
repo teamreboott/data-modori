@@ -34,7 +34,7 @@ ray
 fasttext==0.9.2
 sentencepiece >= 0.1.6, <=0.1.96
 pypi-kenlm==0.1.20220713
-transformers
+transformers[torch]>=4.34.0
 fasttext-wheel
 scipy
 ftfy
@@ -46,12 +46,21 @@ nltk
 transformers
 opencc==1.1.6
 imagededup
-torch==2.1.1
+torch==2.0.1
 spacy-pkuseg==0.0.32
 fasttext-wheel
 omegaconf
 peft==0.7.1
 trl==0.7.4
+accelerate>=0.23.0
+datasets>=2.10.0,<3
+deepspeed>=0.11.1
+xformers>=0.0.22
+einops
+bitsandbytes
+tiktoken
+click>=8.0.4,<9
+databricks_sdk
 fire
 jsonlines
 pyspark
