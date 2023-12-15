@@ -75,7 +75,7 @@ pip install -r environments/combined_requirements.txt
 - Run `process_data.py` tool with your config as the argument to process your dataset.
 
 ```bash
-python tools/process_data.py --config configs/process.yaml
+python tools/process_data.py --config configs/ko_process.yaml
 ```
 
 - **Note:** For some operators that involve third-party models or resources which are not stored locally on your computer, it might be slow for the first running because these ops need to download corresponding resources into a directory first.
