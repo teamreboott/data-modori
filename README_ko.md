@@ -116,7 +116,7 @@ streamlit run app.py
   - 연산자 목록: 데이터셋을 처리하는 데 사용되는 연산자와 해당 인수 목록
 - 다음 방법으로 자체 설정 파일을 작성할 수 있습니다:
   - ➖: 우리의 예제 설정 파일 config_all.yaml을 수정합니다. 이 파일에는 모든 연산자와 기본 인수가 포함되어 있습니다. 사용하지 않을 연산자를 제거하고 일부 연산자의 인수를 수정하면 됩니다.
-  - ➕: 예제 설정 파일 [`config_all.yaml`](configs/config_all.yaml), [연산자 문서](docs/Operators_ko.md), 그리고 [개발자를 위한 사용법 가이드](docs/DeveloperGuide_ko.md#build-your-own-configs)를 참조하여 처음부터 자체 설정 파일을 작성합니다.
+  - ➕: 예제 설정 파일 [`config_all.yaml`](configs/config_all.yaml), [연산자 문서](docs/Operators_ko.md), 그리고 [[개발자를 위한 How-to 가이드]](docs/DeveloperGuide_ko.md#build-your-own-configs)를 참조하여 처음부터 자체 설정 파일을 작성합니다.
 - yaml 파일 외에도 명령 줄에서 하나의 (여러 개 중의 하나) 매개변수만 지정하여 yaml 파일의 값을 무시하고 변경할 수 있습니다.
 
 ```bash
@@ -153,7 +153,7 @@ process:
 
 ## 기여하기
 저희는 빠르게 발전하는 분야에 속해 있으며 새로운 기능, 버그 수정, 더 나은 문서를 기능, 버그 수정 및 더 나은 문서에 대한 기여를 크게 환영합니다. 
-[개발자를 위한 사용법 가이드](docs/DeveloperGuide_ko.md)를 참조하세요.
+[[개발자를 위한 How-to 가이드]](docs/DeveloperGuide_ko.md)를 참조하세요.
 
 ## 감사한분들
 **Data-Modori**는 다양한 LLM 제품 및 연구 이니셔티브에서 사용됩니다,
