@@ -1,6 +1,6 @@
 # Postprocess tools
 
-This folder contains some postprocess scripts for additional processing of your processed dataset using **Data-Modori**.
+This folder contains some postprocess scripts for additional processing of your processed dataset using **Data-Modori**.
 
 ## Usage
 
