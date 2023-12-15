@@ -107,4 +107,4 @@ All the specific operators are listed below, each featured with several capabili
 
 
 ## Contributing
-We welcome contributions of adding new operators. Please refer to [How-to Guide for Developers](DeveloperGuide_en.md).
+We welcome contributions of adding new operators. Please refer to [How-to Guide for Developers](DeveloperGuide.md).
