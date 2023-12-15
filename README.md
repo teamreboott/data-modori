@@ -6,19 +6,13 @@ English | [한국어](README_ko.md)
   <img src="https://github.com/teamreboott/data-modori/blob/main/docs/imgs/buri_heart.png?raw=true" width="300"/>
   <div>&nbsp;</div>
   <div align="center">
-    <b><font size="5">TEAMREBOOTT website </font></b>
+    <b><font size="5">TEAMREBOOTT Inc. </font></b>
     <sup>
       <a href="https://reboott.ai">
         <i><font size="4">HOT</font></i>
       </a>
     </sup>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b><font size="5">TeamAR platform</font></b>
-    <sup>
-      <a href="https://askyour.trade">
-        <i><font size="4">TRY IT OUT</font></i>
-      </a>
-    </sup>
   </div>
   <div>&nbsp;</div>
 
@@ -33,12 +27,14 @@ English | [한국어](README_ko.md)
 
 </div>
 
-**Data-Modori** is a creative and advanced platform that guides you into the realm of data, offering diverse possibilities by collecting information from various sources. We gather all the puzzle pieces of data, assemble them into one, and invite you into the world of the information you desire.
+**LMOps** is a complex and challenging field, but it plays a pivotal role in the successful deployment and management of large language models.
+**Data-Modori** is an unified platform that guides you into the realm of LLM, offering diverse possibilities by analyzing useful information from various sources. 
+We gather all the puzzle pieces of the developing process of LLM, assemble them into one, and invite you into the world of the information you desire.
 
-- Data Integration: We collect data from various sources, integrating them into one central hub for your convenience.
 - Flexible Analysis: Utilize advanced analysis tools to delve into your data, gaining new insights and perspectives.
 - Customized Results: Organize and present data according to your requirements, delivering tailored results.
 - User-Friendly Interface: An intuitive and easy-to-use interface allows users to harness the power of data without requiring advanced knowledge.
+- Easy-to-Learn: We provide an intuitive Supervised Fine-Tuning (SFT) codes.
 
 ----
 
