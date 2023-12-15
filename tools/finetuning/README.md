@@ -114,6 +114,3 @@ WANDB:
 sh scripts/run_mistral_lora_dpo.sh
 ```
 
-
-
-## References
