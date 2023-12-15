@@ -6,13 +6,13 @@
 
 Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 
-| 타입                                | 개수	 | 설명                                 |
+| 타입                                | 개수	 | 설명                                |
 |-----------------------------------|:------:|------------------------------------|
-| [ Formatter ]( #formatter )       |   7    | 소스 데이터를 찾아서 로드하고 표준화합니다.        |
-| [ Mapper ]( #mapper )             |   21   | 샘플을 편집하고 변환합니다.                    |
-| [ Filter ]( #filter )             |   20   | 낮은 품질의 샘플을 필터링합니다.                 |
-| [ Deduplicator ]( #deduplicator ) |   4    | 중복된 샘플을 감지하고 제거합니다.                |
-| [ Selector ]( #selector )         |   2    | 랭킹 기준에 따라 상위 샘플을 선택합니다.            |
+| [ Formatter ]( #formatter )       |   7    | 소스 데이터를 찾아서 로드하고 표준화합니다.   |
+| [ Mapper ]( #mapper )             |   18   | 샘플을 편집하고 변환합니다.               |
+| [ Filter ]( #filter )             |   16   | 낮은 품질의 샘플을 필터링합니다.           |
+| [ Deduplicator ]( #deduplicator ) |   3    | 중복된 샘플을 감지하고 제거합니다.          |
+| [ Selector ]( #selector )         |   2    | 랭킹 기준에 따라 상위 샘플을 선택합니다.     |
 
 
 모든 구체적인 오퍼레이터는 아래에 나열되어 있으며, 각각이 여러 기능 태그로 표시됩니다.
@@ -59,7 +59,6 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 | remove_comments_mapper                              | LaTeX              | en, ko | TeX 문서의 주석을 제거합니다                                                              |
 | remove_header_mapper                                | LaTeX              | en, ko | TeX 문서의 러닝 헤더를 제거합니다, e.g., titles, chapter or section numbers/names      |
 | remove_long_words_mapper                            | General            | en, ko | 지정된 범위를 벗어나는 길이의 단어를 제거합니다                                               |
-| remove_non_chinese_character_mapper                 | General            | en, ko | 중국어 이외의 문자를 텍스트 샘플에서 제거합니다. |
 | remove_specific_chars_mapper                        | General            | en, ko | 사용자가 지정한 문자나 부분 문자열을 제거합니다                                                |
 | remove_table_text_mapper                            | General, Financial | en     | 가능한 테이블 콘텐츠를 감지하고 제거합니다 (:warning: relies on regular expression matching and thus fragile) |
 | remove_words_with_incorrect_<br />substrings_mapper | General            | en, ko | 지정된 부분 문자열을 포함하는 단어를 제거합니다                                                     |
@@ -74,11 +73,7 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 | alphanumeric_filter            | General | en, ko | 알파벳 및 숫자 비율이 지정된 범위 내에 있는 샘플을 유지합니다.                                               |
 | average_line_length_filter     | Code    | en, ko | 평균 줄 길이가 지정된 범위 내에 있는 샘플을 유지합니다.                                                   |
 | character_repetition_filter    | General | en, ko | 문자 수준 n-그램 반복 비율이 지정된 범위 내에 있는 샘플을 유지합니다.                                          |
-| clip_similarity_filter         | Multimodal |   -    | 텍스트 및 이미지 간 유사성이 지정된 범위 내에 있는 샘플을 유지합니다.                                           |
 | flagged_words_filter           | General | en, ko | flagged-word 비율이 지정된 임계값 아래인 샘플을 유지합니다.                                            |
-| image_aspect_ratio_filter      | Image   |   -    | 지정된 범위 내의 가로 세로 비율을 갖는 이미지를 포함한 샘플을 유지합니다.                                         |
-| image_shape_filter             | Image   |   -    | 지정된 범위 내의 너비와 높이를 갖는 이미지를 포함한 샘플을 유지합니다.                                           |
-| image_size_filter              | Image   |   -    | 지정된 범위 내의 바이트 크기를 갖는 이미지를 포함한 샘플을 유지합니다.                                           |
 | language_id_score_filter       | General | en, ko | 예측된 신뢰도 점수에 따라 특정 언어의 샘플을 유지합니다.                                                   |
 | maximum_line_length_filter     | Code    | en, ko | 최대 줄 길이가 지정된 범위 내에 있는 샘플을 유지합니다.                                                   |
 | perplexity_filter              | General | en, ko | perplexity 점수가 지정된 임계값 아래인 샘플을 유지합니다.                                              |
@@ -100,7 +95,6 @@ Data-Juicer의 오퍼레이터는 5가지 유형으로 분류됩니다.
 | document_deduplicator         | General | en, ko | MD5 해시를 비교하여 문서 수준에서 샘플 중복 제거 |
 | document_minhash_deduplicator | General | en, ko | MinHashLSH를 사용하여 문서 수준에서 샘플 중복 제거    |
 | document_simhash_deduplicator | General | en, ko | SimHash를 사용하여 문서 수준에서 샘플 중복 제거       |
-| image_deduplicator            | Image   |   -    | 이미지 간의 정확한 일치를 사용하여 문서 수준에서 샘플 중복 제거 |
 
 
 ## Selector <a name="selector"/>
