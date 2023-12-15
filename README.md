@@ -34,7 +34,7 @@ We gather all the puzzle pieces of the developing process of LLM, assemble them 
 - Flexible Analysis: Utilize advanced analysis tools to delve into your data, gaining new insights and perspectives.
 - Customized Results: Organize and present data according to your requirements, delivering tailored results.
 - User-Friendly Interface: An intuitive and easy-to-use interface allows users to harness the power of data without requiring advanced knowledge.
-- Easy-to-Learn: We provide an intuitive Supervised Fine-Tuning (SFT) codes.
+- Easy-to-Learn: We provide an intuitive codes, including finetuning and auto-eval codes fot LLMs.
 
 ----
 
