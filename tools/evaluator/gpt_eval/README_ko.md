@@ -54,8 +54,8 @@
         - question_file: 이전 단계에서 생성된 벤치마크 데이터셋 파일
         - answer_file: 이전 단계에서 모델이 생성한 답변 파일
         - baseline_file: 이전 단계에서 기준 모델의 답변 파일
-        - prompt_file: 다양한 프롬프트 템플릿이 포함된 파일, 툴킷에서는 샘플 파일을 제공하였습니다 ([`config/prompt.json`](config/prompt.json))
-        - reviewer_file: OpenAI API 요청에 사용되는 모델 유형 및 기타 매개변수가 포함된 여러 리뷰어 템플릿이 포함된 파일, 툴킷에서는 샘플 파일을 제공하였습니다 ([`config/reviewer.json`](config/reviewer.jsonl))
+        - prompt_file: 다양한 프롬프트 템플릿이 포함된 파일, 툴킷에서는 샘플 파일을 제공하였습니다 ([`config/prompt.jsonl`](config/prompt.jsonl))
+        - reviewer_file: OpenAI API 요청에 사용되는 모델 유형 및 기타 매개변수가 포함된 여러 리뷰어 템플릿이 포함된 파일, 툴킷에서는 샘플 파일을 제공하였습니다 ([`config/reviewer.jsonl`](config/reviewer.jsonl))
     2. 구성 파일 (`config.yaml`)을 작성하세요. 파일 형식은 다음과 같습니다:
         ```yaml
         gpt_evaluation:
