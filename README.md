@@ -65,27 +65,10 @@ git clone https://github.com/teamreboott/data-modori
 cd data-modori
 ```
 
-- Run the following commands to install the latest basic data_modori version in editable mode:
+- Run the following command to install the required modules from **data-modori**:
 ```bash
-pip install -v -e .
+pip install -r environments/combined_requirements.txt
 ```
-
-- Some OPs rely on some other too large or low-platform-compatibility third-party libraries. You can install optional dependencies as needed:
-```bash
-pip install -v -e .  # install a minimal dependencies, which support the basic functions
-pip install -v -e .[tools] # install a subset of tools dependencies
-```
-
-- The dependency options are listed below:
-
-| Tag          | Description                                                                                  |
-|--------------|----------------------------------------------------------------------------------------------|
-| `.` or `.[mini]` | Install minimal dependencies for basic Data-Modori.                                        |
-| `.[all]`       | Install all optional dependencies (including minimal dependencies and all of the following). |
-| `.[sci]`       | Install all dependencies for all OPs.                                                        |
-| `.[dist]`      | Install dependencies for distributed data processing. (Experimental)                         |
-| `.[dev]`       | Install dependencies for developing the package as contributors.                             |
-| `.[tools]`     | Install dependencies for dedicated tools, such as quality classifiers.                       |
 
 ### Data Processing
 
@@ -137,7 +120,7 @@ streamlit run app.py
     arguments. You just need to **remove** ops that you won't use and refine
     some arguments of ops.
   - ➕：Build up your own config files **from scratch**. You can refer our
-    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide_en.md#build-your-own-configs).
+    example config file [`config_all.yaml`](configs/config_all.yaml), [op documents](docs/Operators.md), and advanced [Build-Up Guide for developers](docs/DeveloperGuide.md#build-your-own-configs).
   - Besides the yaml files, you also have the flexibility to specify just
     one (of several) parameters on the command line, which will override
     the values in yaml files.
@@ -160,7 +143,7 @@ text_keys: 'content'
 # a list of several process operators with their arguments
 process:
   - language_id_score_filter:
-      lang: 'en'
+      lang: 'ko'
 ```
 
 ## Documentation
