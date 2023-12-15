@@ -31,10 +31,10 @@ English | [한국어](README_ko.md)
 **Data-Modori** is an unified platform that guides you into the realm of LLM, offering diverse possibilities by analyzing useful information from various sources 🌐. 
 We gather all the puzzle pieces of the developing process of LLM, assemble them into one, and invite you into the world of the information you desire.
 
-- 🛠️ Flexible Analysis: Utilize advanced analysis tools to delve into your data, gaining new insights and perspectives.
-- 📊 Customized Results: Organize and present data according to your requirements, delivering tailored results.
-- 🖥️ User-Friendly Interface: An intuitive and easy-to-use interface allows users to harness the power of data without requiring advanced knowledge.
-- 🤖 Easy-to-Learn: We provide an intuitive codes, including finetuning and auto-eval codes fot LLMs.
+- 🛠️ **Flexible Analysis**: Utilize advanced analysis tools to delve into your data for Korean languages, gaining new insights and perspectives.
+- 📊 **Customized Results**: Organize and present data according to your requirements, delivering tailored results.
+- 🖥️ **User-Friendly Interface**: An intuitive and easy-to-use interface allows users to harness the power of data without requiring advanced knowledge.
+- 🤖 **Easy-to-Learn**: We provide an intuitive codes, including finetuning and auto-eval codes fot LLMs.
 
 ----
 
@@ -46,7 +46,8 @@ Table of Contents
   - [Data Processing](#data-processing)
   - [Data Analysis](#data-analysis)
   - [Data Visualization](#data-visualization)
-  - [Build Up Config Files](#build-up-config-files)
+  - [Build Up Config Files for Preprocessing](#build-up-config-files)
+  - [Supervised Fine-Tuning](tools/finetuning/README.md)
   - [Documentation](#documentation)
   - [License](#license)
   - [Contributing](#contributing)
@@ -158,16 +159,13 @@ features, bug fixes and better documentations. Please refer to [How-to Guide for
 
 ## Acknowledgement
 **Data-Modori** is used across various LLM products and research initiatives,
-including industrial LLMs from Teamreboott AI TEAM(AR), 
-such as AUT for trade and AUW for work. 
-
+including industrial LLMs.
 We look forward to more of your experience, suggestions and discussions for collaboration!
 
 **Data-Modori** thanks and refers to several community projects, such as 
 [data-juicer](https://github.com/alibaba/data-juicer), [Huggingface-Datasets](https://github.com/huggingface/datasets), [Bloom](https://huggingface.co/bigscience/bloom), [Pile](https://huggingface.co/datasets/EleutherAI/pile), [Megatron-LM](https://github.com/NVIDIA/Megatron-LM), [DeepSpeed](https://www.deepspeed.ai/), [Arrow](https://github.com/apache/arrow), [Ray](https://github.com/ray-project/ray), [Beam](https://github.com/apache/beam),  [LM-Harness](https://github.com/EleutherAI/lm-evaluation-harness), [HELM](https://github.com/stanford-crfm/helm), ....
 
 ## References
-If you find our work useful for your research or development, please kindly cite the following [paper](https://arxiv.org/abs/2309.02033).
 ```
 @misc{chen2023datajuicer,
 title={Data-Juicer: A One-Stop Data Processing System for Large Language Models},
