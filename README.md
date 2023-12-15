@@ -95,7 +95,7 @@ export DATA_MODORI_ASSETS_CACHE="/path/to/another/directory/assets"
 - Run `analyze_data.py` tool with your config as the argument to analyse your dataset.
 
 ```bash
-python tools/analyze_data.py --config configs/analyze.yaml
+python tools/analyze_data.py --config configs/analyser.yaml
 ```
 
 - **Note:** Analyser only compute stats of Filter ops. So extra Mapper or Deduplicator ops will be ignored in the analysis process.
