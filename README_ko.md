@@ -28,12 +28,12 @@
 </div>
 
 **LMOps**는 복잡하고 도전적인 분야이지만 대형 언어 모델의 성공적인 배포와 관리에서 핵심적인 역할을 합니다.   
-**Data-Modori**는 여러 소스에서 유용한 정보를 분석하여 다양한 가능성을 제공하며 여러분을 LLM의 영역으로 안내하는 통합 플랫폼입니다. 🌐 우리는 LLM 개발 과정의 모든 퍼즐 조각을 수집하여 하나로 조립하고 여러분을 원하는 정보의 세계로 초대합니다.
+**Data-Modori**는 데이터에서 유용한 정보를 분석하여 다양한 한국어 전처리 연산기능을 제공해 여러분이 LLM을 쉽고 빠르게 개발할 수 있는 통합 플랫폼입니다. 🌐 Data-Modori는 LLM 개발 과정을 통합한 한국어 특화 LMOps툴이며 지속적으로 업데이트되니 많은 관심 부탁드립니다 😄
 
-- 🛠️ 유연한 분석: 고급 분석 도구를 활용하여 데이터를 자세히 살펴보고 새로운 통찰과 시각을 얻을 수 있습니다.
-- 📊 맞춤형 결과: 귀하의 요구에 따라 데이터를 조직하고 제시하여 맞춤형 결과를 전달합니다.
-- 🖥️ 사용자 친화적 인터페이스: 직관적이고 사용하기 쉬운 인터페이스를 통해 사용자들은 고급 지식이 필요하지 않고도 데이터의 힘을 활용할 수 있습니다.
-- 🤖 쉬운 학습: 우리는 LLM에 대한 미세 조정 및 자동 평가 코드를 포함한 직관적인 코드를 제공합니다.
+- 🛠️ **유연한 분석**: 고급 분석 도구를 활용하여 데이터를 자세히 살펴보고 새로운 통찰과 시각을 얻을 수 있습니다.
+- 📊 **맞춤형 결과**: 목적에 따라 데이터를 전처리(예: Deduplication, Text Cleaning)하여 맞춤형 결과를 전달합니다. 분산처리를 통해 빠른 연산속도를 경험해보세요!
+- 🖥️ **사용자 친화적 인터페이스**: 직관적이고 사용하기 쉬운 인터페이스를 통해 사용자들은 고급 지식이 필요하지 않고도 데이터의 힘을 활용할 수 있습니다.
+- 🤖 **쉬운 학습**: LLM 튜닝 및 자동 평가 코드를 포함한 직관적인 코드를 제공합니다.
 
 ----
 
@@ -41,25 +41,25 @@
 =================
 - [Data-Modori: 한국어용 LMOps 도구](#data-modori-한국어용-lmops-도구)
 - [목차](#목차)
-  - [전제조건](#전제조건)
   - [설치](#설치)
   - [데이터 전처리](#데이터-전처리)
   - [데이터 분석](#데이터-분석)
   - [데이터 시각화](#데이터-시각화)
   - [데이터 전처리용 설정 파일 구성](#설정-파일-구성)
-  - [LLM 튜닝하기](tools/finetuning/README.md)
+  - [Supervised Fine-Tuning (SFT)](tools/finetuning/README.md)
+  - [Direct Preference Optimization (DPO)](tools/finetuning/README.md)
   - [Ko-LLM 평가하기](tools/evaluator/README.md)
   - [문서](#문서)
   - [License](#license)
   - [기여하기](#기여하기)
   - [감사한분들](#감사한분들)
 
-### 전제조건
+### 개발환경
 
 - Python==3.8 권장
 - (최소 C++14 지원하는) gcc >= 5 
 
-### 설치
+### ⚙️ 설치
 
 - **Github**에서 소스 코드 가져오기
 ```bash
@@ -72,7 +72,7 @@ cd data-modori
 pip install -r environments/combined_requirements.txt
 ```
 
-### 데이터 전처리
+### 📊 데이터 전처리
 
 - `process_data.py`와 config 파일을 사용해 데이터셋을 처리합니다.
 
@@ -93,7 +93,7 @@ export DATA_MODORI_MODELS_CACHE="/path/to/another/directory/models"
 export DATA_MODORI_ASSETS_CACHE="/path/to/another/directory/assets"
 ```
 
-### 데이터 분석
+### 🔍 데이터 분석
 
 - `analyze_data.py`와 config 파일을 사용해 데이터셋을 분석합니다.
 
@@ -103,7 +103,7 @@ python tools/analyze_data.py --config configs/analyser.yaml
 
 - **참고:** `analyze_data.py`는 Filter ops의 통계만 계산합니다. 따라서 Mapper or Deduplicator ops는 분석 프로세스에서 무시됩니다.
 
-### 데이터 시각화
+### 📈 데이터 시각화
 
 - `app.py` 를 실행하여 브라우저에서 데이터셋을 분석하며 시각화된 정보를 얻습니다.
 
@@ -114,7 +114,7 @@ streamlit run app.py
 ![Example of App](docs/imgs/streamlit_ex.png "Streamlit App")
 
 
-### 설정 파일 구성
+### 🏗️ 설정 파일 구성
 
 - 설정 파일은 전역 인수 및 데이터 처리를 위한 연산자 목록을 지정합니다. 다음을 설정해야 합니다:
   - 전역 인수: 입력/출력 데이터셋 경로, 작업자 수 등
@@ -146,21 +146,21 @@ process:
       lang: 'en'
 ```
 
-## 문서
+## 📖 문서
 
 - [개요](README_ko.md)
 - [연산자](docs/Operators_ko.md)
 - [설정파일](configs/README_ko.md)
 - [개발자 가이드](docs/DeveloperGuide_ko.md)
 
-## License
+## 🔐 License
 **Data-Modori**는 Apache 라이선스 2.0에 따라 배포됩니다.
 
-## 기여하기
+## 🤝 기여하기
 저희는 빠르게 발전하는 분야에 속해 있으며 새로운 기능, 버그 수정, 더 나은 문서를 기능, 버그 수정 및 더 나은 문서에 대한 기여를 크게 환영합니다. 
 [[개발자를 위한 How-to 가이드]](docs/DeveloperGuide_ko.md)를 참조하세요.
 
-## 감사한분들
+## 🙏 감사한분들
 **Data-Modori**는 다양한 LLM 제품 및 연구 이니셔티브에서 사용됩니다,
 협업을 위한 여러분의 더 많은 경험, 제안해주세요.
 
