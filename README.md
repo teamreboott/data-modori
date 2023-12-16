@@ -42,25 +42,27 @@ Table of Contents
 =================
 - [Data-Modori: LMOps Tool for Korean](#data-modori-lmops-tool-for-korean)
 - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Data Processing](#data-processing)
   - [Data Analysis](#data-analysis)
   - [Data Visualization](#data-visualization)
   - [Build Up Config Files for Preprocessing](#build-up-config-files)
-  - [Supervised Fine-Tuning](tools/finetuning/README.md)
+  - [Supervised Fine-Tuning (SFT)](tools/finetuning/README.md)
+  - [Direct Preference Optimization (DPO)](tools/finetuning/README.md)
   - [Korean Language Model Evaluation Harness](tools/evaluator/README.md)
   - [Documentation](#documentation)
   - [License](#license)
   - [Contributing](#contributing)
   - [Acknowledgement](#acknowledgement)
 
+
 ### Prerequisites
 
 - Recommend Python==3.8
 - gcc >= 5 (at least C++14 support)
 
-### Installation
+
+### ⚙️ Installation
 
 - Get source code from **Github**
 ```bash
@@ -73,7 +75,9 @@ cd data-modori
 pip install -r environments/combined_requirements.txt
 ```
 
-### Data Processing
+### 📊 Data Processing
+
+**Data-Modori** provides a variety of [operators](docs/Operators.md)!
 
 - Run `process_data.py` tool with your config as the argument to process your dataset.
 
@@ -93,7 +97,7 @@ export DATA_MODORI_MODELS_CACHE="/path/to/another/directory/models"
 export DATA_MODORI_ASSETS_CACHE="/path/to/another/directory/assets"
 ```
 
-### Data Analysis
+### 🔍 Data Analysis
 
 - Run `analyze_data.py` tool with your config as the argument to analyse your dataset.
 
@@ -103,7 +107,7 @@ python tools/analyze_data.py --config configs/analyser.yaml
 
 - **Note:** Analyser only compute stats of Filter ops. So extra Mapper or Deduplicator ops will be ignored in the analysis process.
 
-### Data Visualization
+### 📈 Data Visualization
 
 - Run `app.py` tool to visualize your dataset in your browser.
 
@@ -114,7 +118,7 @@ streamlit run app.py
 ![Example of App](docs/imgs/streamlit_ex.png "Streamlit App")
 
 
-### Build Up Config Files
+### 🏗️ Build Up Config Files
 
 - Config files specify some global arguments, and an operator list for the
   data process. You need to set:
@@ -152,21 +156,21 @@ process:
       lang: 'ko'
 ```
 
-## Documentation
+## 📖 Documentation
 
 - [Overview](README.md)
 - [Operators](docs/Operators.md)
 - [Configs](configs/README.md)
 - [Developer Guide](docs/DeveloperGuide.md)
 
-## License
+## 🔐 License
 **Data-Modori** is released under Apache License 2.0.
 
-## Contributing
+## 🤝 Contributing
 We are in a rapidly developing field and greatly welcome contributions of new 
 features, bug fixes and better documentations. Please refer to [How-to Guide for Developers](docs/DeveloperGuide.md).
 
-## Acknowledgement
+## 🙏  Acknowledgement
 **Data-Modori** is used across various LLM projects and research initiatives,
 including industrial LLMs.
 We look forward to more of your experience, suggestions and discussions for collaboration!
